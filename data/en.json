@@ -1,0 +1,10 @@
+{
+  "meta": {"title":"Documentary Ethics Compass","subtitle":"Educational guidance for filmmakers on ethical decisions before, during, and after filming.","dir":"ltr"},
+  "ui": { "more": "more" },
+  "sections": [
+    {"id":"consent","title":"Consent and Trust","short":"Informed consent as an ongoing process.","content":"# Consent\n**Informed consent** is a process, not a form.\nUse &Checklist|consent_checklist&.","subsections":{"consent_checklist":{"title":"Consent checklist","content":"## Five steps\nContext, risk, right to refuse, contact, revision."}}},
+    {"id":"power","title":"Power and Vulnerability","short":"Map power asymmetry between crew and subjects.","content":"# Power\nAssess harm and benefit continuously.\nOpen &Risk cases|risk_cases&.","subsections":{"risk_cases":{"title":"Risk cases","content":"## Typical risk\nRecording people in distress without support."}}},
+    {"id":"editing","title":"Editing and Representation","short":"Editing choices shape meaning and fairness.","content":"# Editing\nKeep context intact.\nOpen &Bias control|bias_control&.","subsections":{"bias_control":{"title":"Bias control","content":"### Prompt\nIs this fair and accurate?"}}},
+    {"id":"impact","title":"Post-release Impact","short":"Prepare post-premiere safety and communication plans.","content":"# Impact\nTrack consequences after release.","subsections":{}}
+  ]
+}

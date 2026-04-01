@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Dokumentární etický kompas",
+    "subtitle": "Interaktivní osvěta pro filmaře: co je etické rozhodnutí před natáčením, během něj i po něm.",
+    "dir": "ltr"
+  },
+  "ui": { "more": "více" },
+  "sections": [
+    {
+      "id": "consent",
+      "title": "Souhlas a vztah",
+      "short": "Jak získat informovaný souhlas a budovat důvěru bez manipulace.",
+      "content": "# Souhlas\n**Informovaný souhlas** je proces, ne podpis.\nVysvětli cíl filmu, distribuci i rizika.\nPoužívej &Checklist|consent_checklist& před natáčením.",
+      "subsections": {
+        "consent_checklist": {
+          "title": "Checklist souhlasu",
+          "content": "## 5 kroků\n1) Kontext\n2) Rizika\n3) Právo odmítnout\n4) Kontakt\n5) Revize při změně záměru"
+        }
+      },
+      "chart": { "type": "bar", "items": [ {"label":"Jasnost", "value": 9}, {"label":"Empatie", "value": 7}, {"label":"Doložení", "value": 6} ], "options": { "orientation": "horizontal" } }
+    },
+    {
+      "id": "power",
+      "title": "Moc a zranitelnost",
+      "short": "Sleduj nerovnost moci mezi štábem a protagonistou.",
+      "content": "# Moc\nKamera může chránit i ubližovat.\nPoužij *minimalizaci zásahu* a vždy hodnoť dopad.\nPřečti &Rizikové situace|risk_cases&.",
+      "subsections": {
+        "risk_cases": {
+          "title": "Rizikové situace",
+          "content": "## Typické riziko\nKrizový rozhovor bez podpory.\nSkryté natáčení bez veřejného zájmu."
+        }
+      },
+      "chart": { "type": "plot", "points": [ {"x":1,"y":2},{"x":2,"y":4},{"x":3,"y":3},{"x":4,"y":7} ] }
+    },
+    {
+      "id": "editing",
+      "title": "Střih a reprezentace",
+      "short": "Etika nekončí natáčením: střihem se tvoří význam i riziko zkreslení.",
+      "content": "# Střih\nNenarušuj kontext výroku.\nOvěřuj fakta a označ rekonstrukce.\nViz &Kontrola zkreslení|bias_control&.",
+      "subsections": {
+        "bias_control": {
+          "title": "Kontrola zkreslení",
+          "content": "### Praktika\nU každé klíčové scény se ptej: Je to férové? Je to přesné?"
+        }
+      }
+    },
+    {
+      "id": "impact",
+      "title": "Dopad po vydání",
+      "short": "Plánuj následnou péči a bezpečnost protagonistů po premiéře.",
+      "content": "# Dopad\nPo vydání sleduj důsledky.\nNastav bezpečný kontakt a krizový plán.\nVíce: [Etické minimum](https://example.com).",
+      "subsections": {}
+    }
+  ]
+}
