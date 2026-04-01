@@ -38,7 +38,7 @@
     });
 
     const rotation = -(state.activeIndex * 90);
-    $('#wheel-rotor').css('transform', `rotate(${rotation}deg)`);
+    $('#wheel-rotor').attr('transform', `rotate(${rotation} 210 210)`);
   }
 
   function renderHeroText() {
