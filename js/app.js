@@ -63,7 +63,6 @@
   function wrapSvgText(text, maxChars = 16) {
     const nbsp = '\u00A0';
     const normalized = textWithNbsp(text);
-
     const protectedText = normalized.replace(new RegExp(nbsp, 'g'), '%%NBSP%%');
     const words = protectedText.split(/ +/);
     const lines = [];
@@ -83,6 +82,55 @@
 
     if (current) lines.push(current);
     return lines.slice(0, 3);
+  }
+
+  function isMobileLayout() {
+    return window.matchMedia('(max-width: 900px)').matches;
+  }
+
+  function refreshSectionHeight($section) {
+    if (!$section || !$section.length) return;
+    const $body = $section.find('.section-body');
+    if (!$body.length) return;
+
+    const body = $body[0];
+
+    if (!$section.hasClass('is-open')) {
+      $body.css('--section-open-height', '0px');
+      return;
+    }
+
+    const previousMaxHeight = body.style.maxHeight;
+    body.style.maxHeight = 'none';
+    const measured = body.scrollHeight;
+    body.style.maxHeight = previousMaxHeight;
+
+    $body.css('--section-open-height', `${measured}px`);
+  }
+
+  function refreshAllSectionHeights() {
+    $('.section-block').each(function () {
+      refreshSectionHeight($(this));
+    });
+  }
+
+  function scrollToSideboxTop($section) {
+    const $side = $section.find('.section-side');
+    if (!$side.length || !$side.hasClass('is-visible')) return;
+
+    const behavior = 'smooth';
+    $side[0].scrollIntoView({
+      behavior,
+      block: isMobileLayout() ? 'start' : 'nearest',
+      inline: 'nearest'
+    });
+
+    const $heading = $side.find('.sidebox-title').first();
+    if ($heading.length) {
+      window.setTimeout(() => {
+        $heading.trigger('focus');
+      }, 180);
+    }
   }
 
   function renderWheel() {
@@ -234,15 +282,23 @@
   function closeSideboxes($scope = $('.section-block')) {
     $scope.each(function () {
       const $section = $(this);
-      $section.find('.section-side').removeClass('is-visible').empty();
+      const $side = $section.find('.section-side');
+      $side
+        .removeClass('is-visible')
+        .attr('aria-hidden', 'true')
+        .empty();
+
       $section.find('.inline-link.is-open')
         .removeClass('is-open')
         .attr('aria-expanded', 'false');
+
+      refreshSectionHeight($section);
     });
   }
 
   function toggleInlinePanel($trigger, $section, subsection) {
     const $side = $section.find('.section-side');
+    const sideId = $side.attr('id');
     const isSameOpen = $trigger.hasClass('is-open') && $side.hasClass('is-visible');
 
     $section.find('.inline-link')
@@ -251,17 +307,35 @@
       .attr('aria-expanded', 'false');
 
     if (isSameOpen) {
-      $side.removeClass('is-visible').empty();
+      $side
+        .removeClass('is-visible')
+        .attr('aria-hidden', 'true')
+        .empty();
+
       $trigger.removeClass('is-open').attr('aria-expanded', 'false');
+      refreshSectionHeight($section);
       return;
     }
 
     $side.html(`
-      <h4>${safeTextHtml(subsection.title)}</h4>
+      <h4 class="sidebox-title" tabindex="-1">${safeTextHtml(subsection.title)}</h4>
       ${renderContent(subsection.content)}
-    `).addClass('is-visible');
+    `)
+      .addClass('is-visible')
+      .attr('aria-hidden', 'false');
+
+    if (sideId) {
+      $trigger.attr('aria-controls', sideId);
+    }
 
     $trigger.addClass('is-open').attr('aria-expanded', 'true');
+
+    refreshSectionHeight($section);
+
+    window.requestAnimationFrame(() => {
+      scrollToSideboxTop($section);
+      window.setTimeout(() => refreshSectionHeight($section), 220);
+    });
   }
 
   function renderSections() {
@@ -273,19 +347,29 @@
     }
 
     (state.data.sections || []).forEach((s) => {
+      const sideId = `sidebox-${htmlEscape(s.id)}`;
+
       const sectionHtml = `
         <section class="section-block" id="section-${htmlEscape(s.id)}">
-          <button class="section-header" aria-expanded="false">
+          <button class="section-header" aria-expanded="false" aria-controls="section-body-${htmlEscape(s.id)}">
             <span>${safeTextHtml(s.title)}</span>
             <span aria-hidden="true">+</span>
           </button>
 
-          <div class="section-body">
+          <div class="section-body" id="section-body-${htmlEscape(s.id)}">
             <div class="section-main">
               ${renderContent(s.content)}
               ${makeChart(s.chart)}
             </div>
-            <aside class="section-side" aria-live="polite"></aside>
+            <aside
+              class="section-side"
+              id="${sideId}"
+              aria-live="polite"
+              aria-hidden="true"
+              role="region"
+              aria-label="${safeTextHtml(s.title)}"
+              tabindex="-1"
+            ></aside>
           </div>
         </section>
       `;
@@ -302,6 +386,10 @@
         const sub = s.subsections?.[key];
         if (!sub) return;
 
+        if (!$sec.hasClass('is-open')) {
+          setSectionOpen(s.id, true, false);
+        }
+
         toggleInlinePanel($(this), $sec, sub);
       });
 
@@ -311,36 +399,50 @@
     if (infoPosition === 'end') {
       $root.append(renderInfoBlock());
     }
+
+    refreshAllSectionHeights();
   }
 
   function setSectionOpen(id, forceOpen = null, smooth = false) {
-    const $all = $('.section-block');
-    const $current = $(`#section-${CSS.escape(id)}`);
-    if (!$current.length) return;
+  const $all = $('.section-block');
+  const $current = $(`#section-${CSS.escape(id)}`);
+  if (!$current.length) return;
 
-    const open = forceOpen !== null ? forceOpen : !$current.hasClass('is-open');
+  const open = forceOpen !== null ? forceOpen : !$current.hasClass('is-open');
 
-    closeSideboxes($all);
-    $all.removeClass('is-open').find('.section-header').attr('aria-expanded', 'false');
+  closeSideboxes($all);
+  $all.removeClass('is-open').find('.section-header').attr('aria-expanded', 'false');
 
-    if (open) {
-      $current.addClass('is-open').find('.section-header').attr('aria-expanded', 'true');
+  if (open) {
+    $current.addClass('is-open').find('.section-header').attr('aria-expanded', 'true');
 
-      if (smooth && $current[0]) {
-        $current[0].scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+    refreshSectionHeight($current);
+
+    requestAnimationFrame(() => {
+      refreshSectionHeight($current);
+
+      setTimeout(() => {
+        refreshSectionHeight($current);
+      }, 250);
+    });
+
+    if (smooth && $current[0]) {
+      $current[0].scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
+  } else {
+    refreshSectionHeight($current);
   }
+}
 
   function setActiveSection(index) {
     state.activeIndex = index;
     renderWheel();
     renderHeroText();
 
-    if (window.matchMedia('(max-width: 900px)').matches) {
+    if (isMobileLayout()) {
       const hero = document.getElementById('hero-description');
       if (hero) {
         hero.scrollIntoView({
@@ -387,6 +489,10 @@
     $('#skin-select').on('change', function () {
       state.skin = $(this).val();
       SkinEngine.applySkin(state.skin);
+    });
+
+    $(window).on('resize', function () {
+      refreshAllSectionHeights();
     });
 
     $(document).on('click', function (e) {

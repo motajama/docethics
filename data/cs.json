@@ -11,98 +11,252 @@
     {
       "id": "social-actors",
       "title": "Zodpovědnost k~sociálnímu herectvu",
-      "short": "Lidé ve filmu nejsou materiál, ale nositelé důstojnosti, agency a zkušenosti. Základní otázka zní: jak neškodit a jak neodebírat hlas těm, jejichž příběh film zpracovává?",
+      "short": "Respektuj důstojnost, autonomii, soukromí a identitu. Usiluj o informovaný souhlas, předcházej škodě. Stejně citlivě pracuj i s archivy: chraň lidskou důstojnost a reflektuj, že archivní záznamy mohou mít dopad na reálné osoby a komunity. Uplatňuj trauma respektující přístup.",
       "content": [
-        "# Zodpovědnost k sociálnímu herectvu\nTato osa se týká vztahu k participantům, protagonistům a komunitám, jejichž zkušenost film zprostředkovává.\n\nZákladní principy jsou **do no harm**, ochrana zranitelných, respekt k důstojnosti a uznání toho, že participant je expert na svou vlastní zkušenost. Dokumentarista má moc: rozhoduje, koho ukáže, z jaké perspektivy, v jakém kontextu a s jakým důsledkem.\n\nEtická otázka proto nezačíná až u podpisu release formuláře. Začíná už tím, zda je správné tento příběh vyprávět právě takto, právě teď a právě tímto štábem. Viz $Klíčové otázky|participants_questions$ a $Praktické zásady|participants_practice$."
+        "# Respektovat lidskou nezávislost a důstojnost",
+        "Základním etickým principem dokumentární i obecně audiovizuální tvorby je respekt k člověku jako k bytosti, která není „materiálem“, ale samostatným nositelem hodnoty, zkušenosti a práva rozhodovat o sobě. Tento princip znamená, že filmovaná osoba nesmí být redukována na prostředek k dosažení silného záběru, emocionálního účinku nebo veřejného zájmu. Respekt k nezávislosti a důstojnosti předpokládá, že participující osoba má vlastní perspektivu, vlastní hranice a vlastní legitimní zájmy, které je třeba brát vážně. Tvůrčí tým proto nevstupuje do vztahu s participující osobou jako vlastník příběhu, ale jako někdo, kdo nese odpovědnost za způsob setkání, reprezentace i možné následky.",
+        "Archivní praxe opakovaně zdůrazňuje, že vedle zachování a zpřístupnění je třeba zvažovat i to, jak záznam znovu vstupuje do života lidí, jichž se týká, a zda nové užití neobnovuje staré formy objektifikace nebo nerovnosti. Současná debata o archivech proto posouvá důraz od představy neutrálního „uložení minulosti“ k odpovědnému kurátorství, které bere vážně dopad na reálně existující osoby a komunity.",
+        "## Autonomie a informovaný souhlas",
+        "Autonomie v etickém smyslu znamená, že člověk může svobodně a kompetentně rozhodovat o své účasti. V dokumentární praxi se tento princip nejčastěji vyjadřuje požadavkem $informovaného souhlasu|informed-consent$. Nestačí jen formální „ano“ před kamerou nebo podpis na formuláři; participující osoba má rozumět tomu, kdo film vytváří, za jakým účelem, kde bude dílo uvedeno, jaký může mít dopad a jakým způsobem bude její výpověď či obraz použit. Souhlas je skutečně informovaný tehdy, když je dán bez nátlaku, bez manipulace a s přiměřeným porozuměním situaci. Zároveň je třeba mít na paměti, že autonomie není jednorázový úkon, ale průběžný proces: zvlášť u citlivých témat je eticky důležité ověřovat, zda participující osoba chce pokračovat a zda se podmínky její účasti nezměnily.",
+        "V práci s archivy je důležité rozlišovat mezi souhlasem k pořízení záznamu, souhlasem k jeho uložení a souhlasem k pozdějšímu znovuužití, protože nejde o totožné věci. Doporučení z oblasti oral history i archivace výslovně upozorňují, že souhlas nemá být dovozován z mlčení a že má být srozumitelný, písemně zachycený a navázaný na konkrétní podmínky přístupu, omezení a případného budoucího využití. Archivářstvo navíc běžně pracuje s různými typy dohod — účastnickou, depozitní a autorskoprávní — právě proto, aby autonomie nebyla zúžena na jediný podpis bez dalšího kontextu.",
+        "## Neškodit – 'no harm' princip",
+        "Princip nonmaleficence (no-harm, neškodit) patří $k nejzákladnějším normám etické praxe|bioethics-four$. Znamená, že tvůrčí tým má předcházet předvídatelné újmě, a to nejen fyzické, ale také psychické, sociální, reputační nebo právní. Újma může vzniknout už samotným natáčením, způsobem kladení otázek, zveřejněním citlivých informací, vytržením výpovědi z kontextu nebo tím, že filmovaná osoba po uvedení filmu ponese důsledky, které nemohla plně odhadnout. Neškodit neznamená, že dokument nesmí zobrazovat bolestné nebo konfliktní skutečnosti, ale že tvůrčí osoby musí pečlivě zvažovat přiměřenost svého postupu a dopad na konkrétní lidi. Etická otázka tedy nezní jen „je to pravdivé?“, ale také „koho to může zasáhnout a jak?“.",
+        "V případě, že se tvůrci a tvůrkyně dotýkají příběhů souvisejících s lidskými traumaty, anebo je přímo zpracovávají, měli by si osvojit $trauma-informovaný přístup|trauma-informed$.",
+        "U archivů se princip neškodění týká zejména sekundárního užití: materiál, který byl kdysi pořízen v jiných podmínkách, může dnes někoho poškodit novým zveřejněním, novým rámováním nebo digitálním šířením. [Archivní doporučení](https://link.springer.com/chapter/10.1007/978-3-031-51063-2_11) proto kladou důraz na risk-based přístup, ochranu osobních dat a citlivé posuzování toho, zda veřejný přístup nebo filmové použití nepřináší nepřiměřené riziko pro dotčené osoby, jejich rodiny nebo komunity. To platí zvlášť u záznamů násilí, marginalizace, zdravotního stavu, policejního dohledu nebo jiných situací, v nichž může být archivní stopa sama nástrojem další újmy.",
+        "## Soukromí",
+        "Jedním z nejdůležitějších projevů ochrany důstojnosti je respekt k soukromí a intimitě. Ne všechno, co je možné natočit, je také etické ukázat. Člověk může být v situaci bolesti, zranitelnosti, studu, nemoci, smutku nebo rodinného konfliktu, a právě tehdy je třeba zvlášť citlivě rozlišovat mezi tím, co má veřejný význam, a tím, co už patří do chráněné sféry osobního života. Soukromí neznamená jen fyzické oddělení od veřejnosti, ale i právo nebýt zbytečně odhalen, interpretován nebo vystaven pohledu druhých v momentech, které ohrožují lidskou integritu. Respekt k intimitě proto vyžaduje zdrženlivost, citlivé rámování a někdy i vědomé rozhodnutí určité záběry nenatočit nebo nepoužít, i kdyby byly dramaticky silné.",
+        "V archivním kontextu je tento princip ještě složitější, protože záznam může přežít původní situaci i původní očekávání osoby, která v něm vystupuje. Archivní literatura zdůrazňuje, že soukromí prostupuje celý životní cyklus záznamu — od akvizice přes popis a uchování až po badatelský přístup a další publikaci — a že ochrana intimity někdy vyžaduje omezení přístupu, anonymizaci nebo pečlivé redakční rozhodnutí, i když je materiál technicky dostupný. U audiovizuálních archivů navíc nelze vždy spoléhat na prosté „odstranění jména“, protože obraz, hlas a kontext mohou identitu odhalovat samy o sobě.",
+        "## Respekt k identitě",
+        "Etická dokumentární i archivní praxe má respektovat to, jak lidé chápou a pojmenovávají vlastní identitu, a nemá jim vnucovat cizí kategorie, označení nebo rámce, které je zkreslují či zraňují. To se týká genderu, sexuality, etnicity, národnosti, náboženství, zdravotního stavu i dalších rovin sebeurčení: tvůrčí tým by měl pracovat s takovým jazykem, který odpovídá sebeidentifikaci participujících osob a neprodukuje zbytečné vylučování (viz $inkluzivní jazyk|inclusive-language$. Genderově neutrální jazyk v tomto smyslu není jen stylistická volba, ale součást respektu k důstojnosti a viditelnosti; pomáhá vyhnout se tomu, aby byl mužský rod automaticky pokládán za normu nebo aby některé osoby zůstávaly symbolicky neviditelné. V praxi to znamená volit inkluzivní výrazy jako autorstvo, filmařstvo, tvůrčí tým, participující osoby nebo jiné formulace, které nepředjímají pohlaví tam, kde to není nutné. V archivním kontextu se tento princip promítá i do metadat, popisů fondů a kurátorských textů: způsob, jakým jsou lidé a skupiny pojmenováni, zásadně ovlivňuje jejich dohledatelnost, interpretaci i to, zda archiv neopakuje starší diskriminační nebo zneviditelňující rámce. Práce s archivem proto vyžaduje citlivost k historickému jazyku, ale také schopnost doplnit jej dnešním eticky odpovědným popisem, který respektuje identitu osob a komunit, o nichž archiv vypovídá."
       ],
       "subsections": {
-        "participants_questions": {
-          "title": "Klíčové otázky",
-          "content": [
-            "## Na co se ptát\n1. Může film participantům uškodit — během natáčení, po uvedení nebo skrze budoucí šíření obrazů?\n2. Podporuje způsob vyprávění jejich **agency**, nebo je redukuje na oběti, symptomy nebo ilustrace problému?\n3. Rozumí lidé ve filmu tomu, co děláš, proč to děláš a jaké mohou být důsledky?\n4. Má film dostatečný vztah k lidem s lived experience, nebo zaměňuje přístup za porozumění?\n5. Nehrozí retraumatizace, stigmatizace, represálie, izolace nebo ztráta kontroly nad vlastním příběhem?"
-          ]
+      "bioethics-four": {
+  "title": "Čtyři principy bioetiky",
+  "content": [
+    "*Čtyři principy bioetiky* (autonomie, nonmaleficence, beneficence a spravedlnost) představují základní rámec pro etické rozhodování v situacích, kde dochází k zásahu do života, těla nebo důstojnosti člověka. Původně byly formulovány pro medicínu, ale dnes se široce uplatňují i v oblasti výzkumu, médií a dokumentární tvorby. Nejde o rigidní pravidla, ale o *vyvažování hodnot*, které mohou být v napětí.",
+    
+    "*Autonomie* znamená respekt k právu každého člověka rozhodovat o sobě. V praxi to zahrnuje informovaný souhlas, možnost odmítnout účast a kontrolu nad tím, jak je člověk reprezentován. Autonomie není absolutní — může být omezena například v situacích, kde dochází ke konfliktu s ochranou jiných osob nebo s principem neškodění. V dokumentární a archivní práci se autonomie promítá do způsobu získávání souhlasu, práce s identitou a možnosti participujících osob ovlivnit vlastní reprezentaci.",
+    
+    "*Nonmaleficence* (neškodění) znamená povinnost nezpůsobit újmu. Jde o základní etický závazek minimalizovat rizika fyzická, psychická, sociální i reputační. Tento princip klade důraz na prevenci — tedy nejen neškodit přímo, ale také nepřispívat k situacím, které mohou vést k poškození. V audiovizuální tvorbě se týká například zacházení s citlivými tématy, zveřejňování zranitelných situací nebo práce s archivními materiály, které mohou někoho vystavit novému riziku.",
+    
+    "*Beneficence* (prospěšnost) znamená aktivní snahu přispět k dobru a blahu druhých. Nejde jen o to neškodit, ale také o to, zda projekt přináší pozitivní hodnotu — pro participující osoby, komunity nebo společnost. Tento princip otevírá otázky jako: komu film nebo výzkum slouží, kdo z něj má prospěch a zda přínosy nepřevažují nad riziky. V praxi může znamenat podporu participujících osob, sdílení výsledků nebo citlivé zpracování témat, která mají veřejný význam.",
+    
+    "*Spravedlnost* znamená férové a rovné zacházení, zejména ve vztahu k rozdělení přínosů a zátěží. Ptá se, kdo nese rizika a kdo má užitek, a zda nejsou určité skupiny systematicky zatěžovány nebo zneviditelňovány. V kontextu médií a dokumentu se týká například výběru témat, reprezentace marginalizovaných skupin, přístupu k hlasu a viditelnosti i toho, jak jsou rozdělovány zdroje, pozornost a uznání.",
+    
+    "## Kam dál?",
+    "- Beauchamp, T. L., & Childress, J. F., *Principles of Biomedical Ethics*, 8th ed., 2019.",
+    "- Belmont Report, [Ethical Principles and Guidelines](https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html)",
+    "- Stanford Encyclopedia of Philosophy, [Beneficence](https://plato.stanford.edu/entries/principle-beneficence/)"
+  ]
+},
+        "trauma-informed" : {
+        "title": "Trauma respektující přístup",
+        "content" : [
+        "*Trauma respektující* (někdy také *trauma-informovaný*) *přístup* vychází z vědomí, že lidé, kteří mají zkušenost s traumatem mají odlišné prožívání, emoce a chování než ostatní. Nejde o to 'řešit trauma' (což je věcí psychoterapie), ale především *neubližovat znovu* (zabránit retraumatizacei).",
+        "Natalie Brown doporučuje vzít v úvahu tyto principy:",
+        "1. Pečovat o sociální herectvo, zvláště, pokud jde o marginalizované komunity a lidi poznamenané traumatem. Zabránit *extraktivní logice* dokumentu. Nepouživej nátlak, donucení.",
+        "2. Souhlas sám nestačí – není to 'bianco šek', ale minimum etiky.",
+        "3. Sebereflexe autorstva – 'Proč to točím právě já?', 'Jaký mám k tématu, ke komunitě vztah?'. Lze využit techniku *3Z*: zvědom si zažité vzorce svého chování, zastav se a změň pohled na situaci.",
+        "4. Do vývoje, produkce i postprodukce by měli být zapojení lidé z pečujících profesí, odbornictvo, které může pomoci nejen konzultací, ale i poskytnout péči.",
+        "5. Trauma nelze chápat pouze individuálně, ale *strukturálně* – vzniká v průsečíku společenských nerovností. Někdy pomůže změnit fokus: netočit film o traumatizovaných dětech, ale traumatizujícím systému."]
         },
-        "participants_practice": {
-          "title": "Praktické zásady",
-          "content": [
-            "## Praktické zásady\n- informovaný souhlas chápej jako **proces**, ne jako jednorázový podpis\n- vysvětluj záměr filmu, distribuci, rizika i hranice kontroly\n- naslouchej zpětné vazbě participantů tam, kde zvyšuje přesnost, důvěru a nuance\n- zvaž participant-centered dohody a harm mitigation plán\n- nepoužívej silné scény jen proto, že jsou silné; vždy zvažuj jejich cenu pro člověka před kamerou\n- u zranitelných lidí počítej s tím, že zveřejnění může změnit jejich život i vztahy v komunitě"
-          ]
-        }
-      }
-    },
+        "inclusive-language": {
+  "title": "Inkluzivní jazyk",
+  "content": [
+    "*Inkluzivní jazyk* reflektuje skutečnost, že řeč není neutrální. Může buď posilovat, nebo narušovat mocenské struktury, které udržují chudobu, nerovnost a vylučování. Inkluzivní jazyk není *newspeak*, ale snaha o to, aby způsob vyjadřování odpovídal hodnotám rovnosti, důstojnosti, solidarity a sdílení moci.",
+    "Oxfam doporučuje vzít v úvahu tyto principy:",
+    "1. Jazyk je politický: slova mohou upevňovat stereotypy, paternalismus a nerovnost, ale také pomáhat přerámovat problémy a zpochybňovat útlak.",
+    "2. Nech se vést lidmi, o nichž mluvíš: nepřiřazuj lidem identity a označení zvenčí, ale vycházej z toho, jak si přejí být označováni oni sami nebo organizace, které je zastupují.",
+    "3. Buď konkrétní: nezevšeobecňuj a nevytvářej homogenní kategorie tam, kde jsou mezi lidmi rozdílné zkušenosti, potřeby a formy znevýhodnění.",
+    "4. Nepoužívej jazyk, který patronizuje nebo stigmatizuje: vyhýbej se formulacím, které lidi redukují na jejich 'problém', činí z nich oběti bez agency nebo z nich dělají odchylku od domnělé normy.",
+    "5. Mysli na inkluzi a sounáležitost: ptej se, koho svými slovy zahrnuješ a koho naopak vynecháváš, zneviditelňuješ nebo symbolicky vytlačuješ na okraj.",
+    "6. Sdílej moc i jazykem: používej takové pojmy a rámce, které nenormalizují dominantní perspektivu, koloniální optiku nebo 'white gaze', ale narušují zavedené hierarchie.",
+    "7. Dbej na bezpečí: jazyk nemá lidi vystavovat většímu riziku, poškození nebo zranitelnosti; zvláštní pozornost je potřeba tam, kde se mluví o diskriminovaných nebo ohrožených komunitách.",
+    "8. Komunikuj srozumitelně a bez zbytečného žargonu: preferuj jednoduché a dobře přeložitelné formulace; pokud musíš použít méně známý pojem, vysvětli jej.",
+    "9. Neboj se pojmenovávat struktury útlaku: [patriarchát](https://cs.wikipedia.org/wiki/Patriarch%C3%A1t), [rasismus](https://cs.wikipedia.org/wiki/Rasismus), [kolonialita](https://cs.wikipedia.org/wiki/Kolonialita), [sexismus](https://cs.wikipedia.org/wiki/Sexismus), [ableismus](https://cs.wikipedia.org/wiki/Ableismus) nebo ekonomická nerovnost nemají být schovávány za neutrální a vyprázdněné fráze.",
+    "10. Ber jazyk jako situovaný a proměnlivý: nejde o neměnný soubor zákazů a příkazů, ale o průběžnou reflexi kontextu, publika, času a měnících se preferencí komunit.",
+    "## Kam dál?",
+    "- Oxfam, [Inclusive Language Guide](https://policy-practice.oxfam.org/resources/inclusive-language-guide-621487/), 2023."
+  ]
+},
+"informed-consent": {
+  "title": "Informovaný souhlas",
+  "content": [
+    "*Informovaný souhlas* odráží zásadu, že participující osoby mají právo rozhodovat o své účasti na základě *srozumitelných, úplných a pravdivých* informací. Nejde o jednorázový podpis nebo formální 'ano', ale o *proces sdílení moci*, který umožňuje lidem porozumět situaci, zvážit rizika a svobodně se rozhodnout.",
+    "Doporučuje se vzít v úvahu tyto principy:",
+    "1. Souhlas jako proces, ne událost: souhlas se neodehrává jen na začátku, ale je třeba jej průběžně ověřovat a znovu potvrzovat v průběhu vývoje, produkce i distribuce.",
+    "2. Srozumitelnost: informace mají být podány jazykem, kterému participující osoba skutečně rozumí; vyhýbej se právnickému nebo technickému žargonu.",
+    "3. Úplnost informací: sděluj, kdo projekt vytváří, za jakým účelem, kde bude zveřejněn, jak bude materiál použit a jaké mohou být dopady.",
+    "4. Dobrovolnost: souhlas musí být dán bez nátlaku, manipulace nebo závislosti; absence souhlasu musí být respektována bez sankcí.",
+    "5. Možnost odstoupení: participující osoba má mít reálnou možnost svůj souhlas kdykoli odvolat nebo omezit bez negativních důsledků.",
+    "6. Citlivost k moci a zranitelnosti: zvláštní pozornost věnuj situacím, kde existuje nerovnováha moci (děti, marginalizované komunity, lidé v krizi).",
+    "7. Kontext a důsledky: vysvětli nejen co se bude dít během natáčení, ale i co se může stát po zveřejnění (online šíření, mediální reakce, sociální dopady).",
+    "8. Ochrana soukromí: nabídni možnosti anonymizace, omezení použití nebo jiné formy ochrany identity tam, kde je to relevantní.",
+    "9. Specifičnost souhlasu: souhlas by měl být vázán na konkrétní použití; další využití (archivace, distribuce, nové projekty) vyžaduje nové zvážení.",
+    "10. Dokumentace a transparentnost: podmínky souhlasu mají být jasně zaznamenány a dostupné všem zúčastněným, aby bylo možné se k nim vracet a ověřovat je.",
+    "## Kam dál?",
+    "- BBC, [Guidance: Informed Consent](https://www.bbc.com/editorialguidelines/guidance/consent)",
+    "- Oral History Association, [Principles and Best Practices](https://www.oralhistory.org/principles-and-best-practices/)",
+    "- Belmont Report, [Ethical Principles and Guidelines](https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html)"
+  ]
+  }
+ }
+  },
     {
-      "id": "audience",
-      "title": "Zodpovědnost k~publiku",
-      "short": "Publikum vkládá do dokumentu důvěru. Filmař má odpovědnost jednat v dobré víře: být přesný, transparentní a férový vůči tomu, jak význam vytváří.",
-      "content": [
-        "# Zodpovědnost k publiku\nDokument neslibuje mechanickou objektivitu, ale slibuje poctivost vůči tomu, co se skutečně stalo, a vůči způsobu, jakým z reality vytváří význam.\n\nOdpovědnost k publiku znamená chránit jeho důvěru: nemanipulovat zavádějícím střihem, nefalšovat materiály, nezkreslovat archiv, jasně artikulovat perspektivu a být transparentní v procesu. Publikum má právo vědět, že sleduje autorsky tvarované dílo, ne nahodilý záznam reality. Viz $Klíčové otázky|audience_questions$ a $Rizikové body|audience_risks$."
-      ],
-      "subsections": {
-        "audience_questions": {
-          "title": "Klíčové otázky",
-          "content": [
-            "## Na co se ptát\n1. Je film přesný nejen ve faktech, ale i v kontextu a významu?\n2. Nevede střih, hudba, rekonstrukce nebo práce s archivem diváka k chybnému závěru?\n3. Je jasné, z jaké perspektivy film mluví a co je jeho interpretační rámec?\n4. Nepoužívá film cizí bolest pouze jako emocionální motor bez vysvětlení souvislostí?\n5. Nehrozí, že některé publikum bude film číst jako potvrzení stereotypů, protože mu chybí potřebná nuance?"
-          ]
-        },
-        "audience_risks": {
-          "title": "Rizikové body",
-          "content": [
-            "## Rizikové body\n- zavádějící juxtapozice ve střihu\n- neoznačené rekonstrukce nebo reenactment\n- archiv použitý mimo místo, čas nebo významový kontext\n- zvukové či vizuální sweetening, které mění smysl scény\n- silné narativní zkratky, které vytvářejí „vyšší pravdu“, ale oslabují konkrétní pravdivost\n- absence transparentnosti vůči metodě a pozici autora"
-          ]
-        }
-      }
-    },
+"id": "audience",
+"title": "Zodpovědnost k~publiku",
+"short": "Respektuj důvěru publika. Vyprávěj poctivě, srozumitelně a bez senzacionalismu. Nezamlčuj podstatný kontext, nemanipuluj emocemi a transparentně komunikuj, jak film vznikal a co může způsobit. Mysli i na přístupnost a na to, že uvedení filmu může mít dopad nejen na publikum, ale i na komunity, jichž se týká.",
+"content": [
+"# Respektovat důvěru publika",
+"Vedle odpovědnosti k participujícím osobám nese autorstvo také odpovědnost k publiku. Dokumentární film sice není „čisté okno do reality“, ale stojí na implicitním příslibu, že vypovídá poctivě o něčem, co se skutečně stalo nebo děje. Právě proto je důvěra publika jedním ze základních etických statků dokumentu: bez ní se ztrácí nejen přesvědčivost díla, ale i jeho veřejná legitimita.",
+"Odpovědnost k publiku neznamená předstírat úplnou neutralitu nebo falešnou vyváženost. Znamená spíše poctivě přiznat perspektivu filmu, nenechat se vést pouhou efektností a nepodkopávat důvěru diváctva klamavým rámováním, zavádějícím střihem nebo zamlčováním podstatných skutečností. Publikum nemusí dostat „všechno“, ale nemá být vedeno k omylu o tom, co vidí, slyší a jaký status mají použité materiály.",
+"## Říkat pravdu poctivě, ne senzacechtivě",
+"Poctivost vůči publiku znamená nabídnout co nejúplnější porozumění problému, nikoli jen emocionálně nejsilnější verzi příběhu. Autorstvo by nemělo vynechávat relevantní fakta nebo perspektivy jen proto, že komplikují dramatický oblouk, a nemělo by zaměňovat analytickou sílu filmu za šok, melodrama nebo moral panic. Eticky odpovědný dokument neusiluje jen o to, aby publikum „cítilo“, ale také aby rozumělo.",
+"To je zvlášť důležité v době streamovacích platforem, které podporují rychlou pozornost, binge watching a tlak na vypjaté emoce, cliffhangery a skandalizaci. Současná debata o dokumentární etice proto stále častěji upozorňuje, že estetická atraktivita nesmí převážit nad pravdivostí, kontextem a férovostí vůči publiku.",
+"## Transparentnost a přiznaná perspektiva",
+"Důvěra publika roste tam, kde je zřejmé, z jaké pozice film mluví, co ví a co naopak neví. Transparentnost neznamená rozbít film vysvětlováním každého produkčního rozhodnutí, ale nenechávat publikum v omylu o povaze rekonstrukcí, archivních záběrů, stylizace, zvukových zásahů, generovaných obrazů nebo jiných výrazných intervencí. Pokud film něco rekonstruuje, komprimuje nebo esteticky stylizuje, nemělo by to být vydáváno za bezprostřední nezprostředkovaný záznam.",
+"Stejná zásada platí i pro vztah mezi filmem a jeho veřejným oběhem. Release a impact fáze nejsou jen marketing: i zde má autorstvo transparentně komunikovat cíle filmu, jeho veřejné použití a možné důsledky. Jestliže je film uváděn jako nástroj změny, je třeba otevřeně říci, komu má sloužit, koho zapojuje a jaké druhy dopadu předpokládá.",
+"## Poskytnout kontext, ne jen emoci",
+"Publikum potřebuje víc než jen silný zážitek. Odpovědný dokument má pomáhat chápat systémy, vztahy a podmínky, které utvářejí jednání postav a komunit. Nejde pouze o individuální osudy, ale i o struktury moci, instituce, ekonomické a historické souvislosti. Bez kontextu může film snadno sklouznout k psychologizaci, stereotypu nebo k tomu, že z jednotlivých lidí činí nositele problémů, které jsou ve skutečnosti systémové.",
+"Tato zásada je důležitá i při práci s traumatem. Trauma-respektující přístup se netýká jen participantů, ale také publika: autorstvo má promýšlet, jak obsah uvádět, zda neposkytnout doprovodné materiály, moderaci diskuse, varování před spouštěči nebo podpůrné zdroje tam, kde film otevírá bolestivé nebo kolektivně sdílené rány.",
+"## Nepodvádět střihem, hudbou a efekty",
+"Dokumentární film vždy realitu tvaruje, ale nemá publikum svádět k závěrům, které materiál sám neunesl. Kritická místa vznikají zejména ve střihu, v přerámování výpovědí, ve spojování nesouvisejících obrazů a zvuků, v manipulativním použití hudby nebo v efektech, které uměle zvyšují intenzitu a podsouvají interpretaci. Publikum má právo očekávat, že emocionální účinek nebude vyroben za cenu epistemického klamu.",
+"Totéž platí pro práci s archivy. Archivní materiál má být zasazen do poctivého kontextu: kdo jej pořídil, v jakých podmínkách, co skutečně ukazuje a co naopak neukazuje. Vytržený archivní záběr může posílit iluzi autenticity, a právě proto je třeba s ním zacházet obezřetně. Odpovědnost k publiku zde znamená nenechat archiv fungovat jako magický důkaz, ale jako historický materiál, který vyžaduje interpretaci.",
+"## Přístupnost a odpovědné uvedení",
+"Zodpovědnost k publiku zahrnuje i otázku, komu je film skutečně dostupný. Eticky promyšlené uvedení počítá s titulky, audiopopisem, přístupným webem a formami doprovodu, které rozšiřují možnost smysluplné recepce. Přístupnost není technický dodatek, ale součást spravedlivého vztahu k publiku.",
+"Zároveň je třeba myslet na to, že publikum není abstraktní masa. Různá publika vstupují do filmu s různou zkušeností, různou zranitelností a různým vztahem k tématu. U citlivých filmů proto může být součástí odpovědného uvedení i diskusní facilitace, edukační materiály, community screening guide nebo jiné nástroje, které pomáhají filmu nevyrábět pouze reakci, ale i porozumění a péči."
+],
+"subsections": {
+"viewer-trust": {
+"title": "Důvěra publika",
+"content": [
+"*Důvěra publika* je jeden z klíčových etických závazků dokumentu. Publikum přijímá dokument s očekáváním, že jde o poctivé svědectví o skutečnosti, byť z určité perspektivy. Proto by autorstvo nemělo publikum klamat rámováním, střihem, neoznačenou stylizací ani zamlčením relevantního kontextu.",
+"Výzkum dokumentaristů v USA ukázal, že vedle zásad „do no harm“ a „protect the vulnerable“ panuje ve filmařstvu široká shoda právě na zásadě *honor the viewer’s trust*. Nejde o zákaz autorského názoru, ale o závazek nezradit vztah důvěry mezi filmem a publikem.",
+"## Kam dál?",
+"- Patricia Aufderheide, Peter Jaszi, Mridu Chandra, *Honest Truths: Documentary Filmmakers on Ethical Challenges in Their Work*.",
+"- Patricia Aufderheide, *Perceived ethical conflicts in US documentary filmmaking: a field report*."
+]
+},
+"release-impact": {
+"title": "Uvedení a dopad",
+"content": [
+"*Release a impact fáze* jsou součástí etiky, ne až dodatečný marketing. Autorstvo má promýšlet, jak uvedení filmu zasáhne publika, participující osoby i dotčené komunity, a má o tom komunikovat transparentně.",
+"DAWG framework doporučuje plánovat release včas, konzultovat dopady s těmi, jichž se film týká, a nést hodnoty filmu i do distribuce, doprovodných debat a impact kampaní. U náročných témat může být součástí odpovědného uvedení i healing guide, moderovaná diskuse nebo podpůrné materiály pro publikum.",
+"## Kam dál?",
+"- Documentary Accountability Working Group, *From Reflection to Release: A Framework for Values, Ethics and Accountability in Nonfiction Filmmaking*."
+]
+}
+}
+},
     {
-      "id": "artistic-vision",
-      "title": "Zodpovědnost k~umělecké vizi",
-      "short": "Autorská vize je legitimní, ale není výjimkou z~etiky. Tvůrce musí reflektovat vlastní positionalitu, záměr, moc a hranice estetické manipulace.",
+  "id": "creative-vision",
+  "title": "Zodpovědnost k~tvůrčí vizi",
+  "short": "Rozvíjej tvůrčí vizi poctivě, sebereflexivně a v dialogu s druhými. Ptej se, proč právě ty máš tento příběh vyprávět, komu film slouží a jaké mocenské vztahy přitom reprodukuje. Pečuj o sebe i o tým, buduj solidaritu, oporu a komunitu: udržitelná tvorba není slabost, ale součást etické odpovědnosti.",
+  "content": [
+    "# Rozvíjet tvůrčí vizi se sebereflexí",
+    "Tvůrčí vize není výjimka z etiky, ale jedna z jejích klíčových oblastí. Autorstvo má právo na vlastní perspektivu, styl i interpretaci, ale zároveň má nést odpovědnost za to, z jaké pozice mluví, co ve filmu zvýrazňuje, co potlačuje a komu jeho vize slouží. Etická otázka proto nezní jen 'mám právo tento film udělat?', ale také 'proč právě já, proč právě takto a s jakými důsledky?'.",
+    "Sebereflexe je zvlášť důležitá tehdy, když autorstvo vstupuje do zkušenosti, která není jeho vlastní, nebo když pracuje s komunitami, jež nesou historickou zkušenost marginalizace, traumatu nebo nerovného zastoupení. Trauma respektující i accountable přístupy proto doporučují začínat otázkami po vlastní motivaci, vztahu ke komunitě, hranicím kompetence a po tom, zda film skutečně otevírá prostor porozumění, nebo spíše jen těží z cizí zranitelnosti.",
+    "## Tvůrčí svoboda není licence k extrakci",
+    "Odpovědnost k tvůrčí vizi znamená hájit autorskou svobodu, ale neplést si ji s právem použít cizí životy, bolest nebo obraz světa jako pouhý materiál. Ve výzkumu dokumentární etiky se opakovaně ukazuje napětí mezi závazkem k participantům, očekáváním publika a autorskou představou filmu. Právě proto je třeba chápat vizi nikoli jako absolutní suverenitu, ale jako vztahovou a vyjednávanou praxi.",
+    "Eticky silná tvůrčí vize není ta, která umlčí pochybnosti, ale ta, která je dokáže unést a proměnit v přesnější, citlivější a pravdivější tvar. Někdy to může znamenat změnit fokus filmu, zpomalit produkci, přehodnotit přístup k protagonistům nebo přijmout, že určitý film nemá vzniknout v podobě, jak byla původně zamýšlena.",
+    "## Péče o sebe jako součást odpovědnosti",
+    "Péče o sebe není v dokumentární tvorbě luxus ani individualistický dodatek. Pokud autorstvo pracuje s traumatem, konfliktem, zármutkem, strukturálním násilím nebo dlouhodobým tlakem produkce, může být samo zasaženo přetížením, sekundární traumatizací, vyhořením nebo otupěním. Brown výslovně připomíná, že accountable storytelling je i o tom, 'jak zacházíme sami se sebou'.",
+    "Zodpovědnost k tvůrčí vizi proto zahrnuje i právo a povinnost nastavovat si hranice, pracovat udržitelně, vyhledat supervizi, konzultaci nebo psychologickou podporu a nepovažovat sebezničení za důkaz umělecké autenticity. Film, který vzniká z dlouhodobého vyčerpání, izolace a strachu, snadno reprodukuje necitlivost i v samotném způsobu práce.",
+    "## Solidarita, podpora a komunita",
+    "Tvůrčí vize nevzniká ve vakuu. Dokumentární etika dnes stále častěji zdůrazňuje, že autorstvo je součástí širšího pole vztahů: týmu, komunity, profesní sítě, funderů, gatekeeperů i lidí, kteří nesou důsledky filmu. Odpovědné autorstvo proto nebuduje vizi na romantickém mýtu osamělého génia, ale na schopnosti sdílet moc, naslouchat kritice a vytvářet podpůrné struktury pro sebe i pro ostatní.",
+    "Solidarita v praxi znamená přizvat ke konzultaci lidi s relevantní zkušeností, férově uznávat práci ostatních, sdílet zdroje a vytvářet prostředí, v němž lze mluvit o pochybnostech, selháních i etických dilematech bez strachu z profesní diskvalifikace. Komunitní a pečující zázemí není překážkou vize, ale jednou z podmínek její etické i dlouhodobě udržitelné podoby.",
+    "## Vést dialog místo obrany ega",
+    "Zodpovědnost k tvůrčí vizi předpokládá schopnost vstupovat do dialogu: s participujícími, s publikem, s komunitou i s vlastní profesní obcí. Kritická zpětná vazba nemusí znamenat útok na autorství; může být součástí procesu, který film zpřesňuje a zbavuje slepých míst. Motal proto chápe dokumentární etiku jako prostor emancipačního dialogu, v němž nejde jen o kontrolu škod, ale i o hledání spravedlivějších podob společného světa.",
+    "Autorstvo by proto nemělo chránit tvůrčí vizi tak, že se uzavře před kritikou, ale tak, že ji bude rozvíjet se schopností odpovědět na otázky po moci, reprezentaci, péči a veřejném významu filmu. Tvůrčí integrita se neprokazuje neomylností, ale ochotou nést odpovědnost za rozhodnutí, která film utvářejí."
+  ],
+  "subsections": {
+    "self-care": {
+      "title": "Péče o sebe a udržitelná tvorba",
       "content": [
-        "# Zodpovědnost k umělecké vizi\nDokumentarista není jen technik nebo zpravodaj; vytváří formu, rytmus, perspektivu a smysl. Umělecká vize proto není problém sama o sobě — problém nastává tehdy, když se vydává za neutrální pravdu nebo když estetický účinek převáží nad odpovědností.\n\nEtická práce s uměleckou vizí znamená pojmenovat vlastní hodnoty, předsudky, blízkost či vzdálenost k tématu a vlastní nárok vyprávět cizí příběh. Znamená také promýšlet, zda zvolená forma podporuje porozumění, nebo spíš reprodukuje dominance, exotizaci či trauma. Viz $Reflexivní otázky|vision_questions$ a $Co patří do autorské sebereflexe|vision_reflection$."
-      ],
-      "subsections": {
-        "vision_questions": {
-          "title": "Reflexivní otázky",
-          "content": [
-            "## Na co se ptát\n1. Proč chci vyprávět právě tento příběh a proč já?\n2. Jak mou interpretaci formuje moje positionalita, vzdělání, třída, zkušenost, kulturní blízkost nebo distance?\n3. Kde končí legitimní autorské tvarování a začíná eticky problematická manipulace?\n4. Nepoužívá film participanty jen jako nositele mé předem dané teze?\n5. Není „silný film“ vykoupen tím, že někomu bere komplexitu nebo agency?"
-          ]
-        },
-        "vision_reflection": {
-          "title": "Co patří do autorské sebereflexe",
-          "content": [
-            "## Co promyslet\n- vlastní intence, hodnoty, bias a předpoklady\n- vztah k tématu, komunitě a zdrojům moci, které film zkoumá\n- proč je zvolená perspektiva důležitá pro druhé lidi, ne jen pro autora\n- jak forma filmu pracuje s emocí, napětím, krásou, šokem a tichem\n- zda estetika neoslabuje důstojnost lidí, o nichž film je"
-          ]
-        }
-      }
+        "*Péče o sebe* je součást etiky dokumentární tvorby. Autorstvo není jen pozorovatelstvo: může být zasaženo traumatem tématu, tlakem produkce i dlouhodobou emocionální zátěží. Proto je legitimní nastavovat hranice, hledat podporu a plánovat práci tak, aby byla dlouhodobě udržitelná.",
+        "Trauma respektující přístupy i současná debata o accountability zdůrazňují, že pečující proces se týká nejen participantů, ale i štábu a autorstva. Udržitelná tvorba může zahrnovat supervizi, konzultace, krizový plán, odpočinek, sdílení rozhodování nebo odbornou pomoc tam, kde téma přesahuje běžnou profesní kapacitu.",
+        "## Kam dál?",
+        "- Natalie Bullock Brown, [Considering a Trauma-Informed Process In Documentary Filmmaking](https://www.documentary.org/online-feature/considering-trauma-informed-process-documentary-filmmaking)",
+        "- Documentary Accountability Working Group, [From Reflection to Release](https://www.docaccountability.org/framework)"
+      ]
     },
-    {
-      "id": "institutional",
-      "title": "Zodpovědnost institucionální",
-      "short": "Etika dokumentu není jen osobní ctnost autora. Vzniká také v podmínkách produkce, financování, smluv, festivalového oběhu a institucionálních tlaků na rychlost, drama a výkon.",
+    "community-accountability": {
+      "title": "Komunita a vzájemná opora",
       "content": [
-        "# Zodpovědnost institucionální\nDokument vzniká uvnitř produkčních a distribučních struktur. Fundeři, commissioning editorky, producenti, broadcastery, právní rámce, rozpočty, pojištění i pracovní režim štábu formují, co je možné natočit a jak.\n\nEtická odpovědnost proto neleží jen na jednotlivci. Je třeba se ptát, zda instituce podporuje transparentnost, bezpečí, odpovědnost a férovost, nebo naopak tlačí film k exploataci, zkratce a senzaci. Sem patří i odpovědnost za pracovní podmínky, mocenské uspořádání štábu, jasné dohody a schopnost nést odpovědnost po release. Viz $Institucionální otázky|institution_questions$ a $Kde vzniká tlak|institution_pressures$."
-      ],
-      "subsections": {
-        "institution_questions": {
-          "title": "Institucionální otázky",
-          "content": [
-            "## Na co se ptát\n1. Tlačí rozpočet, harmonogram nebo broadcaster k eticky slabším rozhodnutím?\n2. Odpovídají smlouvy a release formuláře skutečné moci participantů a jejich potřebám?\n3. Jsou ve štábu nastaveny férové procesy rozhodování, péče a komunikace?\n4. Je transparentní vztah k funderům, partnerům a dalším stakeholderům?\n5. Existuje plán odpovědnosti po uvedení filmu — pro participanty, publikum i tým?"
-          ]
-        },
-        "institution_pressures": {
-          "title": "Kde vzniká tlak",
-          "content": [
-            "## Kde vzniká tlak\n- požadavek zvýšit drama, konflikt nebo nebezpečí\n- záměna dokumentu za entertainment pipeline\n- oddělení terénní práce od postprodukce, které poruší dohody s participanty\n- nejasná odpovědnost mezi režijní, producentskou a distribuční stranou\n- nerovné mocenské vztahy uvnitř produkce\n- absence sdílených standardů a možností, jak se proti tlaku opřít principem místo improvizace"
-          ]
-        }
-      }
+        "*Komunita a solidarita* pomáhají, aby tvůrčí vize nebyla izolovaná ani extraktivní. Odpovědné autorstvo nevytváří film samo proti všem, ale v síti vztahů, kde je možné sdílet pochybnosti, konzultovat rizika a budovat etické zázemí pro rozhodování.",
+        "Současné rámce accountability proto kladou důraz na kolektivní infrastruktury: pečující produkční kulturu, konzultace s lidmi z dotčených komunit, profesní podporu a otevřenost k tomu, že etika není jen individuální ctnost, ale i vlastnost prostředí, v němž film vzniká.",
+        "## Kam dál?",
+        "- Sonya Childress & Natalie Bullock Brown, [The Documentary Future: A Call for Accountability](https://www.documentary.org/feature/documentary-future-call-accountability)",
+        "- Jan Motal, [Dokumentární etika – prostor pro emancipační dialog](https://www.dokrevue.cz/clanky/dokumentarni-etika-prostor-pro-emancipacni-dialog)",
+        "## Nejsme sami!",
+        "zde organizace"
+      ]
     }
+  }
+},
+    {
+  "id": "institutional",
+  "title": "Institucionální zodpovědnost",
+  "short": "Jednej transparentně a spravedlivě v rámci institucí a produkčních struktur. Sdílej moc, nastavuj férové podmínky práce a nenechávej etickou odpovědnost jen na jednotlivcích. Zohledňuj dopady rozhodnutí na participující, publikum i komunity a usiluj o systémové změny směrem k větší rovnosti, bezpečí a odpovědnosti.",
+  "content": [
+    "# Jednat odpovědně v rámci institucí",
+    "Etika dokumentární tvorby není jen otázkou individuálních rozhodnutí autorstva, ale také institucí, v nichž film vzniká a cirkuluje. Produkční společnosti, televize, festivaly, fundeři, streamovací platformy i vzdělávací instituce nastavují pravidla, která určují, co je možné, co je podporované a co je naopak potlačované.",
+    "Institucionální zodpovědnost proto znamená reflektovat, jak tyto struktury ovlivňují podobu filmů, pracovní podmínky i vztahy k participantům a publiku. Pokud instituce vytvářejí tlak na rychlost, senzaci nebo extraktivní přístup k tématům, nelze etiku přenášet jen na jednotlivce – je třeba měnit samotné podmínky produkce.",
+    "## Sdílet moc a nastavovat spravedlivé podmínky",
+    "Instituce mají moc rozhodovat o tom, kdo dostane prostor, zdroje a viditelnost. Etická odpovědnost proto zahrnuje snahu tuto moc sdílet, otevírat příležitosti marginalizovaným hlasům a narušovat zavedené hierarchie, které dlouhodobě zvýhodňují určité skupiny na úkor jiných.",
+    "To se týká nejen výběru projektů, ale i pracovních podmínek: férové odměňování, bezpečné pracovní prostředí, respekt k času a kapacitám, prevence vyhoření a jasné mechanismy řešení konfliktů a zneužití moci. Instituce nemají pouze 'umožňovat tvorbu', ale aktivně vytvářet podmínky, v nichž může být etická.",
+    "## Transparentnost a odpovědnost za rozhodnutí",
+    "Institucionální rozhodování – o financování, dramaturgii, distribuci nebo marketingu – má být transparentní a zdůvodnitelné. Autorstvo i veřejnost mají mít možnost porozumět tomu, proč byl určitý projekt podpořen, jaké hodnoty instituce sleduje a jaké dopady její rozhodnutí mají.",
+    "Transparentnost se týká i komunikace směrem k participantům a komunitám. Pokud instituce podporují film, který se jich dotýká, nesou spoluodpovědnost za to, jak bude uveden, jaké rámování bude použito a jaké důsledky může mít jeho veřejná cirkulace.",
+    "## Etika jako součást infrastruktury, ne jen kodexu",
+    "Mnohé instituce mají etické kodexy, ale samotný dokument nestačí. Etika musí být vtělena do každodenní praxe: do smluv, produkčních procesů, dramaturgických rozhodnutí i způsobu, jakým se pracuje s lidmi. To znamená vytvářet konkrétní nástroje – od konzultačních mechanismů přes etické review až po podporu pečujících a komunitních přístupů.",
+    "DAWG framework proto chápe etiku jako infrastrukturu vztahů: mezi autorstvem, participanty, publikem, fundery i dalšími aktéry. Odpovědnost je sdílená a nelze ji redukovat na individuální 'morální selhání'.",
+    "## Myslet na dlouhodobé dopady",
+    "Instituce často rozhodují o tom, jaký dopad bude film mít – komu bude dostupný, jak bude rámován, jaké diskuse vyvolá. Institucionální zodpovědnost proto zahrnuje i plánování release a impact fáze: zvažování rizik, konzultace s dotčenými komunitami a hledání způsobů, jak minimalizovat škody a posílit pozitivní dopady.",
+    "To je zvlášť důležité u citlivých témat, kde může nevhodné uvedení filmu vést k retraumatizaci, stigmatizaci nebo dalším formám poškození. Instituce mají kapacitu tato rizika předvídat a aktivně s nimi pracovat.",
+    "## Podporovat kulturu péče a solidarity",
+    "Institucionální prostředí může buď reprodukovat soutěživost, tlak a izolaci, nebo naopak podporovat spolupráci, sdílení a péči. Eticky odpovědné instituce vytvářejí prostor pro dialog, kritiku i vzájemnou podporu a uznávají, že kvalitní a odpovědná tvorba vzniká v prostředí, které je bezpečné a inkluzivní.",
+    "Podpora komunitních sítí, mentoringu, peer-to-peer sdílení a kolektivních forem rozhodování není jen organizační volba, ale součást etického rámce, který usiluje o spravedlivější a udržitelnější dokumentární praxi."
+  ],
+  "subsections": {
+    "accountability": {
+      "title": "Sdílená odpovědnost (accountability)",
+      "content": [
+        "*Accountability* znamená, že odpovědnost za etiku nenese jen autorstvo, ale celý systém: produkce, fundeři, distributoři, festivaly i platformy. Každý z těchto aktérů ovlivňuje, jaké filmy vznikají a jaké podmínky jejich vznik provázejí.",
+        "Současné rámce dokumentární etiky proto zdůrazňují potřebu sdílené odpovědnosti, která zahrnuje transparentnost, spravedlnost a aktivní práci s mocí. Etika není individuální vlastnost, ale vztahová a institucionální praxe.",
+        "## Kam dál?",
+        "- Documentary Accountability Working Group, *From Reflection to Release*",
+        "- Sonya Childress & Natalie Bullock Brown, *The Documentary Future: A Call for Accountability*"
+      ]
+    },
+    "equity": {
+      "title": "Rovnost a přístup",
+      "content": [
+        "*Rovnost (equity)* znamená aktivně vyrovnávat nerovnosti v přístupu ke zdrojům, reprezentaci a rozhodování. Instituce mají odpovědnost otevírat prostor těm, kteří byli historicky vylučováni nebo marginalizováni.",
+        "To zahrnuje nejen výběr projektů, ale i podporu různorodých tvůrčích týmů, férové pracovní podmínky a přístupnost distribuce. Bez těchto kroků se etika redukuje na deklaraci bez reálného dopadu.",
+        "## Kam dál?",
+        "- DAWG, [From Reflection to Release: A framework for Values, Ethics and Accountability in Nonfiction Filmmaking](https://www.thealliance.media/wp-content/uploads/dlm_uploads/2024/11/FROM-REFLECTION-TO-RELEASE_-A-FRAMEWORK-FOR-VALUES-ETHICS-AND-ACCOUNTABILITY-IN-NONFICTION-FILMMAKING-comp.pdf).",
+        "- The Documentary Future, *A Call for Accountability*"
+      ]
+    }
+  }
+}
   ],
   "info": {
     "position": "start",
     "title": "Aby se člověk neztratil, potřebuje kompas",
     "content": [
       "Umělecká tvorba je velmi osobní záležitostí. Nejen proto, že lidé, kteří tvoří, projevují svoje nitro, ale protože v kolektivním umění (jako je film) nutně pracují s nitry druhých lidí. Jak připomíná [Patricia Aufderheide](https://en.wikipedia.org/wiki/Patricia_Aufderheide), i když se dokumentární tvorba prolíná s žurnalistikou, na rozdíl od ní si nevyvinula žádné závazné normy, kodexy. A ani by to nebylo možné, vzhledem k tomu, jak rozmanitá a nepředvídatelná tvorba je. A ta i když se v tvorbě neřídíme pevně stanovenými pravidly, stojí za to mít k ruce kompas, který nám pomůže zorientovat se na rozcestích – volba, kterou cestu se vydáme, je ale pouze na nás. Tento studijní materiál vytvořený pro **[Future Memory Lab](https://futurememorylab.com/)** s využitím výstupů projektu **AI Archivist** podpořeného [Technologickou agenturou České republiky](https://tacr.gov.cz/) právě takový základní kompas nabízí v rámci workshopů, které FML nabízí.",
-      "# Použitá a doporučená literatura§ - Patricia Aufderheide\n - Patricia Aufderheide"
+      "##Použitá a doporučená literatura",
+      "- [From Reflection to Release: A framework for Values, Ethics and Accountability in Nonfiction Filmmaking](https://www.thealliance.media/wp-content/uploads/dlm_uploads/2024/11/FROM-REFLECTION-TO-RELEASE_-A-FRAMEWORK-FOR-VALUES-ETHICS-AND-ACCOUNTABILITY-IN-NONFICTION-FILMMAKING-comp.pdf). *The Documentary Accountability Working Group, *",
+      "- Patricia Aufderheide, [Perceived ethical conflicts in US documentary filmmaking: a field report](https://doi.org/10.1080/17400309.2012.691248). *New Review of Film and Television Studies* 10(3), 2012.",
+      "- Patricia Aufderheide, [The Growth of Documentary Ethics Debates in the Streaming Era](https://www.dokrevue.com/news/the-growth-of-documentary-ethics-debates-in-the-streaming-era). *Doc Revue* 1. 2. 2024.",
+      "- Natalie Bullock Brown, [Considering a Trauma-Informed Process In Documentary Filmmaking](https://www.documentary.org/online-feature/considering-trauma-informed-process-documentary-filmmaking). *Documentary Magazine*, 12. 6. 2021.",
+      "- Jan Motal, [Dokumentární etika – akademický obor, anebo prostor pro emancipační dialog?](https://vupshop.cz/cs/domu/2728-2418-etika-v-dokumentarnim-filmu-i-moc-a-mocenske-vztahy.html#/51-format-e_kniha_pdf) In: *Etika v dokumentárním filmu I: Moc a mocenské vztahy*, Olomouc: VUP, 2023.",
+      "- Ellen M. Maccarone, [Ethical Responsibilities to Subjects and Documentary Filmmaking](https://doi.org/10.1080/08900523.2010.497025). *Journal of Mass Media Ethics* 25(3), 2010.",
+      "- Willemien Sanders, [Documentary Filmmaking and Ethics: Concepts, Responsibilities, and the Need for Empirical Research](https://doi.org/10.1080/15205431003703319). *Mass Communication and Society* 13(5), 2010.",
+      "##O autorovi",
+      "Autorem je [Jan Motal](https://www.janmotal.cz), který spolupracuje s **Future Memory Lab** jako konzultant a v projektu **AI Archivist** pracuje jako výzkumník. Koordinuje [Centrum pro mediální etiku a dialog](https://www.medialnietika.cz) na [Katedře mediálních studií a žurnalistiky FSS MUNI](https://medzur.fss.muni.cz). Je členem uměleckého kolektivu [Dílo](https://www.skupinadilo.cz), kde se věnuje experimentální filmové tvorbě a jejím průnikům do performance, environmentální tvorby a digitálního umění. Spolu s Terezou Schwadoschovou založili a organizují výroční konferenci o etice v dokumentárním filmu v rámci [MFDF Jihlava](https://www.ji-hlava.cz/etika)."
     ]
   }
 }
