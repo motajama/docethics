@@ -2,9 +2,11 @@
 
 A custom lightweight markup language.
 
-```bash
+---
 
 ## Headings
+
+```bash
 
 # Heading
 ## Subheading
