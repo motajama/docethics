@@ -6,20 +6,47 @@
     activeIndex: 0
   };
 
-const WHEEL = {
-  cx: 320,
-  cy: 320,
-  outerR: 160,
-  innerR: 66,
-  labelRadius: 255
-};
+  const WHEEL = {
+    cx: 320,
+    cy: 320,
+    outerR: 160,
+    innerR: 66,
+    labelRadius: 255
+  };
+
+  function textWithNbsp(text) {
+    return String(text || '')
+      .replace(/\\~/g, '%%ESCAPED_TILDE%%')
+      .replace(/~/g, '\u00A0')
+      .replace(/%%ESCAPED_TILDE%%/g, '~');
+  }
+
+  function htmlEscape(text) {
+    return String(text || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function safeTextHtml(text) {
+    return htmlEscape(textWithNbsp(text));
+  }
+
+  function renderContent(content) {
+    if (Array.isArray(content)) {
+      return MarkupEngine.render(content);
+    }
+    return MarkupEngine.render(content || '');
+  }
 
   function updateLanguageSwitcher() {
-  $('.lang-link').removeClass('is-active').attr('aria-current', 'false');
-  $(`.lang-link[data-lang="${state.lang}"]`)
-    .addClass('is-active')
-    .attr('aria-current', 'page');
-}
+    $('.lang-link').removeClass('is-active').attr('aria-current', 'false');
+    $(`.lang-link[data-lang="${state.lang}"]`)
+      .addClass('is-active')
+      .attr('aria-current', 'page');
+  }
 
   function fetchLanguage(lang) {
     return fetch(`./data/${lang}.json`).then((r) => r.json());
@@ -33,41 +60,22 @@ const WHEEL = {
     };
   }
 
-  function describeArcSlice(cx, cy, outerR, innerR, startAngle, endAngle) {
-    const startOuter = polarToCartesian(cx, cy, outerR, endAngle);
-    const endOuter = polarToCartesian(cx, cy, outerR, startAngle);
-    const startInner = polarToCartesian(cx, cy, innerR, startAngle);
-    const endInner = polarToCartesian(cx, cy, innerR, endAngle);
-
-    const largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
-
-    return [
-      `M ${startOuter.x} ${startOuter.y}`,
-      `A ${outerR} ${outerR} 0 ${largeArcFlag} 0 ${endOuter.x} ${endOuter.y}`,
-      `L ${startInner.x} ${startInner.y}`,
-      `A ${innerR} ${innerR} 0 ${largeArcFlag} 1 ${endInner.x} ${endInner.y}`,
-      'Z'
-    ].join(' ');
-  }
-
-  function getSectionStep(total) {
-    return 360 / total;
-  }
-
-  function getMidAngle(index, total) {
-    return index * getSectionStep(total) + getSectionStep(total) / 2;
-  }
-
   function wrapSvgText(text, maxChars = 16) {
-    const words = String(text || '').split(/\s+/);
+    const nbsp = '\u00A0';
+    const normalized = textWithNbsp(text);
+
+    const protectedText = normalized.replace(new RegExp(nbsp, 'g'), '%%NBSP%%');
+    const words = protectedText.split(/ +/);
     const lines = [];
     let current = '';
 
     words.forEach((word) => {
-      const candidate = current ? `${current} ${word}` : word;
+      const restoredWord = word.replace(/%%NBSP%%/g, nbsp);
+      const candidate = current ? `${current} ${restoredWord}` : restoredWord;
+
       if (candidate.length > maxChars && current) {
         lines.push(current);
-        current = word;
+        current = restoredWord;
       } else {
         current = candidate;
       }
@@ -78,141 +86,203 @@ const WHEEL = {
   }
 
   function renderWheel() {
-  const sections = state.data.sections;
-  const $connectors = $('#wheel-connectors').empty();
-  const $labels = $('#wheel-label-nodes').empty();
+    const sections = state.data.sections || [];
+    const $connectors = $('#wheel-connectors').empty();
+    const $labels = $('#wheel-label-nodes').empty();
 
-  const segmentIds = [
-    '#seg-social-actors',
-    '#seg-audience',
-    '#seg-artistic-vision',
-    '#seg-institutional'
-  ];
+    const segmentIds = [
+      '#seg-social-actors',
+      '#seg-audience',
+      '#seg-artistic-vision',
+      '#seg-institutional'
+    ];
 
-  $('.wheel-slice').removeClass('is-active');
+    $('.wheel-slice').removeClass('is-active');
 
-  segmentIds.forEach((selector, i) => {
-    const el = document.querySelector(selector);
-    if (!el) return;
+    segmentIds.forEach((selector, i) => {
+      const el = document.querySelector(selector);
+      if (!el || !sections[i]) return;
 
-    const isActive = i === state.activeIndex;
-    el.classList.toggle('is-active', isActive);
-    el.setAttribute('data-index', i);
-    el.setAttribute('aria-label', sections[i].title);
+      const isActive = i === state.activeIndex;
+      el.classList.toggle('is-active', isActive);
+      el.setAttribute('data-index', i);
+      el.setAttribute('aria-label', textWithNbsp(sections[i].title));
 
-    $(el).off('click keydown').on('click keydown', function (e) {
-      if (e.type === 'click' || e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        setActiveSection(i);
-      }
-    });
-  });
-
-  const directions = [
-    { angle: 0,   anchor: 'middle', dx: 0,   dy: -10 },  // top
-    { angle: 90,  anchor: 'start',  dx: 14,  dy: 0 },    // right
-    { angle: 180, anchor: 'middle', dx: 0,   dy: 22 },   // bottom
-    { angle: 270, anchor: 'end',    dx: -14, dy: 0 }     // left
-  ];
-
-  sections.forEach((section, i) => {
-    const cfg = directions[i];
-    const isActive = i === state.activeIndex;
-
-    const lineStart = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.outerR + 2, cfg.angle);
-    const lineEnd = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.labelRadius - 34, cfg.angle);
-
-    const connector = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    connector.setAttribute('x1', lineStart.x);
-    connector.setAttribute('y1', lineStart.y);
-    connector.setAttribute('x2', lineEnd.x);
-    connector.setAttribute('y2', lineEnd.y);
-    connector.setAttribute('class', `wheel-connector${isActive ? ' is-active' : ''}`);
-    $connectors.append(connector);
-
-    const labelPos = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.labelRadius, cfg.angle);
-
-    const labelGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    labelGroup.setAttribute('class', `wheel-label-node${isActive ? ' is-active' : ''}`);
-    labelGroup.setAttribute('data-index', i);
-    labelGroup.setAttribute('tabindex', '0');
-    labelGroup.setAttribute('role', 'button');
-    labelGroup.setAttribute('aria-label', section.title);
-
-    const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    textEl.setAttribute('x', labelPos.x + cfg.dx);
-    textEl.setAttribute('y', labelPos.y + cfg.dy);
-    textEl.setAttribute('class', 'wheel-label-text');
-    textEl.setAttribute('text-anchor', cfg.anchor);
-
-    const lines = wrapSvgText(section.title, 18);
-    const lineHeight = 18;
-    const startYOffset = -((lines.length - 1) * lineHeight) / 2;
-
-    lines.forEach((line, idx) => {
-      const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
-      tspan.setAttribute('x', labelPos.x + cfg.dx);
-      tspan.setAttribute('dy', idx === 0 ? startYOffset : lineHeight);
-      tspan.textContent = line;
-      textEl.appendChild(tspan);
+      $(el).off('click keydown').on('click keydown', function (e) {
+        if (e.type === 'click' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setActiveSection(i);
+        }
+      });
     });
 
-    labelGroup.appendChild(textEl);
+    const directions = [
+      { angle: 0, anchor: 'middle', dx: 0, dy: -10 },
+      { angle: 90, anchor: 'start', dx: 14, dy: 0 },
+      { angle: 180, anchor: 'middle', dx: 0, dy: 22 },
+      { angle: 270, anchor: 'end', dx: -14, dy: 0 }
+    ];
 
-    $(labelGroup).on('click keydown', function (e) {
-      if (e.type === 'click' || e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        setActiveSection(i);
-      }
+    sections.forEach((section, i) => {
+      const cfg = directions[i];
+      if (!cfg) return;
+
+      const isActive = i === state.activeIndex;
+
+      const lineStart = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.outerR + 2, cfg.angle);
+      const lineEnd = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.labelRadius - 34, cfg.angle);
+
+      const connector = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      connector.setAttribute('x1', lineStart.x);
+      connector.setAttribute('y1', lineStart.y);
+      connector.setAttribute('x2', lineEnd.x);
+      connector.setAttribute('y2', lineEnd.y);
+      connector.setAttribute('class', `wheel-connector${isActive ? ' is-active' : ''}`);
+      $connectors.append(connector);
+
+      const labelPos = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.labelRadius, cfg.angle);
+
+      const labelGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      labelGroup.setAttribute('class', `wheel-label-node${isActive ? ' is-active' : ''}`);
+      labelGroup.setAttribute('data-index', i);
+      labelGroup.setAttribute('tabindex', '0');
+      labelGroup.setAttribute('role', 'button');
+      labelGroup.setAttribute('aria-label', textWithNbsp(section.title));
+
+      const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      textEl.setAttribute('x', labelPos.x + cfg.dx);
+      textEl.setAttribute('y', labelPos.y + cfg.dy);
+      textEl.setAttribute('class', 'wheel-label-text');
+      textEl.setAttribute('text-anchor', cfg.anchor);
+
+      const lines = wrapSvgText(section.title, 18);
+      const lineHeight = 18;
+      const startYOffset = -((lines.length - 1) * lineHeight) / 2;
+
+      lines.forEach((line, idx) => {
+        const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+        tspan.setAttribute('x', labelPos.x + cfg.dx);
+        tspan.setAttribute('dy', idx === 0 ? startYOffset : lineHeight);
+        tspan.textContent = line;
+        textEl.appendChild(tspan);
+      });
+
+      labelGroup.appendChild(textEl);
+
+      $(labelGroup).on('click keydown', function (e) {
+        if (e.type === 'click' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setActiveSection(i);
+        }
+      });
+
+      $labels.append(labelGroup);
     });
-
-    $labels.append(labelGroup);
-  });
-}
+  }
 
   function renderHeroText() {
-  const section = state.data.sections[state.activeIndex];
-  const html = `
-    <h3>${section.title}</h3>
-    <p>${section.short}</p>
-    <a href="#section-${section.id}" data-jump="${section.id}">${state.data.ui.more}</a>
-  `;
+    const section = state.data.sections[state.activeIndex];
+    if (!section) return;
 
-  const $hero = $('#hero-description');
-  $hero.html(html);
+    const html = `
+      <h3>${safeTextHtml(section.title)}</h3>
+      <p>${safeTextHtml(section.short || '')}</p>
+      <a href="#section-${section.id}" data-jump="${htmlEscape(section.id)}">${safeTextHtml(state.data.ui?.more || 'více')}</a>
+    `;
 
-  $hero.find('[data-jump]').on('click', function (e) {
-    e.preventDefault();
-    const id = $(this).data('jump');
-    setSectionOpen(id, true, true);
-  });
-}
+    const $hero = $('#hero-description');
+    $hero.html(html);
+
+    $hero.find('[data-jump]').on('click', function (e) {
+      e.preventDefault();
+      const id = $(this).data('jump');
+      setSectionOpen(id, true, true);
+    });
+  }
 
   function makeChart(block) {
     if (!block || !block.type) return '';
+
     if (block.type === 'bar') {
       return `<pre class="ascii-chart">${AsciiChart.barChart(block.items, block.options)}</pre>`;
     }
+
     if (block.type === 'plot') {
       return `<pre class="ascii-chart">${AsciiChart.plot(block.points, block.options)}</pre>`;
     }
+
     return '';
+  }
+
+  function renderInfoBlock() {
+    const info = state.data.info;
+    if (!info || !info.content) return '';
+
+    const title = info.title ? `<h2>${safeTextHtml(info.title)}</h2>` : '';
+
+    return `
+      <section class="info-block" id="info-block">
+        <div class="info-block-inner">
+          ${title}
+          ${renderContent(info.content)}
+          ${makeChart(info.chart)}
+        </div>
+      </section>
+    `;
+  }
+
+  function closeSideboxes($scope = $('.section-block')) {
+    $scope.each(function () {
+      const $section = $(this);
+      $section.find('.section-side').removeClass('is-visible').empty();
+      $section.find('.inline-link.is-open')
+        .removeClass('is-open')
+        .attr('aria-expanded', 'false');
+    });
+  }
+
+  function toggleInlinePanel($trigger, $section, subsection) {
+    const $side = $section.find('.section-side');
+    const isSameOpen = $trigger.hasClass('is-open') && $side.hasClass('is-visible');
+
+    $section.find('.inline-link')
+      .not($trigger)
+      .removeClass('is-open')
+      .attr('aria-expanded', 'false');
+
+    if (isSameOpen) {
+      $side.removeClass('is-visible').empty();
+      $trigger.removeClass('is-open').attr('aria-expanded', 'false');
+      return;
+    }
+
+    $side.html(`
+      <h4>${safeTextHtml(subsection.title)}</h4>
+      ${renderContent(subsection.content)}
+    `).addClass('is-visible');
+
+    $trigger.addClass('is-open').attr('aria-expanded', 'true');
   }
 
   function renderSections() {
     const $root = $('#content-root').empty();
+    const infoPosition = state.data.info?.position === 'start' ? 'start' : 'end';
 
-    state.data.sections.forEach((s) => {
+    if (infoPosition === 'start') {
+      $root.append(renderInfoBlock());
+    }
+
+    (state.data.sections || []).forEach((s) => {
       const sectionHtml = `
-        <section class="section-block" id="section-${s.id}">
+        <section class="section-block" id="section-${htmlEscape(s.id)}">
           <button class="section-header" aria-expanded="false">
-            <span>${s.title}</span>
+            <span>${safeTextHtml(s.title)}</span>
             <span aria-hidden="true">+</span>
           </button>
 
           <div class="section-body">
             <div class="section-main">
-              ${MarkupEngine.render(s.content)}
+              ${renderContent(s.content)}
               ${makeChart(s.chart)}
             </div>
             <aside class="section-side" aria-live="polite"></aside>
@@ -224,35 +294,37 @@ const WHEEL = {
 
       $sec.find('.section-header').on('click', () => setSectionOpen(s.id));
 
-      $sec.find('.section-main').on('click', '.inline-link', function () {
+      $sec.find('.section-main').on('click', '.inline-link', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
         const key = $(this).data('subsection');
         const sub = s.subsections?.[key];
         if (!sub) return;
 
-        const $side = $sec.find('.section-side');
-        $side.html(`
-          <h4>${sub.title}</h4>
-          ${MarkupEngine.render(sub.content)}
-        `).addClass('is-visible');
+        toggleInlinePanel($(this), $sec, sub);
       });
 
       $root.append($sec);
     });
+
+    if (infoPosition === 'end') {
+      $root.append(renderInfoBlock());
+    }
   }
 
   function setSectionOpen(id, forceOpen = null, smooth = false) {
     const $all = $('.section-block');
-    const $current = $(`#section-${id}`);
+    const $current = $(`#section-${CSS.escape(id)}`);
+    if (!$current.length) return;
+
     const open = forceOpen !== null ? forceOpen : !$current.hasClass('is-open');
 
-    $all.removeClass('is-open')
-      .find('.section-header')
-      .attr('aria-expanded', 'false');
+    closeSideboxes($all);
+    $all.removeClass('is-open').find('.section-header').attr('aria-expanded', 'false');
 
     if (open) {
-      $current.addClass('is-open')
-        .find('.section-header')
-        .attr('aria-expanded', 'true');
+      $current.addClass('is-open').find('.section-header').attr('aria-expanded', 'true');
 
       if (smooth && $current[0]) {
         $current[0].scrollIntoView({
@@ -263,55 +335,74 @@ const WHEEL = {
     }
   }
 
-function setActiveSection(index) {
-  state.activeIndex = index;
-  renderWheel();
-  renderHeroText();
+  function setActiveSection(index) {
+    state.activeIndex = index;
+    renderWheel();
+    renderHeroText();
 
-  if (window.matchMedia('(max-width: 900px)').matches) {
-    const hero = document.getElementById('hero-description');
-    if (hero) {
-      hero.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      const hero = document.getElementById('hero-description');
+      if (hero) {
+        hero.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
   }
-}
 
-async function loadLanguage(lang) {
-  state.lang = lang;
-  state.data = await fetchLanguage(lang);
+  async function loadLanguage(lang) {
+    state.lang = lang;
+    state.data = await fetchLanguage(lang);
 
-  $('html')
-    .attr('lang', lang)
-    .attr('dir', state.data.meta.dir || 'ltr');
+    $('html')
+      .attr('lang', lang)
+      .attr('dir', state.data.meta?.dir || 'ltr');
 
-  $('#site-title').text(state.data.meta.title);
-  $('#site-subtitle').text(state.data.meta.subtitle);
+    $('#site-title').text(textWithNbsp(state.data.meta?.title || ''));
+    $('#site-subtitle').text(textWithNbsp(state.data.meta?.subtitle || ''));
+    document.title = textWithNbsp(state.data.meta?.title || 'Document');
 
-  updateLanguageSwitcher();
-  renderWheel();
-  renderHeroText();
-  renderSections();
-}
+    updateLanguageSwitcher();
+    renderWheel();
+    renderHeroText();
+    renderSections();
+  }
 
-$(async function () {
-  SkinEngine.applySkin(state.skin);
-  await loadLanguage(state.lang);
-
-  $(document).on('click', '.lang-link', async function (e) {
-    e.preventDefault();
-
-    const lang = $(this).data('lang');
-    if (!lang || lang === state.lang) return;
-
-    await loadLanguage(lang);
-  });
-
-  $('#skin-select').on('change', function () {
-    state.skin = $(this).val();
+  $(async function () {
     SkinEngine.applySkin(state.skin);
+    $('#skin-select').val(state.skin);
+
+    await loadLanguage(state.lang);
+
+    $(document).on('click', '.lang-link', async function (e) {
+      e.preventDefault();
+
+      const lang = $(this).data('lang');
+      if (!lang || lang === state.lang) return;
+
+      await loadLanguage(lang);
+    });
+
+    $('#skin-select').on('change', function () {
+      state.skin = $(this).val();
+      SkinEngine.applySkin(state.skin);
+    });
+
+    $(document).on('click', function (e) {
+      const $target = $(e.target);
+      const clickedInlineLink = $target.closest('.inline-link').length > 0;
+      const clickedSide = $target.closest('.section-side').length > 0;
+
+      if (!clickedInlineLink && !clickedSide) {
+        closeSideboxes();
+      }
+    });
+
+    $(document).on('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeSideboxes();
+      }
+    });
   });
-});
 })(jQuery);

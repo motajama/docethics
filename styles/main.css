@@ -249,6 +249,16 @@ h3 {
   padding: 0 1rem;
 }
 
+.info-block {
+  border: 1px solid var(--line);
+  margin-bottom: 1rem;
+  background: var(--surface);
+}
+
+.info-block-inner {
+  padding: 1rem;
+}
+
 .section-block {
   border: 1px solid var(--line);
   margin-bottom: 0.8rem;
@@ -315,9 +325,31 @@ h3 {
 }
 
 .inline-link {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0 0.2rem;
+  padding: 0.08rem 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 75%, transparent);
   color: var(--accent);
-  text-decoration: underline;
+  font: inherit;
+  line-height: 1.2;
+  text-decoration: none;
   cursor: pointer;
+  vertical-align: baseline;
+  white-space: normal;
+}
+
+.inline-link:hover,
+.inline-link:focus,
+.inline-link.is-open {
+  background: color-mix(in srgb, var(--accent) 18%, var(--surface));
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 pre.ascii-chart {
@@ -413,8 +445,8 @@ pre.ascii-chart {
   }
 
   #ethics-wheel {
-    width: min(92vw, 560px);
-    max-width: 560px;
+    width: min(88vw, 500px);
+    max-width: 500px;
     max-height: none;
   }
 
@@ -447,7 +479,21 @@ pre.ascii-chart {
 }
 
 @media (max-width: 700px) {
+  #ethics-wheel {
+    width: min(82vw, 380px);
+  }
+
   .wheel-label-text {
-    font-size: 12px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #ethics-wheel {
+    width: min(78vw, 320px);
+  }
+
+  .wheel-label-text {
+    font-size: 9px;
   }
 }

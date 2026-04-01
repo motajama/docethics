@@ -1,10 +1,108 @@
 {
-  "meta": {"title":"Documentary Ethics Compass","subtitle":"","dir":"ltr"},
-  "ui": { "more": "more" },
+  "meta": {
+    "title": "Documentary Ethics Compass",
+    "subtitle": "xx",
+    "dir": "ltr"
+  },
+  "ui": {
+    "more": "more"
+  },
   "sections": [
-    {"id":"consent","title":"Consent and Trust","short":"Informed consent as an ongoing process.","content":"# Consent\n**Informed consent** is a process, not a form.\nUse &Checklist|consent_checklist&.","subsections":{"consent_checklist":{"title":"Consent checklist","content":"## Five steps\nContext, risk, right to refuse, contact, revision."}}},
-    {"id":"power","title":"Power and Vulnerability","short":"Map power asymmetry between crew and subjects.","content":"# Power\nAssess harm and benefit continuously.\nOpen &Risk cases|risk_cases&.","subsections":{"risk_cases":{"title":"Risk cases","content":"## Typical risk\nRecording people in distress without support."}}},
-    {"id":"editing","title":"Editing and Representation","short":"Editing choices shape meaning and fairness.","content":"# Editing\nKeep context intact.\nOpen &Bias control|bias_control&.","subsections":{"bias_control":{"title":"Bias control","content":"### Prompt\nIs this fair and accurate?"}}},
-    {"id":"impact","title":"Post-release Impact","short":"Prepare post-premiere safety and communication plans.","content":"# Impact\nTrack consequences after release.","subsections":{}}
-  ]
+    {
+      "id": "social-actors",
+      "title": "Responsibility to~social actors",
+      "short": "People in film are not material, but bearers of dignity, agency, and experience. The basic question is: how not to harm and how not to take away the voice of those whose story the film engages with?",
+      "content": [
+        "# Responsibility to social actors\nThis axis concerns the relationship to participants, protagonists, and communities whose experience the film mediates.\n\nThe basic principles are **do no harm**, protection of the vulnerable, respect for dignity, and recognition that the participant is the expert on their own experience. The documentarian has power: they decide whom to show, from what perspective, in what context, and with what consequence.\n\nThe ethical question therefore does not begin only with signing a release form. It begins already with whether it is right to tell this story in this particular way, at this particular time, and by this particular crew. See $Key questions|participants_questions$ and $Practical guidelines|participants_practice$."
+      ],
+      "subsections": {
+        "participants_questions": {
+          "title": "Key questions",
+          "content": [
+            "## What to ask\n1. Can the film harm participants — during filming, after release, or through the future circulation of images?\n2. Does the mode of storytelling support their **agency**, or does it reduce them to victims, symptoms, or illustrations of a problem?\n3. Do the people in the film understand what you are doing, why you are doing it, and what the consequences may be?\n4. Does the film have a sufficient relationship to people with lived experience, or does it mistake access for understanding?\n5. Is there a risk of retraumatization, stigmatization, reprisals, isolation, or loss of control over one’s own story?"
+          ]
+        },
+        "participants_practice": {
+          "title": "Practical guidelines",
+          "content": [
+            "## Practical guidelines\n- treat informed consent as a **process**, not a one-time signature\n- explain the film’s intention, distribution, risks, and limits of control\n- listen to participants’ feedback where it increases accuracy, trust, and nuance\n- consider participant-centered agreements and a harm mitigation plan\n- do not use powerful scenes only because they are powerful; always weigh their cost for the person in front of the camera\n- when working with vulnerable people, assume that publication may change their life and their relationships within the community"
+          ]
+        }
+      }
+    },
+    {
+      "id": "audience",
+      "title": "Responsibility to~the audience",
+      "short": "The audience places trust in a documentary. The filmmaker has a responsibility to act in good faith: to be accurate, transparent, and fair in how meaning is created.",
+      "content": [
+        "# Responsibility to the audience\nA documentary does not promise mechanical objectivity, but it does promise honesty toward what actually happened and toward the way it creates meaning from reality.\n\nResponsibility to the audience means protecting its trust: not manipulating through misleading editing, not falsifying materials, not distorting archives, clearly articulating perspective, and being transparent about process. The audience has a right to know that it is watching an authored work, not a random record of reality. See $Key questions|audience_questions$ and $Risk points|audience_risks$."
+      ],
+      "subsections": {
+        "audience_questions": {
+          "title": "Key questions",
+          "content": [
+            "## What to ask\n1. Is the film accurate not only in facts, but also in context and meaning?\n2. Do editing, music, reconstruction, or the use of archive lead the viewer to a false conclusion?\n3. Is it clear from what perspective the film speaks and what its interpretive frame is?\n4. Does the film use others’ pain merely as an emotional engine without explaining the wider context?\n5. Is there a risk that some audiences will read the film as confirming stereotypes because it lacks the necessary nuance?"
+          ]
+        },
+        "audience_risks": {
+          "title": "Risk points",
+          "content": [
+            "## Risk points\n- misleading juxtapositions in editing\n- unmarked reconstructions or reenactments\n- archive used outside its place, time, or context of meaning\n- audio or visual sweetening that changes the meaning of a scene\n- strong narrative shortcuts that create a “higher truth” but weaken concrete truthfulness\n- lack of transparency about method and authorial position"
+          ]
+        }
+      }
+    },
+    {
+      "id": "artistic-vision",
+      "title": "Responsibility to~artistic vision",
+      "short": "Authorial vision is legitimate, but it is not an exception to ethics. The creator must reflect on their own positionality, intention, power, and the limits of aesthetic manipulation.",
+      "content": [
+        "# Responsibility to artistic vision\nA documentarian is not only a technician or reporter; they create form, rhythm, perspective, and meaning. Artistic vision is therefore not a problem in itself — the problem arises when it presents itself as neutral truth, or when aesthetic effect outweighs responsibility.\n\nEthical work with artistic vision means naming one’s own values, prejudices, closeness or distance to the subject, and one’s claim to tell another person’s story. It also means considering whether the chosen form supports understanding, or rather reproduces dominance, exoticization, or trauma. See $Reflective questions|vision_questions$ and $What belongs in authorial self-reflection|vision_reflection$."
+      ],
+      "subsections": {
+        "vision_questions": {
+          "title": "Reflective questions",
+          "content": [
+            "## What to ask\n1. Why do I want to tell this particular story, and why me?\n2. How is my interpretation shaped by my positionality, education, class, experience, cultural proximity, or distance?\n3. Where does legitimate authorial shaping end and ethically problematic manipulation begin?\n4. Does the film use participants merely as carriers of my preconceived thesis?\n5. Is a “powerful film” paid for by taking away someone’s complexity or agency?"
+          ]
+        },
+        "vision_reflection": {
+          "title": "What belongs in authorial self-reflection",
+          "content": [
+            "## What to consider\n- one’s own intentions, values, biases, and assumptions\n- one’s relationship to the subject, the community, and the sources of power the film examines\n- why the chosen perspective matters to other people, not only to the author\n- how the film’s form works with emotion, tension, beauty, shock, and silence\n- whether aesthetics undermine the dignity of the people the film is about"
+          ]
+        }
+      }
+    },
+    {
+      "id": "institutional",
+      "title": "Institutional responsibility",
+      "short": "Documentary ethics is not only a matter of the author’s personal virtue. It also emerges in the conditions of production, funding, contracts, festival circulation, and institutional pressures toward speed, drama, and performance.",
+      "content": [
+        "# Institutional responsibility\nA documentary is made within structures of production and distribution. Funders, commissioning editors, producers, broadcasters, legal frameworks, budgets, insurance, and the crew’s working regime all shape what can be filmed and how.\n\nEthical responsibility therefore does not rest only on the individual. One must ask whether the institution supports transparency, safety, responsibility, and fairness, or instead pushes the film toward exploitation, shortcuts, and sensationalism. This also includes responsibility for working conditions, the power arrangements within the crew, clear agreements, and the ability to take responsibility after release. See $Institutional questions|institution_questions$ and $Where pressure emerges|institution_pressures$."
+      ],
+      "subsections": {
+        "institution_questions": {
+          "title": "Institutional questions",
+          "content": [
+            "## What to ask\n1. Do the budget, schedule, or broadcaster push toward ethically weaker decisions?\n2. Do contracts and release forms correspond to the real power and needs of participants?\n3. Are fair processes of decision-making, care, and communication established within the crew?\n4. Is the relationship to funders, partners, and other stakeholders transparent?\n5. Is there a plan of responsibility after the film’s release — for participants, audiences, and the team?"
+          ]
+        },
+        "institution_pressures": {
+          "title": "Where pressure emerges",
+          "content": [
+            "## Where pressure emerges\n- pressure to heighten drama, conflict, or danger\n- treating documentary as an entertainment pipeline\n- separating fieldwork from post-production in ways that break agreements with participants\n- unclear responsibility between directing, producing, and distribution sides\n- unequal power relations within production\n- absence of shared standards and ways to resist pressure by relying on principle rather than improvisation"
+          ]
+        }
+      }
+    }
+  ],
+  "info": {
+    "position": "start",
+    "title": "To avoid getting lost, one needs a compass",
+    "content": [
+      "Artistic creation is a deeply personal matter. Not only because those who create reveal something of their inner selves, but also because in collective arts (such as film) they necessarily work with the inner worlds of others. As [Patricia Aufderheide](https://en.wikipedia.org/wiki/Patricia_Aufderheide) reminds us, although documentary practice overlaps with journalism, unlike journalism it has not developed any binding norms or codes. Nor would that really be possible, given how diverse and unpredictable creative work is. And yet, even if we do not follow fixed rules in creative practice, it is worthwhile to have a compass at hand that helps us orient ourselves at crossroads — the choice of which path to take, however, remains entirely our own. This study material, created for **[Future Memory Lab](https://futurememorylab.com/)** using outputs from the **AI Archivist** project supported by the [Technology Agency of the Czech Republic](https://tacr.gov.cz/), offers precisely such a basic compass within the workshops that FML provides.",
+      "# Used and recommended literature\n- Patricia Aufderheide\n- Patricia Aufderheide"
+    ]
+  }
 }
