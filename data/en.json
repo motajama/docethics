@@ -1,5 +1,5 @@
 {
-  "meta": {"title":"Documentary Ethics Compass","subtitle":"Educational guidance for filmmakers on ethical decisions before, during, and after filming.","dir":"ltr"},
+  "meta": {"title":"Documentary Ethics Compass","subtitle":"","dir":"ltr"},
   "ui": { "more": "more" },
   "sections": [
     {"id":"consent","title":"Consent and Trust","short":"Informed consent as an ongoing process.","content":"# Consent\n**Informed consent** is a process, not a form.\nUse &Checklist|consent_checklist&.","subsections":{"consent_checklist":{"title":"Consent checklist","content":"## Five steps\nContext, risk, right to refuse, contact, revision."}}},
