@@ -1,7 +1,7 @@
 (function ($) {
   const state = {
-    lang: 'en',
-    skin: 'classic-mac',
+    lang: 'cs',
+    skin: 'amiga',
     data: null,
     activeIndex: 0
   };
