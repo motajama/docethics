@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "title": "Dokumentární etický kompas",
+    "subtitle": "Čtyři pole odpovědnosti v dokumentární tvorbě: k lidem ve filmu, k publiku, k umělecké vizi a k institucím, které film umožňují i omezují.",
+    "dir": "ltr"
+  },
+  "ui": {
+    "more": "více"
+  },
+  "sections": [
+    {
+      "id": "social-actors",
+      "title": "Zodpovědnost k sociálnímu herectvu",
+      "short": "Lidé ve filmu nejsou materiál, ale nositelé důstojnosti, agency a zkušenosti. Základní otázka zní: jak neškodit a jak neodebírat hlas těm, jejichž příběh film zpracovává?",
+      "content": "# Zodpovědnost k sociálnímu herectvu\nTato osa se týká vztahu k participantům, protagonistům a komunitám, jejichž zkušenost film zprostředkovává.\n\nZákladní principy jsou **do no harm**, ochrana zranitelných, respekt k důstojnosti a uznání toho, že participant je expert na svou vlastní zkušenost. Dokumentarista má moc: rozhoduje, koho ukáže, z jaké perspektivy, v jakém kontextu a s jakým důsledkem.\n\nEtická otázka proto nezačíná až u podpisu release formuláře. Začíná už tím, zda je správné tento příběh vyprávět právě takto, právě teď a právě tímto štábem. Viz &Klíčové otázky|participants_questions& a &Praktické zásady|participants_practice&.",
+      "subsections": {
+        "participants_questions": {
+          "title": "Klíčové otázky",
+          "content": "## Na co se ptát\n1. Může film participantům uškodit — během natáčení, po uvedení nebo skrze budoucí šíření obrazů?\n2. Podporuje způsob vyprávění jejich **agency**, nebo je redukuje na oběti, symptomy nebo ilustrace problému?\n3. Rozumí lidé ve filmu tomu, co děláš, proč to děláš a jaké mohou být důsledky?\n4. Má film dostatečný vztah k lidem s lived experience, nebo zaměňuje přístup za porozumění?\n5. Nehrozí retraumatizace, stigmatizace, represálie, izolace nebo ztráta kontroly nad vlastním příběhem?"
+        },
+        "participants_practice": {
+          "title": "Praktické zásady",
+          "content": "## Praktické zásady\n- informovaný souhlas chápej jako **proces**, ne jako jednorázový podpis\n- vysvětluj záměr filmu, distribuci, rizika i hranice kontroly\n- naslouchej zpětné vazbě participantů tam, kde zvyšuje přesnost, důvěru a nuance\n- zvaž participant-centered dohody a harm mitigation plán\n- nepoužívej silné scény jen proto, že jsou silné; vždy zvažuj jejich cenu pro člověka před kamerou\n- u zranitelných lidí počítej s tím, že zveřejnění může změnit jejich život i vztahy v komunitě"
+        }
+      }
+    },
+    {
+      "id": "audience",
+      "title": "Zodpovědnost k publiku",
+      "short": "Publikum vkládá do dokumentu důvěru. Filmař má odpovědnost jednat v dobré víře: být přesný, transparentní a férový vůči tomu, jak význam vytváří.",
+      "content": "# Zodpovědnost k publiku\nDokument neslibuje mechanickou objektivitu, ale slibuje poctivost vůči tomu, co se skutečně stalo, a vůči způsobu, jakým z reality vytváří význam.\n\nOdpovědnost k publiku znamená chránit jeho důvěru: nemanipulovat zavádějícím střihem, nefalšovat materiály, nezkreslovat archiv, jasně artikulovat perspektivu a být transparentní v procesu. Publikum má právo vědět, že sleduje autorsky tvarované dílo, ne nahodilý záznam reality. Viz &Klíčové otázky|audience_questions& a &Rizikové body|audience_risks&.",
+      "subsections": {
+        "audience_questions": {
+          "title": "Klíčové otázky",
+          "content": "## Na co se ptát\n1. Je film přesný nejen ve faktech, ale i v kontextu a významu?\n2. Nevede střih, hudba, rekonstrukce nebo práce s archivem diváka k chybnému závěru?\n3. Je jasné, z jaké perspektivy film mluví a co je jeho interpretační rámec?\n4. Nepoužívá film cizí bolest pouze jako emocionální motor bez vysvětlení souvislostí?\n5. Nehrozí, že některé publikum bude film číst jako potvrzení stereotypů, protože mu chybí potřebná nuance?"
+        },
+        "audience_risks": {
+          "title": "Rizikové body",
+          "content": "## Rizikové body\n- zavádějící juxtapozice ve střihu\n- neoznačené rekonstrukce nebo reenactment\n- archiv použitý mimo místo, čas nebo významový kontext\n- zvukové či vizuální sweetening, které mění smysl scény\n- silné narativní zkratky, které vytvářejí „vyšší pravdu“, ale oslabují konkrétní pravdivost\n- absence transparentnosti vůči metodě a pozici autora"
+        }
+      }
+    },
+    {
+      "id": "artistic-vision",
+      "title": "Zodpovědnost k umělecké vizi",
+      "short": "Autorská vize je legitimní, ale není výjimkou z etiky. Tvůrce musí reflektovat vlastní positionalitu, záměr, moc a hranice estetické manipulace.",
+      "content": "# Zodpovědnost k umělecké vizi\nDokumentarista není jen technik nebo zpravodaj; vytváří formu, rytmus, perspektivu a smysl. Umělecká vize proto není problém sama o sobě — problém nastává tehdy, když se vydává za neutrální pravdu nebo když estetický účinek převáží nad odpovědností.\n\nEtická práce s uměleckou vizí znamená pojmenovat vlastní hodnoty, předsudky, blízkost či vzdálenost k tématu a vlastní nárok vyprávět cizí příběh. Znamená také promýšlet, zda zvolená forma podporuje porozumění, nebo spíš reprodukuje dominance, exotizaci či trauma. Viz &Reflexivní otázky|vision_questions& a &Co patří do autorské sebereflexe|vision_reflection&.",
+      "subsections": {
+        "vision_questions": {
+          "title": "Reflexivní otázky",
+          "content": "## Na co se ptát\n1. Proč chci vyprávět právě tento příběh a proč já?\n2. Jak mou interpretaci formuje moje positionalita, vzdělání, třída, zkušenost, kulturní blízkost nebo distance?\n3. Kde končí legitimní autorské tvarování a začíná eticky problematická manipulace?\n4. Nepoužívá film participanty jen jako nositele mé předem dané teze?\n5. Není „silný film“ vykoupen tím, že někomu bere komplexitu nebo agency?"
+        },
+        "vision_reflection": {
+          "title": "Co patří do autorské sebereflexe",
+          "content": "## Co promyslet\n- vlastní intence, hodnoty, bias a předpoklady\n- vztah k tématu, komunitě a zdrojům moci, které film zkoumá\n- proč je zvolená perspektiva důležitá pro druhé lidi, ne jen pro autora\n- jak forma filmu pracuje s emocí, napětím, krásou, šokem a tichem\n- zda estetika neoslabuje důstojnost lidí, o nichž film je"
+        }
+      }
+    },
+    {
+      "id": "institutional",
+      "title": "Zodpovědnost institucionální",
+      "short": "Etika dokumentu není jen osobní ctnost autora. Vzniká také v podmínkách produkce, financování, smluv, festivalového oběhu a institucionálních tlaků na rychlost, drama a výkon.",
+      "content": "# Zodpovědnost institucionální\nDokument vzniká uvnitř produkčních a distribučních struktur. Fundeři, commissioning editorky, producenti, broadcastery, právní rámce, rozpočty, pojištění i pracovní režim štábu formují, co je možné natočit a jak.\n\nEtická odpovědnost proto neleží jen na jednotlivci. Je třeba se ptát, zda instituce podporuje transparentnost, bezpečí, odpovědnost a férovost, nebo naopak tlačí film k exploataci, zkratce a senzaci. Sem patří i odpovědnost za pracovní podmínky, mocenské uspořádání štábu, jasné dohody a schopnost nést odpovědnost po release. Viz &Institucionální otázky|institution_questions& a &Kde vzniká tlak|institution_pressures&.",
+      "subsections": {
+        "institution_questions": {
+          "title": "Institucionální otázky",
+          "content": "## Na co se ptát\n1. Tlačí rozpočet, harmonogram nebo broadcaster k eticky slabším rozhodnutím?\n2. Odpovídají smlouvy a release formuláře skutečné moci participantů a jejich potřebám?\n3. Jsou ve štábu nastaveny férové procesy rozhodování, péče a komunikace?\n4. Je transparentní vztah k funderům, partnerům a dalším stakeholderům?\n5. Existuje plán odpovědnosti po uvedení filmu — pro participanty, publikum i tým?"
+        },
+        "institution_pressures": {
+          "title": "Kde vzniká tlak",
+          "content": "## Kde vzniká tlak\n- požadavek zvýšit drama, konflikt nebo nebezpečí\n- záměna dokumentu za entertainment pipeline\n- oddělení terénní práce od postprodukce, které poruší dohody s participanty\n- nejasná odpovědnost mezi režijní, producentskou a distribuční stranou\n- nerovné mocenské vztahy uvnitř produkce\n- absence sdílených standardů a možností, jak se proti tlaku opřít principem místo improvizace"
+        }
+      }
+    }
+  ]
+}
