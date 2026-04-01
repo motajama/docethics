@@ -1,536 +1,136 @@
-# README – použití knihoven
+# Ethical Compass Engine
 
-Tento projekt používá čtyři malé JavaScriptové knihovny, které jsou navržené tak, aby fungovaly společně:
+An open, modular, and reusable frontend engine for building interactive ethical guides, learning maps, and structured knowledge interfaces.
 
-- `skin-engine.js` – přepínání vzhledu a fontů
-- `markup-engine.js` – render jednoduchého značkování do HTML
-- `ascii-chart.js` – generování ASCII grafů
-- `app.js` – hlavní aplikační logika, která knihovny propojuje
-
-Níže je praktický přehled, jak je používat.
+Originally developed for a documentary ethics project, this engine provides a universal framework for presenting complex, multi-layered content in a structured, transparent, and accessible way.
 
 ---
 
-## 1. Základní zapojení do HTML
+## Purpose
 
-Knihovny je potřeba načíst v tomto pořadí:
+This project is designed as a tool for:
 
-```html
-<link id="skin-font-link" rel="stylesheet" href="">
+- educators
+- researchers
+- artists
+- students
+- activists
 
-<script src="skin-engine.js"></script>
-<script src="markup-engine.js"></script>
-<script src="ascii-chart.js"></script>
-<script src="app.js"></script>
-```
+It enables the creation of structured, interactive materials without relying on commercial platforms or opaque systems.
 
-Důvod:
-
-- `app.js` používá globální objekty `SkinEngine`, `MarkupEngine` a `AsciiChart`
-- proto musí být všechny tři pomocné knihovny načtené dřív než `app.js`
-- element `<link id="skin-font-link">` je nutný pro dynamické přepínání fontů ve skinech
-
-Pokud používáš jQuery, musí být načtené ještě před `app.js`, protože `app.js` běží jako jQuery wrapper:
-
-```html
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-```
+The focus is not only on presentation, but on thinking, orientation, and ethical reflection.
 
 ---
 
-## 2. `SkinEngine` – přepínání vzhledu
+## Core Principles
 
-Soubor: `skin-engine.js`
-
-### Co dělá
-
-`SkinEngine` mění CSS proměnné na `:root`, přepíná fonty a ukládá aktivní skin do `document.body.dataset.skin`.
-
-### Veřejné API
-
-K dispozici jsou dvě věci:
-
-- `SkinEngine.applySkin(skinName)`
-- `SkinEngine.skinLibrary`
-
-### Použití
-
-```js
-SkinEngine.applySkin('msdos');
-```
-
-Tím se:
-
-- nastaví barvy a fonty daného skinu
-- přepíše `href` u `<link id="skin-font-link">`
-- nastaví `data-skin="msdos"` na `<body>`
-
-### Dostupné skiny
-
-Podle aktuální knihovny jsou dostupné například tyto názvy:
-
-- `msdos`
-- `amber`
-- `green-terminal`
-- `classic-mac`
-- `win95`
-- `atari`
-- `amiga`
-- `dot-matrix`
-- `arcade`
-
-### Získání seznamu skinů
-
-```js
-const skins = Object.keys(SkinEngine.skinLibrary);
-console.log(skins);
-```
-
-### Napojení na `<select>`
-
-```html
-<select id="skin-select">
-  <option value="msdos">MS-DOS</option>
-  <option value="classic-mac">Classic Mac</option>
-  <option value="atari">Atari</option>
-</select>
-```
-
-```js
-document.getElementById('skin-select').addEventListener('change', (e) => {
-  SkinEngine.applySkin(e.target.value);
-});
-```
-
-### Jak přidat nový skin
-
-Do objektu `skinLibrary` přidej další položku:
-
-```js
-newskin: {
-  fontUrl: 'https://fonts.googleapis.com/css2?family=VT323&display=swap',
-  vars: {
-    '--bg': '#000000',
-    '--surface': '#111111',
-    '--surface-alt': '#1a1a1a',
-    '--text': '#ffffff',
-    '--muted': '#aaaaaa',
-    '--accent': '#39ff14',
-    '--line': '#444444',
-    '--focus': '#ffff00',
-    '--font-main': "'VT323', monospace",
-    '--font-heading': "'VT323', monospace"
-  }
-}
-```
-
-Poznámka: fallback je `msdos`, takže pokud zadáš neexistující skin, použije se právě ten.
+- openness and transparency
+- non-commercial knowledge sharing
+- accessibility and clarity
+- minimal dependencies
+- full control over content and structure
 
 ---
 
-## 3. `MarkupEngine` – jednoduché renderování textu
+## What This Project Is
 
-Soubor: `markup-engine.js`
+This repository contains a modular frontend system composed of several independent but cooperating parts:
 
-### Co dělá
+### Application Layer
 
-`MarkupEngine` převádí jednoduchý textový zápis do HTML. Hodí se pro obsah sekcí, krátké texty, popisy a interní obsahové bloky.
+- app.js  
+  Handles rendering, navigation, interaction logic, sections, and sideboxes.
 
-### Veřejné API
+### Content Layer
 
-- `MarkupEngine.render(markup)`
+- JSON files (cs.json, en.json, ua.json)  
+  Define the entire structure and content of the application.
 
-### Použití
+### Markup Engine
 
-```js
-const html = MarkupEngine.render(`# Nadpis
+- markup-engine.js  
+  A custom lightweight parser designed for structured academic and educational text.
 
-Tohle je **tučné** a tohle je *kurzíva*.`);
-document.getElementById('content').innerHTML = html;
-```
+### Skin System
 
-### Podporovaná syntaxe
+- skin-engine.js  
+  Provides theme switching via CSS variables.
 
-#### Nadpisy
+### Visualization
 
-```text
-# Nadpis úrovně 2
-## Nadpis úrovně 3
-### Nadpis úrovně 4
-```
+- ascii-chart.js  
+  Generates lightweight ASCII-based charts without dependencies.
 
-Renderuje se jako:
+### Styling
 
-- `#` → `<h2>`
-- `##` → `<h3>`
-- `###` → `<h4>`
-
-#### Odstavce
-
-Každý neprázdný řádek, který nezačíná `#`, se převede na `<p>`.
-
-#### Tučné a kurzíva
-
-```text
-**tučné**
-*kurzíva*
-```
-
-#### Odkazy
-
-```text
-[Text odkazu](https://example.com)
-```
-
-Renderuje se jako externí odkaz s:
-
-- `target="_blank"`
-- `rel="noopener noreferrer"`
-
-#### Obrázky
-
-```text
-![Alt text](obrazek.jpg)
-```
-
-Pozor: knihovna umí renderovat i `<img>`, takže je vhodné používat jen důvěryhodný obsah.
-
-#### Interní inline tlačítka / subsekce
-
-```text
-&Popisek tlačítka|subsekce-id&
-```
-
-Renderuje se jako:
-
-```html
-<button class="inline-link" data-subsection="subsekce-id">Popisek tlačítka</button>
-```
-
-To je užitečné, když chceš mít uvnitř textu klikací prvky pro zobrazení detailu, sidebaru nebo podsekce.
-
-### Bezpečnost
-
-Knihovna nejdřív escapuje HTML znaky (`& < > " '`), takže běžný HTML kód vložený do textu se nevykreslí jako HTML. Teprve potom aplikuje vlastní značkování.
+- main.css  
+  A variable-driven design system supporting theming and responsiveness.
 
 ---
 
-## 4. `AsciiChart` – ASCII grafy
+## Key Features
 
-Soubor: `ascii-chart.js`
-
-### Co dělá
-
-`AsciiChart` generuje textové grafy, které se dají vložit například do elementu `<pre>`.
-
-### Veřejné API
-
-- `AsciiChart.barChart(items, options)`
-- `AsciiChart.plot(points, options)`
+- SVG-based compass navigation
+- Expandable accordion sections
+- Dynamic sideboxes triggered by inline links
+- JSON-driven content architecture
+- Multilingual support
+- Fully client-side (no backend required)
+- Responsive and accessible UI
 
 ---
 
-### 4.1 Sloupcový graf: `barChart()`
+## Project Structure
 
-#### Vodorovná varianta
-
-```js
-const chart = AsciiChart.barChart([
-  { label: 'A', value: 10 },
-  { label: 'B', value: 6 },
-  { label: 'C', value: 3 }
-], { width: 20 });
-
-console.log(chart);
-```
-
-Výstup bude přibližně takto:
-
-```text
-A              | ████████████████████ 10
-B              | ████████████ 6
-C              | ██████ 3
-```
-
-#### Svislá varianta
-
-```js
-const chart = AsciiChart.barChart([
-  { label: 'A', value: 10 },
-  { label: 'B', value: 6 },
-  { label: 'C', value: 3 }
-], {
-  orientation: 'vertical',
-  height: 8
-});
-```
-
-### Volby
-
-- `orientation`: `'horizontal'` nebo `'vertical'`
-- `width`: šířka vodorovného grafu
-- `height`: výška svislého grafu
+/
+├── docethics.html
+├── app.js
+├── markup-engine.js
+├── skin-engine.js
+├── ascii-chart.js
+├── main.css
+├── /data
+│   ├── cs.json
+│   ├── en.json
+│   └── ua.json
+└── /docs
+    ├── index.md
+    ├── getting-started.md
+    ├── json-structure.md
+    ├── markup.md
+    ├── skins.md
+    ├── ascii-charts.md
+    └── architecture.md
 
 ---
 
-### 4.2 Bodový graf: `plot()`
+## Documentation
 
-```js
-const plot = AsciiChart.plot([
-  { x: 0, y: 1 },
-  { x: 1, y: 3 },
-  { x: 2, y: 2 },
-  { x: 3, y: 5 }
-], {
-  width: 30,
-  height: 10
-});
+Detailed documentation is available in the /docs directory.
 
-console.log(plot);
-```
+Start here:
 
-### Volby
-
-- `width`: šířka pole
-- `height`: výška pole
-
-Poznámka: `plot()` v aktuální verzi kreslí pouze body (`●`), nespojuje je čarou.
+/docs/index.md
 
 ---
 
-## 5. `app.js` – hlavní aplikační vrstva
+## Quick Start
 
-Soubor: `app.js`
+1. Clone the repository  
+2. Open docethics.html  
+3. Edit /data/*.json  
 
-### Co dělá
-
-`app.js` propojuje všechny předchozí knihovny a řídí celé rozhraní aplikace.
-
-Podle aktuálního kódu zajišťuje hlavně:
-
-- načtení jazykových dat z `./data/${lang}.json`
-- práci se stavem aplikace (`state`)
-- render kruhového navigačního prvku („wheel“)
-- render hero textu
-- render obsahových sekcí
-- napojení `MarkupEngine.render()` pro obsah sekcí
-- napojení `AsciiChart.barChart()` a `AsciiChart.plot()` pro ASCII grafy
-- přepínání aktivní sekce
-
-### Interní stav
-
-V horní části je objekt:
-
-```js
-const state = {
-  lang: 'cs',
-  skin: 'amiga',
-  data: null,
-  activeIndex: 0
-};
-```
-
-To znamená:
-
-- `lang` – aktuální jazyk
-- `skin` – aktuální skin
-- `data` – načtená data aplikace
-- `activeIndex` – aktivní sekce ve wheel navigaci
-
-### Očekávaná struktura dat
-
-Z kódu je vidět, že `app.js` očekává JSON s přibližně touto strukturou:
-
-```json
-{
-  "ui": {
-    "more": "Více"
-  },
-  "sections": [
-    {
-      "id": "social-actors",
-      "title": "Social Actors",
-      "short": "Krátký popis do hero bloku.",
-      "content": "# Nadpis\n\nObsah sekce",
-      "chart": {
-        "type": "bar",
-        "items": [
-          { "label": "A", "value": 10 },
-          { "label": "B", "value": 7 }
-        ],
-        "options": {
-          "width": 20
-        }
-      }
-    }
-  ]
-}
-```
-
-### Jak `app.js` používá ostatní knihovny
-
-#### MarkupEngine
-
-V sekcích:
-
-```js
-${MarkupEngine.render(s.content)}
-```
-
-Takže pole `content` v JSONu má být text ve formátu podporovaném `MarkupEngine`.
-
-#### AsciiChart
-
-V helperu `makeChart(block)`:
-
-- `type: 'bar'` → `AsciiChart.barChart(...)`
-- `type: 'plot'` → `AsciiChart.plot(...)`
-
-Graf je potom vložen jako:
-
-```html
-<pre class="ascii-chart">...</pre>
-```
-
-#### SkinEngine
-
-V ukázce `app.js` není ve zobrazené části přímé volání, ale podle struktury aplikace se `SkinEngine` používá pro změnu vzhledu celé stránky.
+No build step required.
 
 ---
 
-## 6. Doporučený minimální příklad použití
+## License
 
-```html
-<!doctype html>
-<html lang="cs">
-<head>
-  <meta charset="utf-8">
-  <title>Test knihoven</title>
-  <link id="skin-font-link" rel="stylesheet" href="">
-  <style>
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-main);
-    }
-    pre {
-      white-space: pre-wrap;
-    }
-  </style>
-</head>
-<body>
-  <select id="skin-select">
-    <option value="msdos">MS-DOS</option>
-    <option value="amiga">Amiga</option>
-    <option value="classic-mac">Classic Mac</option>
-  </select>
-
-  <div id="content"></div>
-  <pre id="chart"></pre>
-
-  <script src="skin-engine.js"></script>
-  <script src="markup-engine.js"></script>
-  <script src="ascii-chart.js"></script>
-  <script>
-    SkinEngine.applySkin('msdos');
-
-    document.getElementById('skin-select').addEventListener('change', (e) => {
-      SkinEngine.applySkin(e.target.value);
-    });
-
-    document.getElementById('content').innerHTML = MarkupEngine.render(`
-# Ukázka
-Tohle je **tučné**.
-Klikni na [odkaz](https://example.com).
-`);
-
-    document.getElementById('chart').textContent = AsciiChart.barChart([
-      { label: 'Ethics', value: 10 },
-      { label: 'Care', value: 8 },
-      { label: 'Power', value: 4 }
-    ], { width: 24 });
-  </script>
-</body>
-</html>
-```
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)  
+https://creativecommons.org/licenses/by-nc/4.0/
 
 ---
 
-## 7. Omezení aktuální verze
+## Author
 
-### `MarkupEngine`
-
-- neumí seznamy
-- neumí blockquote
-- neumí tabulky
-- neumí vnořené struktury
-- obrázky renderuje přímo jako `<img>`
-
-### `AsciiChart`
-
-- `plot()` kreslí jen body, ne čáry
-- neřeší popisky os
-- normalizace je vždy relativní vůči maximu v datech
-
-### `SkinEngine`
-
-- neukládá skin automaticky do `localStorage`
-- předpokládá existenci `<link id="skin-font-link">`
-
-### `app.js`
-
-- předpokládá konkrétní HTML strukturu a konkrétní JSON data
-- používá jQuery
-- spoléhá na existenci konkrétních SVG a DOM uzlů jako `#wheel-connectors`, `#wheel-label-nodes`, `#hero-description`, `#content-root` a segmentů typu `#seg-social-actors`
-
----
-
-## 8. Praktické doporučení
-
-Pokud chceš knihovny používat samostatně:
-
-- `skin-engine.js` může fungovat úplně samostatně
-- `markup-engine.js` může fungovat úplně samostatně
-- `ascii-chart.js` může fungovat úplně samostatně
-- `app.js` už je aplikační vrstva a potřebuje konkrétní HTML strukturu, data a pomocné knihovny
-
-Jinými slovy:
-
-- první tři soubory jsou skutečné znovupoužitelné utility
-- `app.js` je spíš konkrétní implementace nad nimi
-
----
-
-## 9. Rychlý přehled API
-
-### SkinEngine
-
-```js
-SkinEngine.applySkin(name)
-SkinEngine.skinLibrary
-```
-
-### MarkupEngine
-
-```js
-MarkupEngine.render(markup)
-```
-
-### AsciiChart
-
-```js
-AsciiChart.barChart(items, options)
-AsciiChart.plot(points, options)
-```
-
----
-
-## 10. Doporučené další rozšíření
-
-Pro další vývoj bych doporučil doplnit:
-
-1. u `SkinEngine` ukládání zvoleného skinu do `localStorage`
-2. u `MarkupEngine` seznamy, blockquote a bezpečnostní omezení pro obrázky
-3. u `AsciiChart` osy, legendu a spojnice v plotu
-4. u `app.js` oddělení aplikační logiky od renderu, aby šel wheel a sekce používat modulárněji
-
+Jan Motal
