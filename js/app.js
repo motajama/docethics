@@ -6,13 +6,13 @@
     activeIndex: 0
   };
 
-  const WHEEL = {
-    cx: 260,
-    cy: 260,
-    outerR: 122,
-    innerR: 52,
-    labelRadius: 205
-  };
+const WHEEL = {
+  cx: 320,
+  cy: 320,
+  outerR: 160,
+  innerR: 66,
+  labelRadius: 255
+};
 
   function updateLanguageSwitcher() {
   $('.lang-link').removeClass('is-active').attr('aria-current', 'false');
@@ -78,100 +78,97 @@
   }
 
   function renderWheel() {
-    const sections = state.data.sections;
-    const total = sections.length;
+  const sections = state.data.sections;
+  const $connectors = $('#wheel-connectors').empty();
+  const $labels = $('#wheel-label-nodes').empty();
 
-    const $slices = $('#wheel-slices').empty();
-    const $connectors = $('#wheel-connectors').empty();
-    const $labels = $('#wheel-label-nodes').empty();
+  const segmentIds = [
+    '#seg-social-actors',
+    '#seg-audience',
+    '#seg-artistic-vision',
+    '#seg-institutional'
+  ];
 
-    sections.forEach((section, i) => {
-      const step = getSectionStep(total);
-      const startAngle = i * step;
-      const endAngle = startAngle + step;
-      const midAngle = getMidAngle(i, total);
-      const isActive = i === state.activeIndex;
+  $('.wheel-slice').removeClass('is-active');
 
-      const d = describeArcSlice(
-        WHEEL.cx,
-        WHEEL.cy,
-        WHEEL.outerR,
-        WHEEL.innerR,
-        startAngle,
-        endAngle
-      );
+  segmentIds.forEach((selector, i) => {
+    const el = document.querySelector(selector);
+    if (!el) return;
 
-      const slice = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      slice.setAttribute('d', d);
-      slice.setAttribute('class', `wheel-slice${isActive ? ' is-active' : ''}`);
-      slice.setAttribute('data-index', i);
-      slice.setAttribute('tabindex', '0');
-      slice.setAttribute('role', 'button');
-      slice.setAttribute('aria-label', section.title);
+    const isActive = i === state.activeIndex;
+    el.classList.toggle('is-active', isActive);
+    el.setAttribute('data-index', i);
+    el.setAttribute('aria-label', sections[i].title);
 
-      $(slice).on('click keydown', function (e) {
-        if (e.type === 'click' || e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          setActiveSection(i);
-        }
-      });
-
-      $slices.append(slice);
-
-      const lineStart = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.outerR + 4, midAngle);
-      const lineEnd = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.labelRadius - 34, midAngle);
-
-      const connector = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      connector.setAttribute('x1', lineStart.x);
-      connector.setAttribute('y1', lineStart.y);
-      connector.setAttribute('x2', lineEnd.x);
-      connector.setAttribute('y2', lineEnd.y);
-      connector.setAttribute('class', `wheel-connector${isActive ? ' is-active' : ''}`);
-      $connectors.append(connector);
-
-      const labelPos = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.labelRadius, midAngle);
-      const labelGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      labelGroup.setAttribute('class', `wheel-label-node${isActive ? ' is-active' : ''}`);
-      labelGroup.setAttribute('data-index', i);
-      labelGroup.setAttribute('tabindex', '0');
-      labelGroup.setAttribute('role', 'button');
-      labelGroup.setAttribute('aria-label', section.title);
-
-      const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      textEl.setAttribute('x', labelPos.x);
-      textEl.setAttribute('y', labelPos.y);
-      textEl.setAttribute('class', 'wheel-label-text');
-
-      const anchor =
-        labelPos.x < WHEEL.cx - 20 ? 'end' :
-        labelPos.x > WHEEL.cx + 20 ? 'start' : 'middle';
-
-      textEl.setAttribute('text-anchor', anchor);
-
-      const lines = wrapSvgText(section.title, 14);
-      const lineHeight = 16;
-      const startYOffset = -((lines.length - 1) * lineHeight) / 2;
-
-      lines.forEach((line, idx) => {
-        const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
-        tspan.setAttribute('x', labelPos.x);
-        tspan.setAttribute('dy', idx === 0 ? startYOffset : lineHeight);
-        tspan.textContent = line;
-        textEl.appendChild(tspan);
-      });
-
-      labelGroup.appendChild(textEl);
-
-      $(labelGroup).on('click keydown', function (e) {
-        if (e.type === 'click' || e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          setActiveSection(i);
-        }
-      });
-
-      $labels.append(labelGroup);
+    $(el).off('click keydown').on('click keydown', function (e) {
+      if (e.type === 'click' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setActiveSection(i);
+      }
     });
-  }
+  });
+
+  const directions = [
+    { angle: 0,   anchor: 'middle', dx: 0,   dy: -10 },  // top
+    { angle: 90,  anchor: 'start',  dx: 14,  dy: 0 },    // right
+    { angle: 180, anchor: 'middle', dx: 0,   dy: 22 },   // bottom
+    { angle: 270, anchor: 'end',    dx: -14, dy: 0 }     // left
+  ];
+
+  sections.forEach((section, i) => {
+    const cfg = directions[i];
+    const isActive = i === state.activeIndex;
+
+    const lineStart = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.outerR + 2, cfg.angle);
+    const lineEnd = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.labelRadius - 34, cfg.angle);
+
+    const connector = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    connector.setAttribute('x1', lineStart.x);
+    connector.setAttribute('y1', lineStart.y);
+    connector.setAttribute('x2', lineEnd.x);
+    connector.setAttribute('y2', lineEnd.y);
+    connector.setAttribute('class', `wheel-connector${isActive ? ' is-active' : ''}`);
+    $connectors.append(connector);
+
+    const labelPos = polarToCartesian(WHEEL.cx, WHEEL.cy, WHEEL.labelRadius, cfg.angle);
+
+    const labelGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    labelGroup.setAttribute('class', `wheel-label-node${isActive ? ' is-active' : ''}`);
+    labelGroup.setAttribute('data-index', i);
+    labelGroup.setAttribute('tabindex', '0');
+    labelGroup.setAttribute('role', 'button');
+    labelGroup.setAttribute('aria-label', section.title);
+
+    const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    textEl.setAttribute('x', labelPos.x + cfg.dx);
+    textEl.setAttribute('y', labelPos.y + cfg.dy);
+    textEl.setAttribute('class', 'wheel-label-text');
+    textEl.setAttribute('text-anchor', cfg.anchor);
+
+    const lines = wrapSvgText(section.title, 18);
+    const lineHeight = 18;
+    const startYOffset = -((lines.length - 1) * lineHeight) / 2;
+
+    lines.forEach((line, idx) => {
+      const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+      tspan.setAttribute('x', labelPos.x + cfg.dx);
+      tspan.setAttribute('dy', idx === 0 ? startYOffset : lineHeight);
+      tspan.textContent = line;
+      textEl.appendChild(tspan);
+    });
+
+    labelGroup.appendChild(textEl);
+
+    $(labelGroup).on('click keydown', function (e) {
+      if (e.type === 'click' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setActiveSection(i);
+      }
+    });
+
+    $labels.append(labelGroup);
+  });
+}
 
   function renderHeroText() {
   const section = state.data.sections[state.activeIndex];
