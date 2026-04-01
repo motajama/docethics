@@ -2,12 +2,14 @@
 
 A custom lightweight markup language.
 
----
+```bash
 
 ## Headings
 
 # Heading
 ## Subheading
+
+```
 
 ---
 
@@ -17,11 +19,15 @@ Each array item = one paragraph.
 
 Manual break:
 
+```bash
 §
+```
 
 ---
 
 ## Lists
+
+```bash
 
 - item
 - item
@@ -29,44 +35,70 @@ Manual break:
 1. first
 2. second
 
+```
+
 ---
 
 ## Emphasis
 
+```bash
+
 **bold**
 *italic*
+
+```
 
 ---
 
 ## Links
 
+```bash
+
 [text](https://example.com)
+
+```
 
 ---
 
 ## Internal Links (sidebox)
 
+```bash
+
 $Label|target_id$
+
+```
 
 ---
 
 ## Non-breaking space
 
+```bash
+
 word~word
+
+```
 
 Escape:
 
+```bash
+
 \~
+
+```
 
 ---
 
 ## Example
+
+```bash
 
 "content": [
   "# Title",
   "Text with $link|id$",
   "- item 1\n- item 2"
 ]
+
+```
 
 ---
 
