@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Documentary Ethics Compass",
-    "subtitle": "xx",
+    "subtitle": "",
     "dir": "ltr"
   },
   "ui": {
@@ -10,66 +10,182 @@
   "sections": [
     {
       "id": "social-actors",
-      "title": "Responsibility to~social actors",
-      "short": "People in film are not material, but bearers of dignity, agency, and experience. The basic question is: how not to harm and how not to take away the voice of those whose story the film engages with?",
+      "title": "Responsibility toward~social actors",
+      "short": "Respect dignity, autonomy, privacy, and identity. Strive for informed consent and prevent harm. Work with archives just as sensitively: protect human dignity and recognize that archival records can affect real people and communities. Apply a trauma-informed approach.",
       "content": [
-        "# Responsibility to social actors\nThis axis concerns the relationship to participants, protagonists, and communities whose experience the film mediates.\n\nThe basic principles are **do no harm**, protection of the vulnerable, respect for dignity, and recognition that the participant is the expert on their own experience. The documentarian has power: they decide whom to show, from what perspective, in what context, and with what consequence.\n\nThe ethical question therefore does not begin only with signing a release form. It begins already with whether it is right to tell this story in this particular way, at this particular time, and by this particular crew. See $Key questions|participants_questions$ and $Practical guidelines|participants_practice$."
+        "# Respect human independence and dignity",
+        "A fundamental ethical principle of documentary and audiovisual creation more broadly is respect for the human being as a person who is not “material,” but an autonomous bearer of value, experience, and the right to decide about their own life. This principle means that a filmed person must not be reduced to a means of producing a powerful shot, an emotional effect, or a claim to public interest. Respect for independence and dignity assumes that a participating person has their own perspective, their own boundaries, and their own legitimate interests, all of which must be taken seriously. The creative team therefore does not enter into a relationship with a participating person as the owner of their story, but as someone who bears responsibility for the form of the encounter, the representation, and the possible consequences.",
+        "Archival practice repeatedly emphasizes that alongside preservation and access, it is necessary to consider how a record re-enters the lives of the people it concerns, and whether new uses may reproduce older forms of objectification or inequality. Contemporary debates on archives therefore shift the emphasis from the idea of a neutral “storage of the past” toward responsible curation that takes seriously the impact on actually existing persons and communities.",
+        "## Autonomy and informed consent",
+        "Autonomy in the ethical sense means that a person can freely and competently decide about their participation. In documentary practice, this principle is most often expressed through the requirement of $informed consent|informed-consent$. A formal “yes” in front of the camera or a signature on a form is not enough; a participating person needs to understand who is making the film, for what purpose, where the work will be shown, what its possible effects may be, and how their testimony or image will be used. Consent is truly informed only when it is given without pressure, without manipulation, and with adequate understanding of the situation. At the same time, it is important to remember that autonomy is not a one-off act but an ongoing process: especially with sensitive topics, it is ethically important to keep checking whether the participating person still wishes to continue and whether the conditions of their participation have changed.",
+        "When working with archives, it is important to distinguish between consent to make a record, consent to store it, and consent to its later reuse, because these are not the same thing. Recommendations from oral history and archival practice explicitly warn that consent must not be inferred from silence, and that it should be understandable, documented in writing, and tied to concrete conditions of access, restriction, and possible future use. Archivists also commonly work with different types of agreements — participant, deposit, and copyright agreements — precisely so that autonomy is not reduced to a single signature without further context.",
+        "## Do no harm",
+        "The principle of nonmaleficence (do no harm) belongs $among the most basic norms of ethical practice|bioethics-four$. It means that the creative team should prevent foreseeable harm, whether physical, psychological, social, reputational, or legal. Harm may arise from the filming itself, from the way questions are asked, from the disclosure of sensitive information, from taking testimony out of context, or from the fact that the filmed person may bear consequences after the film is released that they could not fully anticipate. To do no harm does not mean that documentary must avoid painful or conflictual realities, but that creative practitioners must carefully weigh the proportionality of their approach and its impact on concrete people. The ethical question is therefore not only “is it true?” but also “whom might it affect, and how?”",
+        "When filmmakers deal with stories related to human trauma, or process such trauma directly, they should adopt a $trauma-informed approach|trauma-informed$.",
+        "In archives, the principle of nonmaleficence concerns above all secondary use: material once created under different conditions may now harm someone through new publication, reframing, or digital circulation. [Archival recommendations](https://link.springer.com/chapter/10.1007/978-3-031-51063-2_11) therefore emphasize a risk-based approach, protection of personal data, and careful assessment of whether public access or film use poses disproportionate risks to the people concerned, their families, or their communities. This is especially true of records involving violence, marginalization, health status, police surveillance, or other situations in which the archival trace itself can become an instrument of further harm.",
+        "## Privacy",
+        "One of the most important expressions of protecting dignity is respect for privacy and intimacy. Not everything that can be filmed is also ethical to show. A person may be in pain, vulnerable, ashamed, ill, grieving, or in the middle of a family conflict, and precisely then it is necessary to distinguish very carefully between what has public significance and what belongs to the protected sphere of personal life. Privacy does not mean only physical separation from the public, but also the right not to be unnecessarily exposed, interpreted, or subjected to the gaze of others in moments that threaten human integrity. Respect for intimacy therefore requires restraint, sensitive framing, and sometimes a conscious decision not to film or not to use certain shots, even if they are dramatically powerful.",
+        "In the archival context, this principle is even more complex, because a record can outlive the original situation and the original expectations of the person who appears in it. Archival literature emphasizes that privacy runs through the entire life cycle of a record — from acquisition through description and preservation to research access and later publication — and that protecting intimacy sometimes requires access restrictions, anonymization, or careful editorial decisions even when the material is technically available. In audiovisual archives, moreover, it is not always possible to rely on simply “removing a name,” because image, voice, and context may reveal identity on their own.",
+        "## Respect for identity",
+        "Ethical documentary and archival practice should respect how people understand and name their own identity, and should not impose outside categories, labels, or frames that distort or harm them. This concerns gender, sexuality, ethnicity, nationality, religion, health status, and other dimensions of self-definition: the creative team should work with language that corresponds to the self-identification of participating persons and does not produce unnecessary exclusion (see $inclusive language|inclusive-language$). Gender-neutral language in this sense is not merely a stylistic choice but part of respect for dignity and visibility; it helps avoid treating the masculine form as the automatic norm or rendering some people symbolically invisible. In practice, this means choosing inclusive expressions such as authorship, filmmaking community, creative team, participating persons, or other formulations that do not presuppose gender where it is unnecessary. In the archival context, this principle also shapes metadata, collection descriptions, and curatorial texts: the way people and groups are named fundamentally affects how searchable they are, how they are interpreted, and whether the archive reproduces older discriminatory or invisibilizing frameworks. Working with archives therefore requires sensitivity to historical language, but also the ability to supplement it with present-day ethically responsible description that respects the identities of the persons and communities about whom the archive speaks."
       ],
       "subsections": {
-        "participants_questions": {
-          "title": "Key questions",
+        "bioethics-four": {
+          "title": "The Four Principles of Bioethics",
           "content": [
-            "## What to ask\n1. Can the film harm participants — during filming, after release, or through the future circulation of images?\n2. Does the mode of storytelling support their **agency**, or does it reduce them to victims, symptoms, or illustrations of a problem?\n3. Do the people in the film understand what you are doing, why you are doing it, and what the consequences may be?\n4. Does the film have a sufficient relationship to people with lived experience, or does it mistake access for understanding?\n5. Is there a risk of retraumatization, stigmatization, reprisals, isolation, or loss of control over one’s own story?"
+            "*The four principles of bioethics* (autonomy, nonmaleficence, beneficence, and justice) provide a basic framework for ethical decision-making in situations involving interventions in human life, body, or dignity. They were originally formulated for medicine, but today they are widely used in research, media, and documentary practice as well. They are not rigid rules, but a matter of *balancing values* that may come into tension.",
+            "*Autonomy* means respect for every person’s right to decide about themselves. In practice, this includes informed consent, the possibility of refusing participation, and control over how one is represented. Autonomy is not absolute — it may be limited, for example, where it conflicts with protecting others or with the principle of nonmaleficence. In documentary and archival work, autonomy is reflected in how consent is obtained, how identity is handled, and how participating persons may influence their own representation.",
+            "*Nonmaleficence* (do no harm) means the duty not to cause harm. It is a basic ethical commitment to minimize physical, psychological, social, and reputational risks. This principle emphasizes prevention — not only refraining from direct harm, but also not contributing to situations that may lead to harm. In audiovisual practice, it concerns, for example, the treatment of sensitive topics, the publication of vulnerable situations, or the use of archival materials that may expose someone to new risk.",
+            "*Beneficence* means an active effort to contribute to the good and well-being of others. It is not only about avoiding harm, but also about whether a project brings positive value — to participating persons, communities, or society. This principle opens questions such as: whom does the film or research serve, who benefits from it, and do the benefits outweigh the risks? In practice, it may involve supporting participating persons, sharing results, or handling publicly significant topics with care.",
+            "*Justice* means fair and equal treatment, especially in relation to the distribution of benefits and burdens. It asks who bears the risks and who gains the benefits, and whether particular groups are being systematically burdened or rendered invisible. In the context of media and documentary, this concerns, for example, topic selection, representation of marginalized groups, access to voice and visibility, and the distribution of resources, attention, and recognition.",
+            "## Further reading",
+            "- Beauchamp, T. L., & Childress, J. F., *Principles of Biomedical Ethics*, 8th ed., 2019.",
+            "- Belmont Report, [Ethical Principles and Guidelines](https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html)",
+            "- Stanford Encyclopedia of Philosophy, [Beneficence](https://plato.stanford.edu/entries/principle-beneficence/)"
           ]
         },
-        "participants_practice": {
-          "title": "Practical guidelines",
+        "trauma-informed": {
+          "title": "Trauma-informed approach",
           "content": [
-            "## Practical guidelines\n- treat informed consent as a **process**, not a one-time signature\n- explain the film’s intention, distribution, risks, and limits of control\n- listen to participants’ feedback where it increases accuracy, trust, and nuance\n- consider participant-centered agreements and a harm mitigation plan\n- do not use powerful scenes only because they are powerful; always weigh their cost for the person in front of the camera\n- when working with vulnerable people, assume that publication may change their life and their relationships within the community"
+            "*A trauma-informed* (sometimes also *trauma-aware*) *approach* is grounded in the awareness that people with traumatic experience may process, feel, and behave differently from others. It is not about “treating trauma” (which belongs to psychotherapy), but above all about *not causing harm again* (preventing retraumatization).",
+            "Natalie Brown recommends taking these principles into account:",
+            "1. Care for social actors, especially when working with marginalized communities and people affected by trauma. Prevent the *extractive logic* of documentary. Do not use pressure or coercion.",
+            "2. Consent alone is not enough — it is not a “blank check,” but the minimum of ethics.",
+            "3. Self-reflection of authorship — “Why am I the one making this?”, “What is my relationship to the topic and to the community?”. One can use the *3S* technique: see your ingrained patterns of behavior, stop, and shift your perspective on the situation.",
+            "4. People from caring professions and experts who can help not only through consultation but also through care should be involved in development, production, and post-production.",
+            "5. Trauma cannot be understood only individually, but also *structurally* — it arises at the intersection of social inequalities. Sometimes it helps to change the focus: not to make a film about traumatized children, but about the traumatizing system."
+          ]
+        },
+        "inclusive-language": {
+          "title": "Inclusive language",
+          "content": [
+            "*Inclusive language* reflects the fact that speech is not neutral. It can either reinforce or challenge structures of power that sustain poverty, inequality, and exclusion. Inclusive language is not *newspeak*, but an effort to make expression correspond to the values of equality, dignity, solidarity, and shared power.",
+            "Oxfam recommends taking these principles into account:",
+            "1. Language is political: words can reinforce stereotypes, paternalism, and inequality, but can also help reframe problems and challenge oppression.",
+            "2. Let yourself be guided by the people you are talking about: do not assign identities and labels from the outside, but follow how people themselves, or the organizations representing them, wish to be named.",
+            "3. Be specific: do not generalize or create homogeneous categories where people have different experiences, needs, and forms of disadvantage.",
+            "4. Do not use language that patronizes or stigmatizes: avoid formulations that reduce people to their “problem,” make them victims without agency, or cast them as deviations from an assumed norm.",
+            "5. Think about inclusion and belonging: ask whom your words include, and whom they leave out, render invisible, or symbolically push to the margins.",
+            "6. Share power through language too: use terms and frames that do not normalize a dominant perspective, colonial optics, or the “white gaze,” but disrupt established hierarchies.",
+            "7. Care for safety: language should not expose people to greater risk, harm, or vulnerability; special attention is needed when speaking about discriminated-against or endangered communities.",
+            "8. Communicate clearly and without unnecessary jargon: prefer simple and easily translatable formulations; if you must use a less familiar term, explain it.",
+            "9. Do not be afraid to name structures of oppression: [patriarchy](https://en.wikipedia.org/wiki/Patriarchy), [racism](https://en.wikipedia.org/wiki/Racism), [coloniality](https://en.wikipedia.org/wiki/Decoloniality), [sexism](https://en.wikipedia.org/wiki/Sexism), [ableism](https://en.wikipedia.org/wiki/Ableism), or economic inequality should not be hidden behind neutral, emptied-out phrases.",
+            "10. Treat language as situated and changing: it is not an unchanging set of prohibitions and commands, but an ongoing reflection on context, audience, time, and the changing preferences of communities.",
+            "## Further reading",
+            "- Oxfam, [Inclusive Language Guide](https://policy-practice.oxfam.org/resources/inclusive-language-guide-621487/), 2023."
+          ]
+        },
+        "informed-consent": {
+          "title": "Informed consent",
+          "content": [
+            "*Informed consent* reflects the principle that participating persons have the right to decide about their participation on the basis of *clear, complete, and truthful* information. It is not a one-time signature or a formal “yes,” but a *process of sharing power* that allows people to understand the situation, weigh the risks, and decide freely.",
+            "It is recommended to take these principles into account:",
+            "1. Consent as a process, not an event: consent does not happen only at the beginning, but needs to be continuously checked and reaffirmed throughout development, production, and distribution.",
+            "2. Clarity: information should be given in language the participating person genuinely understands; avoid legalistic or technical jargon.",
+            "3. Completeness of information: explain who is creating the project, for what purpose, where it will be published, how the material will be used, and what its possible effects may be.",
+            "4. Voluntariness: consent must be given without pressure, manipulation, or dependency; refusal of consent must be respected without sanctions.",
+            "5. Possibility of withdrawal: the participating person should have a real possibility to withdraw or limit their consent at any time without negative consequences.",
+            "6. Sensitivity to power and vulnerability: pay special attention to situations where there is a power imbalance (children, marginalized communities, people in crisis).",
+            "7. Context and consequences: explain not only what will happen during filming, but also what may happen after publication (online circulation, media reactions, social consequences).",
+            "8. Protection of privacy: offer possibilities for anonymization, limitations of use, or other forms of identity protection where relevant.",
+            "9. Specificity of consent: consent should be tied to a specific use; further uses (archiving, distribution, new projects) require new consideration.",
+            "10. Documentation and transparency: the terms of consent should be clearly recorded and available to all involved so they can be revisited and verified.",
+            "## Further reading",
+            "- BBC, [Guidance: Informed Consent](https://www.bbc.com/editorialguidelines/guidance/consent)",
+            "- Oral History Association, [Principles and Best Practices](https://www.oralhistory.org/principles-and-best-practices/)",
+            "- Belmont Report, [Ethical Principles and Guidelines](https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html)"
           ]
         }
       }
     },
     {
       "id": "audience",
-      "title": "Responsibility to~the audience",
-      "short": "The audience places trust in a documentary. The filmmaker has a responsibility to act in good faith: to be accurate, transparent, and fair in how meaning is created.",
+      "title": "Responsibility toward~the audience",
+      "short": "Respect the audience’s trust. Tell the story honestly, clearly, and without sensationalism. Do not conceal essential context, do not manipulate emotions, and communicate transparently how the film was made and what effects it may have. Also think about accessibility and about the fact that a film’s release may affect not only audiences, but also the communities it concerns.",
       "content": [
-        "# Responsibility to the audience\nA documentary does not promise mechanical objectivity, but it does promise honesty toward what actually happened and toward the way it creates meaning from reality.\n\nResponsibility to the audience means protecting its trust: not manipulating through misleading editing, not falsifying materials, not distorting archives, clearly articulating perspective, and being transparent about process. The audience has a right to know that it is watching an authored work, not a random record of reality. See $Key questions|audience_questions$ and $Risk points|audience_risks$."
+        "# Respect the audience’s trust",
+        "Alongside responsibility toward participating persons, authorship also bears responsibility toward the audience. A documentary film is not a “pure window onto reality,” yet it stands on an implicit promise that it speaks honestly about something that really happened or is happening. For that reason, the audience’s trust is one of the basic ethical goods of documentary: without it, the work loses not only its persuasiveness but also its public legitimacy.",
+        "Responsibility toward the audience does not mean pretending to complete neutrality or false balance. It means honestly acknowledging the film’s perspective, not being driven by mere effect, and not undermining viewers’ trust through deceptive framing, misleading editing, or concealment of important facts. The audience does not need to be given “everything,” but it should not be led into error about what it sees, hears, or about the status of the materials used.",
+        "## Tell the truth honestly, not sensationally",
+        "Honesty toward the audience means offering as complete an understanding of the issue as possible, not merely the most emotionally powerful version of a story. Authorship should not omit relevant facts or perspectives simply because they complicate a dramatic arc, nor should it confuse the analytical power of the film with shock, melodrama, or moral panic. An ethically responsible documentary does not seek only to make the audience “feel,” but also to make them understand.",
+        "This is especially important in the era of streaming platforms, which encourage fast attention, binge watching, and pressure toward heightened emotions, cliffhangers, and scandalization. Current debates about documentary ethics therefore increasingly warn that aesthetic attractiveness must not outweigh truthfulness, context, and fairness toward the audience.",
+        "## Transparency and acknowledged perspective",
+        "The audience’s trust grows where it is clear from what position the film speaks, what it knows, and what it does not know. Transparency does not mean breaking the film apart by explaining every production decision, but it does mean not leaving the audience in error about the nature of reconstructions, archival footage, stylization, sound interventions, generated images, or other strong interventions. If a film reconstructs, compresses, or aesthetically stylizes something, it should not be presented as immediate, unmediated recording.",
+        "The same principle applies to the relationship between a film and its public circulation. Release and impact phases are not merely marketing: here too, authorship should communicate transparently the goals of the film, its public use, and its possible consequences. If the film is presented as a tool for change, it is necessary to say openly whom it is meant to serve, whom it involves, and what kinds of impact it anticipates.",
+        "## Provide context, not only emotion",
+        "The audience needs more than a strong experience. A responsible documentary should help people understand the systems, relationships, and conditions that shape the actions of characters and communities. It is not only about individual destinies, but also about structures of power, institutions, and economic and historical circumstances. Without context, a film can easily slip into psychologization, stereotype, or treating individuals as the bearers of problems that are actually systemic.",
+        "This principle is important when working with trauma as well. A trauma-respecting approach concerns not only participants, but also the audience: authorship should think through how content is introduced, whether to provide accompanying materials, discussion moderation, trigger warnings, or support resources where the film opens painful or collectively shared wounds.",
+        "## Do not cheat through editing, music, and effects",
+        "A documentary film always shapes reality, but it should not lead the audience to conclusions that the material itself cannot support. Critical points arise especially in editing, in reframing statements, in connecting unrelated images and sounds, in manipulative use of music, or in effects that artificially increase intensity and impose interpretation. The audience has a right to expect that emotional effect is not produced at the cost of epistemic deception.",
+        "The same applies to work with archives. Archival material should be embedded in honest context: who made it, under what conditions, what it really shows, and what it does not show. An archival shot taken out of context can strengthen the illusion of authenticity, and precisely for that reason it must be handled cautiously. Responsibility toward the audience here means not letting the archive function as magical proof, but as historical material that requires interpretation.",
+        "## Accessibility and responsible release",
+        "Responsibility toward the audience also includes the question of to whom the film is actually accessible. Ethically considered release includes subtitles, audio description, an accessible website, and forms of accompaniment that expand the possibility of meaningful reception. Accessibility is not a technical add-on, but part of a just relationship with the audience.",
+        "At the same time, it is necessary to remember that the audience is not an abstract mass. Different audiences come to a film with different experiences, different vulnerabilities, and different relations to the topic. With sensitive films, responsible release may therefore also include facilitated discussion, educational materials, a community screening guide, or other tools that help the film generate not only reaction, but also understanding and care."
       ],
       "subsections": {
-        "audience_questions": {
-          "title": "Key questions",
+        "viewer-trust": {
+          "title": "Audience trust",
           "content": [
-            "## What to ask\n1. Is the film accurate not only in facts, but also in context and meaning?\n2. Do editing, music, reconstruction, or the use of archive lead the viewer to a false conclusion?\n3. Is it clear from what perspective the film speaks and what its interpretive frame is?\n4. Does the film use others’ pain merely as an emotional engine without explaining the wider context?\n5. Is there a risk that some audiences will read the film as confirming stereotypes because it lacks the necessary nuance?"
+            "*Audience trust* is one of the key ethical commitments of documentary. Audiences receive documentary with the expectation that it is an honest testimony about reality, even if from a particular perspective. For that reason, authorship should not mislead the audience through framing, editing, unmarked stylization, or the omission of relevant context.",
+            "Research with documentary filmmakers in the United States showed that alongside the principles “do no harm” and “protect the vulnerable,” there is also broad agreement within filmmaking around the principle *honor the viewer’s trust*. This is not a ban on authorial perspective, but a commitment not to betray the relationship of trust between film and audience.",
+            "## Further reading",
+            "- Patricia Aufderheide, Peter Jaszi, Mridu Chandra, *Honest Truths: Documentary Filmmakers on Ethical Challenges in Their Work*.",
+            "- Patricia Aufderheide, *Perceived ethical conflicts in US documentary filmmaking: a field report*."
           ]
         },
-        "audience_risks": {
-          "title": "Risk points",
+        "release-impact": {
+          "title": "Release and impact",
           "content": [
-            "## Risk points\n- misleading juxtapositions in editing\n- unmarked reconstructions or reenactments\n- archive used outside its place, time, or context of meaning\n- audio or visual sweetening that changes the meaning of a scene\n- strong narrative shortcuts that create a “higher truth” but weaken concrete truthfulness\n- lack of transparency about method and authorial position"
+            "*Release and impact phases* are part of ethics, not merely after-the-fact marketing. Authorship should think through how a film’s release will affect audiences, participating persons, and affected communities, and should communicate about this transparently.",
+            "The DAWG framework recommends planning release early, consulting impacts with those whom the film concerns, and carrying the values of the film into distribution, accompanying discussions, and impact campaigns. With difficult topics, responsible release may also include a healing guide, moderated discussion, or support materials for the audience.",
+            "## Further reading",
+            "- Documentary Accountability Working Group, *From Reflection to Release: A Framework for Values, Ethics and Accountability in Nonfiction Filmmaking*."
           ]
         }
       }
     },
     {
-      "id": "artistic-vision",
-      "title": "Responsibility to~artistic vision",
-      "short": "Authorial vision is legitimate, but it is not an exception to ethics. The creator must reflect on their own positionality, intention, power, and the limits of aesthetic manipulation.",
+      "id": "creative-vision",
+      "title": "Responsibility toward~creative vision",
+      "short": "Develop your creative vision honestly, self-reflexively, and in dialogue with others. Ask why you in particular should be telling this story, whom the film serves, and what power relations it reproduces. Take care of yourself and your team, and build solidarity, support, and community: sustainable creation is not weakness, but part of ethical responsibility.",
       "content": [
-        "# Responsibility to artistic vision\nA documentarian is not only a technician or reporter; they create form, rhythm, perspective, and meaning. Artistic vision is therefore not a problem in itself — the problem arises when it presents itself as neutral truth, or when aesthetic effect outweighs responsibility.\n\nEthical work with artistic vision means naming one’s own values, prejudices, closeness or distance to the subject, and one’s claim to tell another person’s story. It also means considering whether the chosen form supports understanding, or rather reproduces dominance, exoticization, or trauma. See $Reflective questions|vision_questions$ and $What belongs in authorial self-reflection|vision_reflection$."
+        "# Develop creative vision with self-reflection",
+        "Creative vision is not an exception to ethics, but one of its key areas. Authorship has the right to its own perspective, style, and interpretation, but at the same time it must bear responsibility for the position from which it speaks, for what it highlights in the film, what it suppresses, and whom its vision serves. The ethical question is therefore not only “do I have the right to make this film?” but also “why me, why in this way, and with what consequences?”",
+        "Self-reflection is especially important when authorship enters into an experience that is not its own, or when working with communities that bear a historical experience of marginalization, trauma, or unequal representation. Trauma-respecting and accountable approaches therefore recommend beginning with questions about one’s own motivation, one’s relationship to the community, the limits of one’s competence, and whether the film truly opens a space for understanding, or merely extracts value from someone else’s vulnerability.",
+        "## Creative freedom is not a license for extraction",
+        "Responsibility toward creative vision means defending authorial freedom, but not confusing it with a right to use other people’s lives, pain, or worldview as mere material. Research in documentary ethics repeatedly reveals tensions between commitments toward participants, the expectations of audiences, and the author’s conception of the film. For that reason, vision should be understood not as absolute sovereignty, but as a relational and negotiated practice.",
+        "An ethically strong creative vision is not one that silences doubt, but one that can endure doubt and transform it into a more precise, sensitive, and truthful form. Sometimes this may mean changing the focus of the film, slowing down production, reconsidering one’s approach to protagonists, or accepting that a given film should not be made in the form originally intended.",
+        "## Self-care as part of responsibility",
+        "Self-care in documentary creation is not a luxury or an individualistic add-on. If authorship works with trauma, conflict, grief, structural violence, or long-term production pressure, it may itself be affected by overload, secondary traumatization, burnout, or numbness. Brown explicitly reminds us that accountable storytelling is also about “how we treat ourselves.”",
+        "Responsibility toward creative vision therefore also includes the right and the duty to set boundaries, work sustainably, seek supervision, consultation, or psychological support, and not treat self-destruction as proof of artistic authenticity. A film that emerges from long-term exhaustion, isolation, and fear easily reproduces insensitivity in the way it is made.",
+        "## Solidarity, support, and community",
+        "Creative vision does not emerge in a vacuum. Documentary ethics increasingly emphasizes that authorship is part of a broader field of relationships: a team, a community, a professional network, funders, gatekeepers, and people who bear the consequences of the film. Responsible authorship therefore does not build vision on the romantic myth of the solitary genius, but on the ability to share power, listen to criticism, and create supportive structures for oneself and for others.",
+        "In practice, solidarity means inviting people with relevant experience to consult, recognizing the work of others fairly, sharing resources, and creating an environment in which one can speak about doubts, failures, and ethical dilemmas without fear of professional disqualification. A communal and caring background is not an obstacle to vision, but one of the conditions of its ethical and long-term sustainable form.",
+        "## Lead dialogue instead of defending the ego",
+        "Responsibility toward creative vision presupposes the ability to enter into dialogue: with participants, with the audience, with the community, and with one’s own professional field. Critical feedback need not mean an attack on authorship; it can be part of a process that makes the film more precise and frees it of blind spots. Motal therefore understands documentary ethics as a space of emancipatory dialogue in which the point is not only harm control, but also the search for more just forms of a shared world.",
+        "Authorship should therefore not protect creative vision by closing itself off from criticism, but by developing it with the ability to respond to questions of power, representation, care, and the public significance of the film. Creative integrity is proven not by infallibility, but by the willingness to take responsibility for the decisions that shape the film."
       ],
       "subsections": {
-        "vision_questions": {
-          "title": "Reflective questions",
+        "self-care": {
+          "title": "Self-care and sustainable creation",
           "content": [
-            "## What to ask\n1. Why do I want to tell this particular story, and why me?\n2. How is my interpretation shaped by my positionality, education, class, experience, cultural proximity, or distance?\n3. Where does legitimate authorial shaping end and ethically problematic manipulation begin?\n4. Does the film use participants merely as carriers of my preconceived thesis?\n5. Is a “powerful film” paid for by taking away someone’s complexity or agency?"
+            "*Self-care* is part of documentary ethics. Authorship is not merely an observing presence: it can be affected by the trauma of the topic, production pressure, and long-term emotional burden. For that reason, it is legitimate to set boundaries, seek support, and plan work in a way that is sustainable over time.",
+            "Trauma-respecting approaches and current accountability debates emphasize that a caring process concerns not only participants, but also the crew and authorship itself. Sustainable creation may include supervision, consultations, a crisis plan, rest, shared decision-making, or professional help when the topic exceeds ordinary professional capacity.",
+            "## Further reading",
+            "- Natalie Bullock Brown, [Considering a Trauma-Informed Process In Documentary Filmmaking](https://www.documentary.org/online-feature/considering-trauma-informed-process-documentary-filmmaking)",
+            "- Documentary Accountability Working Group, [From Reflection to Release](https://www.docaccountability.org/framework)"
           ]
         },
-        "vision_reflection": {
-          "title": "What belongs in authorial self-reflection",
+        "community-accountability": {
+          "title": "Community and mutual support",
           "content": [
-            "## What to consider\n- one’s own intentions, values, biases, and assumptions\n- one’s relationship to the subject, the community, and the sources of power the film examines\n- why the chosen perspective matters to other people, not only to the author\n- how the film’s form works with emotion, tension, beauty, shock, and silence\n- whether aesthetics undermine the dignity of the people the film is about"
+            "*Community and solidarity* help ensure that creative vision is neither isolated nor extractive. Responsible authorship does not create film alone against everyone else, but within a network of relationships where it is possible to share doubts, consult risks, and build an ethical basis for decision-making.",
+            "Current accountability frameworks therefore stress collective infrastructures: a caring production culture, consultation with people from affected communities, professional support, and openness to the idea that ethics is not only an individual virtue, but also a quality of the environment in which a film is made.",
+            "## Further reading",
+            "- Sonya Childress & Natalie Bullock Brown, [The Documentary Future: A Call for Accountability](https://www.documentary.org/feature/documentary-future-call-accountability)",
+            "- Jan Motal, [Documentary ethics – a space for emancipatory dialogue](https://www.dokrevue.cz/clanky/dokumentarni-etika-prostor-pro-emancipacni-dialog)",
+            "## We are not alone!",
+            "organizations here"
           ]
         }
       }
@@ -77,21 +193,46 @@
     {
       "id": "institutional",
       "title": "Institutional responsibility",
-      "short": "Documentary ethics is not only a matter of the author’s personal virtue. It also emerges in the conditions of production, funding, contracts, festival circulation, and institutional pressures toward speed, drama, and performance.",
+      "short": "Act transparently and fairly within institutions and production structures. Share power, establish fair working conditions, and do not leave ethical responsibility only to individuals. Take into account the impact of decisions on participants, audiences, and communities, and strive for systemic changes toward greater equality, safety, and accountability.",
       "content": [
-        "# Institutional responsibility\nA documentary is made within structures of production and distribution. Funders, commissioning editors, producers, broadcasters, legal frameworks, budgets, insurance, and the crew’s working regime all shape what can be filmed and how.\n\nEthical responsibility therefore does not rest only on the individual. One must ask whether the institution supports transparency, safety, responsibility, and fairness, or instead pushes the film toward exploitation, shortcuts, and sensationalism. This also includes responsibility for working conditions, the power arrangements within the crew, clear agreements, and the ability to take responsibility after release. See $Institutional questions|institution_questions$ and $Where pressure emerges|institution_pressures$."
+        "# Act responsibly within institutions",
+        "Documentary ethics is not only a matter of individual decisions by authorship, but also of the institutions within which film is created and circulates. Production companies, television broadcasters, festivals, funders, streaming platforms, and educational institutions set the rules that determine what is possible, what is supported, and what is suppressed.",
+        "Institutional responsibility therefore means reflecting on how these structures shape films, working conditions, and relationships with participants and audiences. If institutions create pressure for speed, sensation, or extractive approaches to subject matter, ethics cannot be shifted onto individuals alone — the conditions of production themselves must be changed.",
+        "## Share power and create fair conditions",
+        "Institutions have the power to decide who gets space, resources, and visibility. Ethical responsibility therefore includes an effort to share that power, open opportunities to marginalized voices, and disrupt established hierarchies that have long favored certain groups at the expense of others.",
+        "This concerns not only project selection, but also working conditions: fair pay, safe working environments, respect for time and capacities, prevention of burnout, and clear mechanisms for addressing conflict and abuses of power. Institutions should not merely “enable creation,” but actively create conditions in which creation can be ethical.",
+        "## Transparency and responsibility for decisions",
+        "Institutional decision-making — concerning funding, dramaturgy, distribution, or marketing — should be transparent and justifiable. Authorship and the public should be able to understand why a particular project was supported, what values the institution pursues, and what impacts its decisions may have.",
+        "Transparency also concerns communication toward participants and communities. If institutions support a film that affects them, they share responsibility for how it is released, what framing is used, and what consequences its public circulation may have.",
+        "## Ethics as infrastructure, not just a code",
+        "Many institutions have ethical codes, but a document alone is not enough. Ethics must be embodied in everyday practice: in contracts, production processes, dramaturgical decisions, and in the ways people are treated. This means creating concrete tools — from consultation mechanisms and ethical review to support for caring and community-based approaches.",
+        "The DAWG framework therefore understands ethics as an infrastructure of relationships: among authorship, participants, audiences, funders, and other actors. Responsibility is shared and cannot be reduced to individual “moral failure.”",
+        "## Think about long-term effects",
+        "Institutions often decide what impact a film will have — to whom it will be available, how it will be framed, and what discussions it will provoke. Institutional responsibility therefore also includes planning release and impact phases: weighing risks, consulting affected communities, and seeking ways to minimize harms and strengthen positive effects.",
+        "This is especially important with sensitive subjects, where an inappropriate release may lead to retraumatization, stigmatization, or further forms of harm. Institutions have the capacity to anticipate these risks and work with them actively.",
+        "## Support a culture of care and solidarity",
+        "Institutional environments can either reproduce competitiveness, pressure, and isolation, or instead support cooperation, sharing, and care. Ethically responsible institutions create space for dialogue, critique, and mutual support, and recognize that high-quality and responsible creation arises in environments that are safe and inclusive.",
+        "Supporting community networks, mentoring, peer-to-peer sharing, and collective forms of decision-making is not merely an organizational choice, but part of an ethical framework that seeks a more just and sustainable documentary practice."
       ],
       "subsections": {
-        "institution_questions": {
-          "title": "Institutional questions",
+        "accountability": {
+          "title": "Shared accountability",
           "content": [
-            "## What to ask\n1. Do the budget, schedule, or broadcaster push toward ethically weaker decisions?\n2. Do contracts and release forms correspond to the real power and needs of participants?\n3. Are fair processes of decision-making, care, and communication established within the crew?\n4. Is the relationship to funders, partners, and other stakeholders transparent?\n5. Is there a plan of responsibility after the film’s release — for participants, audiences, and the team?"
+            "*Accountability* means that responsibility for ethics is not borne only by authorship, but by the whole system: production, funders, distributors, festivals, and platforms. Each of these actors affects what films are made and under what conditions they are made.",
+            "Current documentary ethics frameworks therefore emphasize the need for shared accountability, including transparency, justice, and active engagement with power. Ethics is not an individual trait, but a relational and institutional practice.",
+            "## Further reading",
+            "- Documentary Accountability Working Group, *From Reflection to Release*",
+            "- Sonya Childress & Natalie Bullock Brown, *The Documentary Future: A Call for Accountability*"
           ]
         },
-        "institution_pressures": {
-          "title": "Where pressure emerges",
+        "equity": {
+          "title": "Equity and access",
           "content": [
-            "## Where pressure emerges\n- pressure to heighten drama, conflict, or danger\n- treating documentary as an entertainment pipeline\n- separating fieldwork from post-production in ways that break agreements with participants\n- unclear responsibility between directing, producing, and distribution sides\n- unequal power relations within production\n- absence of shared standards and ways to resist pressure by relying on principle rather than improvisation"
+            "*Equity* means actively addressing inequalities in access to resources, representation, and decision-making. Institutions have a responsibility to open space for those who have historically been excluded or marginalized.",
+            "This includes not only project selection, but also support for diverse creative teams, fair working conditions, and accessible distribution. Without such steps, ethics is reduced to a declaration without real impact.",
+            "## Further reading",
+            "- DAWG, [From Reflection to Release: A framework for Values, Ethics and Accountability in Nonfiction Filmmaking](https://www.thealliance.media/wp-content/uploads/dlm_uploads/2024/11/FROM-REFLECTION-TO-RELEASE_-A-FRAMEWORK-FOR-VALUES-ETHICS-AND-ACCOUNTABILITY-IN-NONFICTION-FILMMAKING-comp.pdf).",
+            "- The Documentary Future, *A Call for Accountability*"
           ]
         }
       }
@@ -99,10 +240,19 @@
   ],
   "info": {
     "position": "start",
-    "title": "To avoid getting lost, one needs a compass",
+    "title": "So that a person does not lose their way, they need a compass",
     "content": [
-      "Artistic creation is a deeply personal matter. Not only because those who create reveal something of their inner selves, but also because in collective arts (such as film) they necessarily work with the inner worlds of others. As [Patricia Aufderheide](https://en.wikipedia.org/wiki/Patricia_Aufderheide) reminds us, although documentary practice overlaps with journalism, unlike journalism it has not developed any binding norms or codes. Nor would that really be possible, given how diverse and unpredictable creative work is. And yet, even if we do not follow fixed rules in creative practice, it is worthwhile to have a compass at hand that helps us orient ourselves at crossroads — the choice of which path to take, however, remains entirely our own. This study material, created for **[Future Memory Lab](https://futurememorylab.com/)** using outputs from the **AI Archivist** project supported by the [Technology Agency of the Czech Republic](https://tacr.gov.cz/), offers precisely such a basic compass within the workshops that FML provides.",
-      "# Used and recommended literature\n- Patricia Aufderheide\n- Patricia Aufderheide"
+      "Artistic creation is a deeply personal matter. Not only because those who create express their inner life, but because in collective art (such as film) they necessarily work with the inner lives of other people as well. As [Patricia Aufderheide](https://en.wikipedia.org/wiki/Patricia_Aufderheide) reminds us, although documentary creation overlaps with journalism, unlike journalism it has not developed binding norms or codes. Nor would that really be possible, given how diverse and unpredictable creative work is. Even if we do not follow fixed rules in creation, it is still worth having a compass at hand to help us orient ourselves at crossroads — the choice of which path to take remains ours alone. This study material, created for **[Future Memory Lab](https://futurememorylab.com/)** using outputs from the **AI Archivist** project supported by the [Technology Agency of the Czech Republic](https://tacr.gov.cz/), offers precisely such a basic compass within the workshops that FML provides.",
+      "## Used and recommended literature",
+      "- [From Reflection to Release: A framework for Values, Ethics and Accountability in Nonfiction Filmmaking](https://www.thealliance.media/wp-content/uploads/dlm_uploads/2024/11/FROM-REFLECTION-TO-RELEASE_-A-FRAMEWORK-FOR-VALUES-ETHICS-AND-ACCOUNTABILITY-IN-NONFICTION-FILMMAKING-comp.pdf). *The Documentary Accountability Working Group,*",
+      "- Patricia Aufderheide, [Perceived ethical conflicts in US documentary filmmaking: a field report](https://doi.org/10.1080/17400309.2012.691248). *New Review of Film and Television Studies* 10(3), 2012.",
+      "- Patricia Aufderheide, [The Growth of Documentary Ethics Debates in the Streaming Era](https://www.dokrevue.com/news/the-growth-of-documentary-ethics-debates-in-the-streaming-era). *Doc Revue* 1 Feb 2024.",
+      "- Natalie Bullock Brown, [Considering a Trauma-Informed Process In Documentary Filmmaking](https://www.documentary.org/online-feature/considering-trauma-informed-process-documentary-filmmaking). *Documentary Magazine*, 12 Jun 2021.",
+      "- Jan Motal, [Dokumentární etika – akademický obor, anebo prostor pro emancipační dialog?](https://vupshop.cz/cs/domu/2728-2418-etika-v-dokumentarnim-filmu-i-moc-a-mocenske-vztahy.html#/51-format-e_kniha_pdf) In: *Etika v dokumentárním filmu I: Moc a mocenské vztahy*, Olomouc: VUP, 2023.",
+      "- Ellen M. Maccarone, [Ethical Responsibilities to Subjects and Documentary Filmmaking](https://doi.org/10.1080/08900523.2010.497025). *Journal of Mass Media Ethics* 25(3), 2010.",
+      "- Willemien Sanders, [Documentary Filmmaking and Ethics: Concepts, Responsibilities, and the Need for Empirical Research](https://doi.org/10.1080/15205431003703319). *Mass Communication and Society* 13(5), 2010.",
+      "## About the author",
+      "The author is [Jan Motal](https://www.janmotal.cz), who collaborates with **Future Memory Lab** as a consultant and works as a researcher in the **AI Archivist** project. He coordinates the [Centre for Media Ethics and Dialogue](https://www.medialnietika.cz) at the [Department of Media Studies and Journalism, FSS MUNI](https://medzur.fss.muni.cz). He is a member of the artistic collective [Dílo](https://www.skupinadilo.cz), where he focuses on experimental filmmaking and its intersections with performance, environmental creation, and digital art. Together with Tereza Schwadoschová, he founded and organizes the annual conference on ethics in documentary film within [MFDF Jihlava](https://www.ji-hlava.cz/etika)."
     ]
   }
 }
