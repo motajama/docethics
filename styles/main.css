@@ -33,11 +33,13 @@ h1,h2,h3 { font-family: var(--font-heading); margin: .2rem 0; }
 #site-title { text-align: center; font-size: clamp(2rem, 5vw, 3.6rem); }
 #site-subtitle { text-align: center; color: var(--muted); margin: 0 auto 1rem; max-width: 60ch; }
 
-.wheel-wrap { display: grid; grid-template-columns: minmax(220px, 420px) minmax(240px, 1fr); gap: 1rem; align-items: center; margin: 0 auto; width: min(1100px, 100%); }
-#ethics-wheel { width: 100%; height: auto; }
+.wheel-wrap { display: grid; grid-template-columns: minmax(300px, 560px) minmax(240px, 1fr); gap: 1rem; align-items: center; margin: 0 auto; width: min(1160px, 100%); }
+#ethics-wheel { width: 100%; max-width: 560px; height: auto; margin-inline: auto; display: block; }
+#wheel-rotor { transform-origin: 210px 210px; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
 .wheel-slice { stroke: var(--line); stroke-width: 2; cursor: pointer; transition: transform .4s ease, filter .2s ease; }
 .wheel-slice:hover { filter: brightness(1.1); }
 .wheel-core { fill: var(--surface); stroke: var(--line); stroke-width: 2; }
+.wheel-marker { fill: var(--accent); stroke: var(--line); stroke-width: 1.5; }
 .wheel-labels { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
 .wheel-link { width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); color: var(--text); padding: .55rem; cursor: pointer; }
 .wheel-link.is-active { border-color: var(--accent); color: var(--accent); }
@@ -70,7 +72,9 @@ pre.ascii-chart { background: #00000033; border: 1px solid var(--line); padding:
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 
 @media (max-width: 900px) {
+  .hero { padding-top: .5rem; }
   .wheel-wrap { grid-template-columns: 1fr; }
+  #ethics-wheel { max-width: min(88vw, 460px); }
   .section-block.is-open .section-body { grid-template-columns: 1fr; }
   .section-side { border-left: 0; border-top: 1px dashed var(--line); }
 }

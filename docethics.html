@@ -35,11 +35,14 @@
     <p id="site-subtitle"></p>
 
     <div class="wheel-wrap">
-      <svg id="ethics-wheel" viewBox="0 0 320 320" role="img" aria-labelledby="wheel-title wheel-desc" tabindex="0">
+      <svg id="ethics-wheel" viewBox="0 0 420 420" role="img" aria-labelledby="wheel-title wheel-desc" tabindex="0">
         <title id="wheel-title">Interaktivní etický rozcestník</title>
-        <desc id="wheel-desc">Kruhový navigační prvek rozdělený na čtyři části.</desc>
-        <g id="wheel-slices"></g>
-        <circle cx="160" cy="160" r="42" class="wheel-core"></circle>
+        <desc id="wheel-desc">Kruhový navigační prvek rozdělený na čtyři části, který se otáčí jako kompas.</desc>
+        <polygon points="210,18 200,44 220,44" class="wheel-marker" aria-hidden="true"></polygon>
+        <g id="wheel-rotor">
+          <g id="wheel-slices"></g>
+          <circle cx="210" cy="210" r="58" class="wheel-core"></circle>
+        </g>
       </svg>
       <ul id="wheel-labels" class="wheel-labels" aria-label="Sekce rozcestníku"></ul>
     </div>

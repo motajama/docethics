@@ -9,7 +9,7 @@
     const sections = state.data.sections;
     const $slices = $('#wheel-slices').empty();
     const $labels = $('#wheel-labels').empty();
-    const center = { x: 160, y: 160, r: 118 };
+    const center = { x: 210, y: 210, r: 168 };
 
     sections.forEach((s, i) => {
       const start = (i * 90 - 90) * Math.PI / 180;
@@ -36,6 +36,9 @@
         .on('click', () => setActiveSection(i));
       $labels.append($('<li/>').append($btn));
     });
+
+    const rotation = -(state.activeIndex * 90);
+    $('#wheel-rotor').css('transform', `rotate(${rotation}deg)`);
   }
 
   function renderHeroText() {
