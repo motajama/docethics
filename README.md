@@ -82,6 +82,7 @@ This repository contains a modular frontend system composed of several independe
 
 ## Project Structure
 
+```bash
 /
 ├── docethics.html
 ├── app.js
@@ -101,6 +102,7 @@ This repository contains a modular frontend system composed of several independe
     ├── skins.md
     ├── ascii-charts.md
     └── architecture.md
+```
 
 ---
 
