@@ -1,27 +1,28 @@
-# Ethical Compass Engine — Documentation
+# Documentation Index
 
-Welcome to the documentation of the **Ethical Compass Engine**.
+Welcome to the documentation for the **Ethical Compass Engine**.
 
-This project is a modular, client-side system for building interactive structured knowledge interfaces.
+This documentation covers content modeling, rendering workflow, markup syntax, theming, and component architecture.
 
-## Documentation Overview
+## Start Here
 
-- [Getting Started](./getting-started.md)
-- [JSON Structure](./json-structure.md)
-- [Markup Engine](./markup.md)
-- [Skin System](./skins.md)
-- [ASCII Charts](./ascii-charts.md)
-- [Architecture](./architecture.md)
+- [Getting Started](./getting-started.md) — local usage and first edits
+- [JSON Structure](./json-structure.md) — content schema and required fields
+- [Markup Engine](./markup.md) — supported inline and block syntax
+- [Skin System](./skins.md) — theming with CSS variables
+- [ASCII Charts](./ascii-charts.md) — lightweight visualization utility
+- [Architecture](./architecture.md) — runtime flow and module responsibilities
 
 ---
 
-## Philosophy
+## Project Philosophy
 
-This project is built on:
+The engine is designed around:
 
 - openness
+- legibility
 - non-commercial knowledge sharing
-- accessibility
-- transparency
+- predictable behavior
+- low technical overhead
 
-It is meant as a **tool for thinking**, not just displaying content.
+It is intended as a tool for structured thinking and communication, not only content display.

@@ -1,44 +1,17 @@
 # Skin System
 
-The UI is controlled via CSS variables.
+The UI theme layer is controlled by CSS custom properties (variables) applied at runtime.
 
----
+## Skin concept
 
-## Concept
+A skin definition contains:
 
-Each skin defines:
+- optional font metadata
+- a `vars` object with CSS variable assignments
 
-{
-  '--bg': '#111',
-  '--text': '#eee',
-  '--accent': '#39ff14'
-}
+Example:
 
----
-
-## Supported variables
-
-- colors
-- fonts
-- links
-- borders
-- UI states
-
----
-
-## Links
-
-Skins define:
-
-- --link
-- --link-hover
-- --link-visited
-- --link-bg-hover
-
----
-
-## Example
-
+```js
 skinLibrary['msdos'] = {
   fontUrl: '...',
   vars: {
@@ -47,17 +20,40 @@ skinLibrary['msdos'] = {
     '--accent': '#39ff14'
   }
 };
+```
 
 ---
 
-## How to apply
+## Common variable groups
 
+- surface/background colors
+- text colors
+- accent and UI states
+- borders and separators
+- link states
+- typography controls
+
+Link-related variables often include:
+
+- `--link`
+- `--link-hover`
+- `--link-visited`
+- `--link-bg-hover`
+
+---
+
+## Applying a skin
+
+```js
 applySkin('msdos');
+```
+
+If creating a new skin, keep contrast and readability in mind for both desktop and mobile.
 
 ---
 
-## Philosophy
+## Design approach
 
-- no CSS rewriting
-- no frameworks
-- full control via variables
+- no CSS recompilation
+- no framework lock-in
+- complete control through variable mapping

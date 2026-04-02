@@ -1,42 +1,46 @@
 # ASCII Charts
 
-Simple text-based visualization engine.
+The engine includes a minimal text-based chart renderer for lightweight visual summaries.
 
----
+## Basic usage
 
-## Usage
-
+```js
 renderAsciiChart([3, 5, 2, 8]);
+```
 
----
+## Typical output shape
 
-## Output
-
+```text
 █
 ███
 █████
+```
 
----
+(Exact output depends on scaling and input values.)
 
 ## Styling
 
+Use monospace output to preserve alignment:
+
+```css
 pre.ascii-chart {
   font-family: monospace;
 }
+```
 
 ---
 
-## Why ASCII?
+## Why ASCII charts
 
 - zero dependencies
-- fast
-- works everywhere
-- aesthetic (terminal / retro)
+- fast rendering
+- portable across environments
+- useful in low-graphics contexts
+- visually consistent with retro/terminal themes
 
----
+## Good use cases
 
-## Use cases
-
-- quick stats
-- teaching
-- logs
+- quick comparisons
+- instructional materials
+- compact inline analytics
+- logging and diagnostic views
