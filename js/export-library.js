@@ -1,26 +1,33 @@
 /*!
- * ExportLib v2.2
+ * CompassExportLib v2.5
  * jQuery library for exporting structured JSON into:
  *  - LaTeX (.tex)
  *  - Markdown (.md)
  *  - RTF (.rtf)
  *
- * Fixes in v2.2:
- *  - fixed leaking placeholders in LaTeX
- *  - fixed internal references $label|key$
- *  - fixed nested patterns like **[link](url)**
- *  - all LaTeX links now have a thin blue border
+ * Supports:
+ *  - text markup
+ *  - internal references $label|key$
+ *  - table blocks inside content
+ *  - ascii chart blocks inside content
+ *
+ * Fixes in v2.5:
+ *  - safer inline parsing
+ *  - fixed RTF ordered lists
+ *  - improved LaTeX chart rendering
+ *  - chart captions now support inline markup
+ *  - LaTeX charts use ASCII-safe bars instead of Unicode blocks
  */
 
 (function (global, $) {
   'use strict';
 
   if (!$) {
-    throw new Error('CompassExportLib v2.2 requires jQuery.');
+    throw new Error('CompassExportLib v2.5 requires jQuery.');
   }
 
   const CompassExportLib = {};
-  const authorName="Jan Motal";
+  const authorName = 'Jan Motal';
 
   /* =========================================================
    * PUBLIC API
@@ -125,12 +132,16 @@
       lines.push('}');
       lines.push('\\usepackage{enumitem}');
       lines.push('\\usepackage{parskip}');
+      lines.push('\\usepackage{array}');
+      lines.push('\\usepackage{longtable}');
+      lines.push('\\usepackage{booktabs}');
+      lines.push('\\usepackage{fancyvrb}');
       lines.push('\\setlength{\\parindent}{0pt}');
       lines.push('\\setlist[itemize]{leftmargin=2em}');
       lines.push('\\setlist[enumerate]{leftmargin=2em}');
       lines.push('');
       lines.push('\\title{' + latexEscape(title) + '}');
-      lines.push('\\author{' + authorName + '}');
+      lines.push('\\author{' + latexEscape(authorName) + '}');
       lines.push('\\date{}');
       lines.push('');
       lines.push('\\begin{document}');
@@ -228,13 +239,13 @@
     const sections = Array.isArray(jsonData && jsonData.sections) ? jsonData.sections : [];
 
     out.push('{\\rtf1\\ansi\\deff0');
-    out.push('{\\fonttbl{\\f0 Times New Roman;}{\\f1 Arial;}}');
+    out.push('{\\fonttbl{\\f0 Times New Roman;}{\\f1 Courier New;}{\\f2 Arial;}}');
     out.push('\\viewkind4\\uc1');
 
     if (options.includeTitle) {
-      out.push(rtfParagraph(title, { bold: true, size: 34, align: 'center', font: 1 }));
+      out.push(rtfParagraph(title, { bold: true, size: 34, align: 'center', font: 2 }));
       if (subtitle && String(subtitle).trim()) {
-        out.push(rtfParagraph(subtitle, { italic: true, size: 24, align: 'center', font: 1 }));
+        out.push(rtfParagraph(subtitle, { italic: true, size: 24, align: 'center', font: 2 }));
       }
     }
 
@@ -279,6 +290,39 @@
     return {
       references: references
     };
+  }
+
+  /* =========================================================
+   * TYPE HELPERS
+   * ========================================================= */
+
+  function isBlockObject(item) {
+    return item && typeof item === 'object' && !Array.isArray(item) && item.type;
+  }
+
+  function buildAsciiChart(block) {
+    if (!global.AsciiChart) return '[AsciiChart not loaded]';
+
+    const chartType = block.chartType || 'bar';
+
+    if (chartType === 'plot') {
+      return global.AsciiChart.plot(Array.isArray(block.points) ? block.points : [], block.options || {});
+    }
+
+    return global.AsciiChart.barChart(Array.isArray(block.items) ? block.items : [], block.options || {});
+  }
+
+  function buildLatexAsciiChart(block) {
+    return buildAsciiChart(block)
+      .replace(/█/g, '#')
+      .replace(/▇/g, '#')
+      .replace(/▆/g, '#')
+      .replace(/▅/g, '#')
+      .replace(/▄/g, '#')
+      .replace(/▃/g, '#')
+      .replace(/▂/g, '#')
+      .replace(/▁/g, '#')
+      .replace(/\t/g, '    ');
   }
 
   /* =========================================================
@@ -332,6 +376,12 @@
     }
 
     arr.forEach(function (rawItem) {
+      if (isBlockObject(rawItem)) {
+        closeList();
+        renderLatexBlock(rawItem, lines, ctx, level);
+        return;
+      }
+
       const parsed = parseLine(rawItem);
 
       if (parsed.type === 'blank') {
@@ -369,6 +419,80 @@
     });
 
     closeList();
+  }
+
+  function renderLatexBlock(block, lines, ctx) {
+    if (block.type === 'table') {
+      renderLatexTableBlock(block, lines, ctx);
+      return;
+    }
+
+    if (block.type === 'chart') {
+      renderLatexChartBlock(block, lines, ctx);
+      return;
+    }
+  }
+
+  function renderLatexTableBlock(block, lines, ctx) {
+    const headers = Array.isArray(block.headers) ? block.headers : [];
+    const rows = Array.isArray(block.rows) ? block.rows : [];
+    const colCount = Math.max(
+      headers.length,
+      rows.reduce(function (max, row) {
+        return Math.max(max, Array.isArray(row) ? row.length : 0);
+      }, 0),
+      1
+    );
+
+    const colSpec = Array(colCount).fill('l').join(' | ');
+
+    if (block.caption) {
+      lines.push('\\textbf{' + renderInlineLatex(block.caption, ctx) + '}');
+      lines.push('');
+    }
+
+    lines.push('\\begin{center}');
+    lines.push('\\begin{tabular}{| ' + colSpec + ' |}');
+    lines.push('\\hline');
+
+    if (headers.length) {
+      lines.push(
+        padRow(headers, colCount).map(function (cell) {
+          return renderInlineLatex(cell, ctx);
+        }).join(' & ') + ' \\\\ \\hline'
+      );
+    }
+
+    rows.forEach(function (row) {
+      const cells = padRow(Array.isArray(row) ? row : [], colCount);
+      lines.push(
+        cells.map(function (cell) {
+          return renderInlineLatex(cell, ctx);
+        }).join(' & ') + ' \\\\ \\hline'
+      );
+    });
+
+    lines.push('\\end{tabular}');
+    lines.push('\\end{center}');
+    lines.push('');
+  }
+
+  function renderLatexChartBlock(block, lines, ctx) {
+    const chartText = buildLatexAsciiChart(block);
+
+    if (block.caption) {
+      lines.push('\\textbf{' + renderInlineLatex(block.caption, ctx) + '}');
+      lines.push('');
+    }
+
+    lines.push('\\begin{center}');
+    lines.push('\\begin{minipage}{0.95\\linewidth}');
+    lines.push('\\begin{Verbatim}[fontsize=\\small]');
+    lines.push(chartText);
+    lines.push('\\end{Verbatim}');
+    lines.push('\\end{minipage}');
+    lines.push('\\end{center}');
+    lines.push('');
   }
 
   function pushLatexHeading(lines, text, level) {
@@ -435,6 +559,11 @@
     if (!Array.isArray(arr)) return;
 
     arr.forEach(function (rawItem) {
+      if (isBlockObject(rawItem)) {
+        renderMarkdownBlock(rawItem, lines, ctx);
+        return;
+      }
+
       const parsed = parseLine(rawItem);
 
       if (parsed.type === 'blank') {
@@ -456,6 +585,60 @@
       lines.push(renderInlineMarkdown(parsed.text, ctx));
       lines.push('');
     });
+  }
+
+  function renderMarkdownBlock(block, lines, ctx) {
+    if (block.type === 'table') {
+      renderMarkdownTableBlock(block, lines, ctx);
+      return;
+    }
+
+    if (block.type === 'chart') {
+      renderMarkdownChartBlock(block, lines);
+      return;
+    }
+  }
+
+  function renderMarkdownTableBlock(block, lines, ctx) {
+    const headers = Array.isArray(block.headers) ? block.headers : [];
+    const rows = Array.isArray(block.rows) ? block.rows : [];
+    const colCount = Math.max(
+      headers.length,
+      rows.reduce(function (max, row) {
+        return Math.max(max, Array.isArray(row) ? row.length : 0);
+      }, 0),
+      1
+    );
+
+    if (block.caption) {
+      lines.push('**' + renderInlineMarkdown(block.caption, ctx) + '**');
+      lines.push('');
+    }
+
+    const headerRow = padRow(headers.length ? headers : Array(colCount).fill(''), colCount);
+    lines.push('| ' + headerRow.map(mdEscapeCell).join(' | ') + ' |');
+    lines.push('| ' + Array(colCount).fill('---').join(' | ') + ' |');
+
+    rows.forEach(function (row) {
+      const cells = padRow(Array.isArray(row) ? row : [], colCount);
+      lines.push('| ' + cells.map(function (cell) {
+        return mdEscapeCell(renderInlineMarkdown(cell, ctx));
+      }).join(' | ') + ' |');
+    });
+
+    lines.push('');
+  }
+
+  function renderMarkdownChartBlock(block, lines) {
+    if (block.caption) {
+      lines.push('**' + block.caption + '**');
+      lines.push('');
+    }
+
+    lines.push('```text');
+    lines.push(buildAsciiChart(block));
+    lines.push('```');
+    lines.push('');
   }
 
   /* =========================================================
@@ -490,51 +673,116 @@
   }
 
   function renderRtfContentArray(arr, out, ctx, level) {
-  if (!Array.isArray(arr)) return;
+    if (!Array.isArray(arr)) return;
 
-  let orderedIndex = 0;
-  let previousWasOrdered = false;
+    let orderedIndex = 0;
+    let previousWasOrdered = false;
 
-  arr.forEach(function (rawItem) {
-    const parsed = parseLine(rawItem);
-
-    if (parsed.type === 'blank') {
-      out.push('\\par');
-      orderedIndex = 0;
-      previousWasOrdered = false;
-      return;
-    }
-
-    if (parsed.type === 'heading') {
-      out.push(rtfHeading(parsed.text, level + parsed.level));
-      orderedIndex = 0;
-      previousWasOrdered = false;
-      return;
-    }
-
-    if (parsed.type === 'list-item') {
-      if (parsed.ordered) {
-        if (!previousWasOrdered) {
-          orderedIndex = 1;
-        } else {
-          orderedIndex += 1;
-        }
-
-        out.push(rtfParagraph(orderedIndex + '. ' + stripMarkupAndReferences(parsed.text)));
-        previousWasOrdered = true;
-      } else {
-        out.push(rtfParagraph('• ' + stripMarkupAndReferences(parsed.text)));
+    arr.forEach(function (rawItem) {
+      if (isBlockObject(rawItem)) {
         orderedIndex = 0;
         previousWasOrdered = false;
+        renderRtfBlock(rawItem, out, ctx);
+        return;
       }
+
+      const parsed = parseLine(rawItem);
+
+      if (parsed.type === 'blank') {
+        out.push('\\par');
+        orderedIndex = 0;
+        previousWasOrdered = false;
+        return;
+      }
+
+      if (parsed.type === 'heading') {
+        out.push(rtfHeading(parsed.text, level + parsed.level));
+        orderedIndex = 0;
+        previousWasOrdered = false;
+        return;
+      }
+
+      if (parsed.type === 'list-item') {
+        if (parsed.ordered) {
+          if (!previousWasOrdered) {
+            orderedIndex = 1;
+          } else {
+            orderedIndex += 1;
+          }
+
+          out.push(rtfParagraph(orderedIndex + '. ' + stripMarkupAndReferences(parsed.text)));
+          previousWasOrdered = true;
+        } else {
+          out.push(rtfParagraph('• ' + stripMarkupAndReferences(parsed.text)));
+          orderedIndex = 0;
+          previousWasOrdered = false;
+        }
+        return;
+      }
+
+      orderedIndex = 0;
+      previousWasOrdered = false;
+      out.push(rtfParagraph(stripMarkupAndReferences(parsed.text)));
+    });
+  }
+
+  function renderRtfBlock(block, out) {
+    if (block.type === 'table') {
+      renderRtfTableBlock(block, out);
       return;
     }
 
-    orderedIndex = 0;
-    previousWasOrdered = false;
-    out.push(rtfParagraph(stripMarkupAndReferences(parsed.text)));
-  });
-}
+    if (block.type === 'chart') {
+      renderRtfChartBlock(block, out);
+      return;
+    }
+  }
+
+  function renderRtfTableBlock(block, out) {
+    const headers = Array.isArray(block.headers) ? block.headers : [];
+    const rows = Array.isArray(block.rows) ? block.rows : [];
+    const allRows = [];
+
+    if (headers.length) {
+      allRows.push(headers);
+    }
+
+    rows.forEach(function (row) {
+      allRows.push(Array.isArray(row) ? row : []);
+    });
+
+    const widths = computeColumnWidths(allRows);
+
+    if (block.caption) {
+      out.push(rtfParagraph(block.caption, { bold: true }));
+    }
+
+    allRows.forEach(function (row, index) {
+      const padded = padPlainRow(row, widths);
+      const line = padded.join(' | ');
+      out.push(rtfParagraph(line, { font: 1 }));
+
+      if (index === 0 && headers.length) {
+        out.push(rtfParagraph(widths.map(function (w) {
+          return '-'.repeat(Math.max(3, w));
+        }).join('-+-'), { font: 1 }));
+      }
+    });
+
+    out.push('\\par');
+  }
+
+  function renderRtfChartBlock(block, out) {
+    if (block.caption) {
+      out.push(rtfParagraph(block.caption, { bold: true }));
+    }
+
+    buildAsciiChart(block).split('\n').forEach(function (line) {
+      out.push(rtfParagraph(line, { font: 1 }));
+    });
+
+    out.push('\\par');
+  }
 
   function rtfHeading(text, level) {
     const sizeMap = {
@@ -547,7 +795,7 @@
     return rtfParagraph(text, {
       bold: true,
       size: sizeMap[level] || 20,
-      font: 1
+      font: 2
     });
   }
 
@@ -555,7 +803,7 @@
     options = options || {};
     const parts = ['\\pard\\sa180\\sl276\\slmult1'];
 
-    parts.push(options.font === 1 ? '\\f1' : '\\f0');
+    parts.push(options.font === 1 ? '\\f1' : options.font === 2 ? '\\f2' : '\\f0');
     parts.push('\\fs' + (options.size || 24));
 
     if (options.align === 'center') parts.push('\\qc');
@@ -643,85 +891,74 @@
   }
 
   function renderInlineGeneric(source, ctx, handlers) {
-  source = String(source || '');
+    source = String(source || '');
 
-  let out = '';
-  let i = 0;
+    let out = '';
+    let i = 0;
 
-  while (i < source.length) {
-    // **bold**
-    if (source.slice(i, i + 2) === '**') {
-      const end = findClosingDoubleAsterisk(source, i + 2);
-      if (end !== -1) {
-        const inner = source.slice(i + 2, end);
-        out += handlers.bold(inner);
-        i = end + 2;
-        continue;
+    while (i < source.length) {
+      if (source.slice(i, i + 2) === '**') {
+        const end = findClosingDoubleAsterisk(source, i + 2);
+        if (end !== -1) {
+          const inner = source.slice(i + 2, end);
+          out += handlers.bold(inner);
+          i = end + 2;
+          continue;
+        }
       }
-    }
 
-    // *italic*
-    if (source[i] === '*') {
-      const end = findClosingSingleAsterisk(source, i + 1);
-      if (end !== -1) {
-        const inner = source.slice(i + 1, end);
-        out += handlers.italic(inner);
-        i = end + 1;
-        continue;
+      if (source[i] === '*') {
+        const end = findClosingSingleAsterisk(source, i + 1);
+        if (end !== -1) {
+          const inner = source.slice(i + 1, end);
+          out += handlers.italic(inner);
+          i = end + 1;
+          continue;
+        }
       }
-    }
 
-    // $label|key$
-    if (source[i] === '$') {
-      const end = source.indexOf('$', i + 1);
-      if (end !== -1) {
-        const inner = source.slice(i + 1, end);
-        const pipeIndex = inner.indexOf('|');
+      if (source[i] === '$') {
+        const end = source.indexOf('$', i + 1);
+        if (end !== -1) {
+          const inner = source.slice(i + 1, end);
+          const pipeIndex = inner.indexOf('|');
 
-        if (pipeIndex !== -1) {
-          const label = inner.slice(0, pipeIndex).trim();
-          const key = inner.slice(pipeIndex + 1).trim();
+          if (pipeIndex !== -1) {
+            const label = inner.slice(0, pipeIndex).trim();
+            const key = inner.slice(pipeIndex + 1).trim();
 
-          if (label && key) {
-            out += handlers.reference(label, key);
-            i = end + 1;
-            continue;
+            if (label && key) {
+              out += handlers.reference(label, key);
+              i = end + 1;
+              continue;
+            }
           }
         }
       }
-    }
 
-    // [label](url)
-    if (source[i] === '[') {
-      const parsedLink = parseMarkdownLinkAt(source, i);
-      if (parsedLink) {
-        out += handlers.link(parsedLink.label, parsedLink.url);
-        i = parsedLink.end;
-        continue;
+      if (source[i] === '[') {
+        const parsedLink = parseMarkdownLinkAt(source, i);
+        if (parsedLink) {
+          out += handlers.link(parsedLink.label, parsedLink.url);
+          i = parsedLink.end;
+          continue;
+        }
       }
+
+      const next = findNextSpecialIndex(source, i + 1);
+
+      if (next === -1) {
+        out += handlers.text(source.slice(i));
+        break;
+      }
+
+      out += handlers.text(source.slice(i, next));
+      i = next;
     }
 
-    // fallback: consume at least one character
-    const next = findNextSpecialIndex(source, i + 1);
-
-    if (next === -1) {
-      out += handlers.text(source.slice(i));
-      break;
-    }
-
-    // if current char is special but invalid, emit it literally and move on
-    if (next <= i) {
-      out += handlers.text(source.charAt(i));
-      i += 1;
-      continue;
-    }
-
-    out += handlers.text(source.slice(i, next));
-    i = next;
+    return out;
   }
 
-  return out;
-}
   function parseMarkdownLinkAt(source, start) {
     if (source[start] !== '[') return null;
 
@@ -751,21 +988,21 @@
   }
 
   function findNextSpecialIndex(source, from) {
-  const candidates = [];
+    const candidates = [];
 
-  const idxDouble = source.indexOf('**', from);
-  const idxSingle = source.indexOf('*', from);
-  const idxDollar = source.indexOf('$', from);
-  const idxBracket = source.indexOf('[', from);
+    const idxDouble = source.indexOf('**', from);
+    const idxSingle = source.indexOf('*', from);
+    const idxDollar = source.indexOf('$', from);
+    const idxBracket = source.indexOf('[', from);
 
-  if (idxDouble !== -1) candidates.push(idxDouble);
-  if (idxSingle !== -1) candidates.push(idxSingle);
-  if (idxDollar !== -1) candidates.push(idxDollar);
-  if (idxBracket !== -1) candidates.push(idxBracket);
+    if (idxDouble !== -1) candidates.push(idxDouble);
+    if (idxSingle !== -1) candidates.push(idxSingle);
+    if (idxDollar !== -1) candidates.push(idxDollar);
+    if (idxBracket !== -1) candidates.push(idxBracket);
 
-  if (!candidates.length) return -1;
-  return Math.min.apply(null, candidates);
-}
+    if (!candidates.length) return -1;
+    return Math.min.apply(null, candidates);
+  }
 
   function findClosingDoubleAsterisk(source, from) {
     return source.indexOf('**', from);
@@ -812,7 +1049,7 @@
       };
     }
 
-    const bulletMatch = trimmed.match(/^\-\s+(.+)$/);
+    const bulletMatch = trimmed.match(/^[-*]\s+(.+)$/);
     if (bulletMatch) {
       return {
         type: 'list-item',
@@ -834,6 +1071,54 @@
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1 ($2)')
       .replace(/\*\*([^*]+)\*\*/g, '$1')
       .replace(/\*([^*]+)\*/g, '$1');
+  }
+
+  /* =========================================================
+   * BLOCK HELPERS
+   * ========================================================= */
+
+  function padRow(row, count) {
+    const out = row.slice(0, count).map(function (cell) {
+      return String(cell == null ? '' : cell);
+    });
+
+    while (out.length < count) {
+      out.push('');
+    }
+
+    return out;
+  }
+
+  function mdEscapeCell(text) {
+    return String(text == null ? '' : text).replace(/\|/g, '\\|');
+  }
+
+  function computeColumnWidths(rows) {
+    const maxCols = rows.reduce(function (max, row) {
+      return Math.max(max, Array.isArray(row) ? row.length : 0);
+    }, 0);
+
+    const widths = Array(maxCols).fill(3);
+
+    rows.forEach(function (row) {
+      if (!Array.isArray(row)) return;
+
+      row.forEach(function (cell, i) {
+        const value = stripMarkupAndReferences(String(cell == null ? '' : cell));
+        widths[i] = Math.max(widths[i], value.length);
+      });
+    });
+
+    return widths;
+  }
+
+  function padPlainRow(row, widths) {
+    const padded = [];
+    for (let i = 0; i < widths.length; i += 1) {
+      const value = stripMarkupAndReferences(String((row && row[i]) == null ? '' : row[i]));
+      padded.push(value.padEnd(widths[i], ' '));
+    }
+    return padded;
   }
 
   /* =========================================================
@@ -917,5 +1202,4 @@
    * ========================================================= */
 
   global.CompassExportLib = CompassExportLib;
-
 })(window, window.jQuery);
