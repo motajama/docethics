@@ -1,69 +1,101 @@
 # JSON Structure
 
-The entire application is driven by JSON.
+The application is fully data-driven. A language file is a single JSON document with three primary blocks:
 
----
-
-## Root
-
+```json
 {
   "meta": {},
   "sections": [],
   "info": {}
 }
+```
 
 ---
 
-## Meta
+## `meta`
 
+Defines document-level settings.
+
+```json
 "meta": {
-  "title": "Title",
-  "subtitle": "",
+  "title": "Main title",
+  "subtitle": "Optional subtitle",
   "dir": "ltr"
 }
+```
+
+- `title` (string, required)
+- `subtitle` (string, optional)
+- `dir` (`"ltr"` or `"rtl"`, required for correct layout direction)
 
 ---
 
-## Sections
+## `sections`
 
+An ordered array of primary content blocks.
+
+```json
 {
   "id": "section-id",
-  "title": "Title",
+  "title": "Section title",
   "short": "Short description",
   "content": ["Paragraph 1", "Paragraph 2"],
   "subsections": {}
 }
+```
+
+Field notes:
+
+- `id`: unique stable identifier used by navigation and linking
+- `title`: visible section heading
+- `short`: short label/preview text
+- `content`: **must be an array of strings**
+- `subsections`: dictionary of sidebox entries keyed by ID
 
 ---
 
-## Subsections (sideboxes)
+## `subsections` (sideboxes)
 
+Inline links in content (`$Label|target_id$`) open entries from this object.
+
+```json
 "subsections": {
-  "example_id": {
-    "title": "Title",
+  "target_id": {
+    "title": "Sidebox title",
     "content": ["Paragraph"]
   }
 }
+```
+
+Rules:
+
+- key (`target_id`) must match link target in content
+- each `content` value is an array of paragraph strings
 
 ---
 
-## Info Block
+## `info`
 
+Optional informational block displayed before or after sections.
+
+```json
 "info": {
   "position": "start",
-  "title": "Title",
+  "title": "Info title",
   "content": ["Paragraph"]
 }
+```
 
-### position options:
+`position` options:
 
-- "start" → before sections
-- "end" → after sections
+- `start` → render before section list
+- `end` → render after section list
 
 ---
 
-## Important rules
+## Validation Checklist
 
-- content MUST be an array
-- each item = one paragraph
-- markup is processed inside each item
+- `content` fields are arrays, not plain strings
+- section IDs are unique
+- sidebox target IDs exist
+- JSON is valid UTF-8 and syntactically correct
