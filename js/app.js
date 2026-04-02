@@ -34,6 +34,20 @@
     return htmlEscape(textWithNbsp(text));
   }
 
+  function slugifyFilename(text) {
+    return String(text || 'document')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'document';
+  }
+
+  function getLatexExportFilename() {
+    const title = state.data?.meta?.title || 'document';
+    return `${slugifyFilename(title)}-${state.lang}`;
+  }
+
   function renderContent(content) {
     if (Array.isArray(content)) {
       return MarkupEngine.render(content);
@@ -404,38 +418,38 @@
   }
 
   function setSectionOpen(id, forceOpen = null, smooth = false) {
-  const $all = $('.section-block');
-  const $current = $(`#section-${CSS.escape(id)}`);
-  if (!$current.length) return;
+    const $all = $('.section-block');
+    const $current = $(`#section-${CSS.escape(id)}`);
+    if (!$current.length) return;
 
-  const open = forceOpen !== null ? forceOpen : !$current.hasClass('is-open');
+    const open = forceOpen !== null ? forceOpen : !$current.hasClass('is-open');
 
-  closeSideboxes($all);
-  $all.removeClass('is-open').find('.section-header').attr('aria-expanded', 'false');
+    closeSideboxes($all);
+    $all.removeClass('is-open').find('.section-header').attr('aria-expanded', 'false');
 
-  if (open) {
-    $current.addClass('is-open').find('.section-header').attr('aria-expanded', 'true');
+    if (open) {
+      $current.addClass('is-open').find('.section-header').attr('aria-expanded', 'true');
 
-    refreshSectionHeight($current);
-
-    requestAnimationFrame(() => {
       refreshSectionHeight($current);
 
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         refreshSectionHeight($current);
-      }, 250);
-    });
 
-    if (smooth && $current[0]) {
-      $current[0].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        setTimeout(() => {
+          refreshSectionHeight($current);
+        }, 250);
       });
+
+      if (smooth && $current[0]) {
+        $current[0].scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } else {
+      refreshSectionHeight($current);
     }
-  } else {
-    refreshSectionHeight($current);
   }
-}
 
   function setActiveSection(index) {
     state.activeIndex = index;
@@ -489,6 +503,31 @@
     $('#skin-select').on('change', function () {
       state.skin = $(this).val();
       SkinEngine.applySkin(state.skin);
+    });
+
+    $('#latex-export').on('click', function (e) {
+      e.preventDefault();
+
+      if (!state.data || typeof CompassExportLib === 'undefined') {
+        console.error('CompassExportLib is not available or no JSON is loaded.');
+        return;
+      }
+
+      CompassExportLib.exportLatex(state.data, getLatexExportFilename(), {
+        engine: 'xelatex',
+        toc: true
+      });
+    });
+
+    $('#rtf-export').on('click', function (e) {
+      e.preventDefault();
+
+      if (!state.data || typeof CompassExportLib === 'undefined') {
+        console.error('CompassExportLib is not available or no JSON is loaded.');
+        return;
+      }
+
+      CompassExportLib.exportRtf(state.data, getLatexExportFilename());
     });
 
     $(window).on('resize', function () {
