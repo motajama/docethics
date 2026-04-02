@@ -1,55 +1,54 @@
 # Getting Started
 
-## 1. Clone the repository
+## 1) Get the project
 
 ```bash
-git clone your-repo
+git clone <repository-url>
+cd docethics
 ```
 
-## 2. Open the project
+If you already have the files, cloning is optional.
 
-Open:
+## 2) Open the application
 
-docethics.html
+Open `docethics.html` in a modern web browser.
 
-No build step required.
+No install, bundler, or build pipeline is required.
 
----
+## 3) Edit content
 
-## 3. Edit content
+All textual content and section structure lives in:
 
-Content is defined in JSON:
+- `data/cs.json`
+- `data/en.json`
+- `data/ua.json`
 
-/data/cs.json
-/data/en.json
-/data/ua.json
+Start by editing one language file, refresh the page, and verify output.
 
----
+## 4) Extend structure
 
-## 4. Modify structure
+You can safely:
 
-You can:
+- add top-level sections
+- add sidebox entries under `subsections`
+- update headings and paragraphs
+- add markup inside paragraph strings
 
-- add sections
-- add subsections
-- edit markup
-- add skins
+## 5) Customize visual style
 
----
+- Global styling: `styles/main.css`
+- Theme definitions: `js/skin-engine.js`
 
-## 5. No backend needed
+## 6) Optional exports
 
-Everything runs:
-
-- client-side
-- no database
-- no framework
+If your workflow uses export helpers, review `js/export-library.js`.
 
 ---
 
-## Recommended use cases
+## Typical Use Cases
 
-- teaching materials
-- research structures
-- ethical frameworks
+- teaching modules
+- ethics frameworks
+- research maps
 - interactive essays
+- public knowledge interfaces

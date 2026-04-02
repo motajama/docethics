@@ -1,112 +1,85 @@
 # Markup Engine
 
-A custom lightweight markup language.
-
----
+The project includes a lightweight custom markup parser for text stored in JSON arrays.
 
 ## Headings
 
-```bash
-
+```text
 # Heading
 ## Subheading
-
 ```
 
----
+## Paragraphs and line breaks
 
-## Paragraphs
+Each item in a `content` array is treated as one logical block.
 
-Each array item = one paragraph.
+Manual line break marker:
 
-Manual break:
-
-```bash
+```text
 §
 ```
 
----
-
 ## Lists
 
-```bash
-
-- item
-- item
+```text
+- bullet item
+- bullet item
 
 1. first
 2. second
-
 ```
-
----
 
 ## Emphasis
 
-```bash
-
+```text
 **bold**
 *italic*
-
 ```
 
----
+## External links
 
-## Links
-
-```bash
-
+```text
 [text](https://example.com)
-
 ```
 
----
+## Internal sidebox links
 
-## Internal Links (sidebox)
-
-```bash
-
+```text
 $Label|target_id$
-
 ```
 
----
+- `Label` is rendered clickable text
+- `target_id` must exist in `subsections`
 
-## Non-breaking space
+## Non-breaking spaces
 
-```bash
-
+```text
 word~word
-
 ```
 
-Escape:
+Escape sequence:
 
-```bash
-
+```text
 \~
-
 ```
 
 ---
 
-## Example
+## JSON Usage Example
 
-```bash
-
+```json
 "content": [
   "# Title",
-  "Text with $link|id$",
+  "Paragraph with $More|details_box$",
   "- item 1\n- item 2"
 ]
-
 ```
 
 ---
 
-## Design Philosophy
+## Design Goals
 
-- readable in JSON
-- minimal syntax
-- predictable output
-- safe rendering
+- readable inline notation in JSON
+- deterministic output
+- low syntax overhead
+- safe rendering behavior

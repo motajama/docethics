@@ -1,128 +1,88 @@
 # Ethical Compass Engine
 
-An open, modular, and reusable frontend engine for building interactive ethical guides, learning maps, and structured knowledge interfaces.
+A modular, frontend-only engine for building interactive ethical guides, learning maps, and structured knowledge interfaces.
 
-Originally developed for a documentary ethics project, this engine provides a universal framework for presenting complex, multi-layered content in a structured, transparent, and accessible way.
+Originally created for documentary ethics work, the project provides a transparent and reusable way to publish complex, layered content without backend services or proprietary platforms.
 
 ---
 
 ## Purpose
 
-This project is designed as a tool for:
+This project helps teams create public-facing knowledge interfaces for:
 
-- educators
-- researchers
-- artists
-- students
-- activists
+- education
+- research
+- cultural projects
+- civic initiatives
+- self-directed learning
 
-It enables the creation of structured, interactive materials without relying on commercial platforms or opaque systems.
-
-The focus is not only on presentation, but on thinking, orientation, and ethical reflection.
+The emphasis is not only on presentation, but also on orientation, reflection, and traceable structure.
 
 ---
 
 ## Core Principles
 
-- openness and transparency
-- non-commercial knowledge sharing
-- accessibility and clarity
-- minimal dependencies
-- full control over content and structure
+- Open and inspectable structure
+- Non-commercial knowledge sharing
+- Accessibility and readability
+- Minimal dependencies
+- Full editorial control over content
 
 ---
 
-## What This Project Is
+## Features
 
-This repository contains a modular frontend system composed of several independent but cooperating parts:
-
-### Application Layer
-
-- app.js  
-  Handles rendering, navigation, interaction logic, sections, and sideboxes.
-
-### Content Layer
-
-- JSON files (cs.json, en.json, ua.json)  
-  Define the entire structure and content of the application.
-
-### Markup Engine
-
-- markup-engine.js  
-  A custom lightweight parser designed for structured academic and educational text.
-
-### Skin System
-
-- skin-engine.js  
-  Provides theme switching via CSS variables.
-
-### Visualization
-
-- ascii-chart.js  
-  Generates lightweight ASCII-based charts without dependencies.
-
-### Styling
-
-- main.css  
-  A variable-driven design system supporting theming and responsiveness.
+- SVG compass navigation
+- Accordion sections with nested sideboxes
+- Inline sidebox references (`$Label|target_id$`)
+- JSON-driven multilingual content
+- Runtime skin switching through CSS variables
+- Lightweight ASCII chart rendering
+- Fully client-side runtime (no build step, no backend)
 
 ---
 
-## Key Features
+## Repository Structure
 
-- SVG-based compass navigation
-- Expandable accordion sections
-- Dynamic sideboxes triggered by inline links
-- JSON-driven content architecture
-- Multilingual support
-- Fully client-side (no backend required)
-- Responsive and accessible UI
-
----
-
-## Project Structure
-
-```bash
-/
+```text
+.
 ├── docethics.html
-├── app.js
-├── markup-engine.js
-├── skin-engine.js
-├── ascii-chart.js
-├── main.css
-├── /data
+├── data/
 │   ├── cs.json
 │   ├── en.json
 │   └── ua.json
-└── /docs
-    ├── index.md
-    ├── getting-started.md
-    ├── json-structure.md
-    ├── markup.md
-    ├── skins.md
-    ├── ascii-charts.md
-    └── architecture.md
+├── docs/
+│   ├── architecture.md
+│   ├── ascii-charts.md
+│   ├── getting-started.md
+│   ├── index.md
+│   ├── json-structure.md
+│   ├── markup.md
+│   └── skins.md
+├── js/
+│   ├── app.js
+│   ├── ascii-chart.js
+│   ├── export-library.js
+│   ├── markup-engine.js
+│   └── skin-engine.js
+└── styles/
+    └── main.css
 ```
-
----
-
-## Documentation
-
-Detailed documentation is available in the /docs directory.
-
-Start here:
-
-/docs/index.md
 
 ---
 
 ## Quick Start
 
-1. Clone the repository  
-2. Open docethics.html  
-3. Edit /data/*.json  
+1. Clone or download the repository.
+2. Open `docethics.html` in a browser.
+3. Edit content in `data/*.json`.
+4. Adjust visuals in `styles/main.css` and `js/skin-engine.js`.
 
-No build step required.
+---
+
+## Documentation
+
+See the documentation hub: [`docs/index.md`](./docs/index.md).
 
 ---
 

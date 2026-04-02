@@ -1,63 +1,58 @@
 # Architecture
 
----
+## High-level overview
 
-## Overview
+The runtime is intentionally simple and split into clearly scoped modules:
 
-The system is composed of:
-
-- JSON → data layer
-- app.js → controller
-- markup-engine.js → parser
-- skin-engine.js → UI layer
-- CSS → presentation
-
----
-
-## Flow
-
-1. Load JSON
-2. Build sections
-3. Apply markup
-4. Attach events
-5. Render UI
+- `data/*.json` → content model
+- `js/app.js` → orchestration and UI behavior
+- `js/markup-engine.js` → text parsing and HTML transformation
+- `js/skin-engine.js` → runtime theming
+- `js/ascii-chart.js` → text chart utility
+- `styles/main.css` → presentation layer
 
 ---
 
-## Sideboxes
+## Runtime flow
 
-Triggered by:
-
-$label|id$
-
-Flow:
-
-- click
-- find subsection
-- render sidebox
-- scroll into view
+1. Load selected language JSON.
+2. Render top-level sections.
+3. Parse markup in each content block.
+4. Bind interaction handlers (accordion, sidebox, navigation).
+5. Apply active skin variables.
+6. Update responsive behavior based on viewport.
 
 ---
 
-## Sections
+## Sidebox flow
 
-- accordion-based
-- dynamic height calculation
-- responsive layout
+Sideboxes are triggered by inline links in content:
+
+```text
+$Label|id$
+```
+
+Interaction sequence:
+
+1. User clicks inline trigger.
+2. App resolves `id` in `section.subsections`.
+3. Sidebox HTML is rendered.
+4. UI scrolls/focuses to keep context visible.
 
 ---
 
-## Mobile behavior
+## Section behavior
 
-- sidebox moves below content
-- click outside closes it
-- scroll to top on open
+- accordion-based expansion/collapse
+- dynamic height calculations
+- state-driven class updates
+- responsive layout with mobile-specific adjustments
 
 ---
 
 ## Design principles
 
-- no frameworks
-- minimal JS
-- readable structure
-- separation of concerns
+- no framework dependency
+- predictable module boundaries
+- readable data-first authoring
+- separation of data, rendering, and presentation
